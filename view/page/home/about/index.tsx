@@ -1,6 +1,38 @@
 import Image from 'next/image'
 import React from 'react'
-import { poppins } from '../../../../styles/fonts'; // Import poppins
+import { poppins } from '../../../../styles/fonts';
+
+const timelineData = [
+  {
+    year: '2000',
+    number: '01',
+    category: 'EDUCATION',
+    title: 'Bachelor of Architecture',
+    description: 'I graduated with a Bachelor of Architecture from New York Institute of Technology.'
+  },
+  {
+    year: '2007',
+    number: '02',
+    category: 'FIRST JOB',
+    title: 'Apprentice Draftsman',
+    description: 'For 7 years, I had been working at Cooper and Sons, one of the best studios in NY.'
+  },
+  {
+    year: '2015',
+    number: '03',
+    category: 'UPGRADE',
+    title: 'Started Freelancing',
+    description: 'Since 2015, I have been working as a freelancer with private and corporate clients.'
+  },
+  {
+    year: '2024',
+    number: '04',
+    category: 'AWARDS',
+    title: 'The Best in Modern Design',
+    description: 'One of my recent projects received an award from AAS Arch for the best modern design.'
+  }
+];
+// Import poppins
 
 const About = () => {
   return (
@@ -73,6 +105,43 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {timelineData.map((item, index) => (
+          <div key={index} className="relative">
+            {/* Number and Category */}
+
+            <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
+              <span className="font-medium">{item.number} \</span>
+              <span className="uppercase">{item.category}</span>
+            </div>
+
+            {/* Year */}
+            <div className={`text-[#cfd8b9] ${poppins.className} text-5xl font-bold mb-4`}>
+              {item.year}
+            </div>
+
+
+            {/* Title */}
+            <h3 className="text-md font-semibold text-gray-900 mb-3">
+              {item.title} <span className='text-[#cfd8b9] font-bold'>—</span>
+            </h3>
+
+
+            {/* Description */}
+            <p className="text-gray-600">
+              {item.description} 
+            </p>
+
+            {/* Connector Line (visible only on larger screens) */}
+            {/* {index < timelineData.length - 1 && (
+              <div className="hidden lg:block absolute top-24 -right-4 w-8 h-[2px] bg-gray-300"></div>
+            )} */}
+          </div>
+        ))}
+      </div>
+
+
     </div>
   )
 }
