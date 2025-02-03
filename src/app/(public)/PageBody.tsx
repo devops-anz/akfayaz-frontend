@@ -1,8 +1,11 @@
 'use client';
 import { Fragment } from 'react';
 import About from 'view/page/home/about';
+import FeaturedProjects from 'view/page/home/featuredProjects';
 import Hero from 'view/page/home/hero';
 import Services from 'view/page/home/service';
+import Testimonials from 'view/page/home/testimonials';
+import TopServices from 'view/page/home/topServices';
 
 const PageBody = () => {
   return (
@@ -10,10 +13,9 @@ const PageBody = () => {
       <Hero />
       <Services />
       <About />
-      {/* <WhyUs />
-      <OurSuccess />
-      <Testimonial />
-      <LearnMore /> */}
+      <TopServices />
+      <FeaturedProjects />
+      <Testimonials />
     </Fragment>
   );
 };
