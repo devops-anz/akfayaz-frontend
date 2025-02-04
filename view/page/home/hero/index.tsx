@@ -8,7 +8,7 @@ const Hero = () => {
 
   return (
     <div
-      className='h-[50vh]  md:h-[100vh] mt-12 sm:mt-16 md:mt-20 mx-4 sm:mx-8 md:mx-12'
+      className='h-[50vh]  md:h-[100vh] mt-12 sm:mt-16 md:mt-0 mx-4 sm:mx-8 md:mx-10'
       style={{backgroundImage: "url('/image/hero/cover.png')", backgroundSize: "cover", backgroundPosition: "center"}}
     >
       <div className='flex flex-col justify-center h-full'>
