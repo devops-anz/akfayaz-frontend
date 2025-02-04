@@ -4,6 +4,8 @@ import { useState } from 'react';
 import MobileNavbar from './mobile-navbar';
 import { navbarData } from '@json-db';
 import { IoMdMail } from 'react-icons/io';
+import { SocialIcon, socialLinks } from '../footer';
+import { poppins } from 'styles/fonts';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -12,10 +14,45 @@ const Navbar = () => {
   return (
     <div>
       <div
-        className={`fixed top-0 z-[101] w-full px-0 py-0 duration-700 ease-in-out md:px-4 md:py-4`}
+        className={`fixed top-0 z-[101] md:static md:z-auto w-full px-0 py-0 duration-700 ease-in-out md:px-4 md:py-4`}
       >
-        <div>
-          <div className='custom-nav glassmorphism mx-auto flex max-w-[1170px] flex-row justify-between gap-20 px-0 py-2 md:justify-between md:px-0 md:py-0 '>
+        <div className=''>
+          <div className='hidden md:flex container-custom flex-row justify-between mx-auto '>
+          <div className='mb-4 flex items-center md:mb-0'>
+              <div className='mr-3 h-10 w-10'>
+                <svg viewBox='0 0 24 24' className='h-full w-full'>
+                  <path fill='currentColor' d='M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z' />
+                </svg>
+              </div>
+              <div>
+                <h1 className={`${poppins.className} text-xl font-bold`}>Adam Smith</h1>
+                <p className='text-sm text-gray-600'>architect & designer</p>
+              </div>
+            </div>
+
+            
+              <div className='flex flex-row gap-4'>
+                <div>
+                  <p className='text-sm text-gray-600/50'>Write me</p>
+                  <p className='text-md text-gray-700'>info@adam.com.au</p>
+                </div>
+                <div>
+                  <p className='text-sm text-gray-600/50'>Call me</p>
+                  <p className='text-md text-gray-700'>+61 4 1234 5678</p>
+                </div>
+              </div>
+
+            
+
+
+          </div>
+          <hr className='container-custom w-full mt-6 mb-2 border-gray-300' />
+          <div className=' mx-auto flex max-w-[1170px] flex-row justify-between gap-20 px-0 py-2 md:justify-between md:px-0 md:py-0 '>
+           
+           
+           
+
+           
             {/* <Link
             href={navbarData?.companyName?.link}
             aria-label='Company'
@@ -46,7 +83,7 @@ const Navbar = () => {
                   ) : (
                     <Link
                       href={item.link}
-                      className='font-work flex items-center gap-1 bg-transparent px-0 py-3 pl-4 text-base font-[500] text-black transition hover:text-primary hover:duration-300'
+                      className='font-work flex items-center gap-1 bg-transparent px-0 py-3 text-base font-[500] text-black transition hover:text-primary hover:duration-300'
                     >
                       {item.name}
                     </Link>
@@ -56,11 +93,19 @@ const Navbar = () => {
               ))}
             </ul>
             <div className='z-20 hidden items-center gap-2 text-lg font-semibold text-black md:flex'>
-            <IoMdMail />
-
-              <Link href='/#contact' className=''>
-                info@adam.com.au
-              </Link>
+            <div className='hidden items-center space-x-1.5 md:flex'>
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  className='border bg-[#d9e2c6] p-1 text-gray-600 transition-colors  duration-300 ease-in-out hover:bg-black hover:text-white '
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <SocialIcon name={social.icon} />
+                </a>
+              ))}
+            </div>
             </div>
 
             <div className='w-full flex items-center justify-between gap-4 lg:hidden'>
