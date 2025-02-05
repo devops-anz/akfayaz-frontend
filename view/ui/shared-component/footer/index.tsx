@@ -10,10 +10,10 @@ import { FaYoutube } from 'react-icons/fa';
 import { FaLinkedinIn } from 'react-icons/fa';
 
 const navLinks = [
-  { title: 'About Me', href: '/#about' },
-  { title: 'Featured Projects', href: '/#projects' },
+  { title: 'About Me', href: '/#about-me' },
+  { title: 'Featured Projects', href: '/#featured-projects' },
   { title: 'Testimonials', href: '/#testimonials' },
-  { title: 'Contact Me', href: '/#contact' }
+  { title: 'Contact Me', href: '/#contact-me' }
 ];
 
 export const socialLinks = [
@@ -32,7 +32,7 @@ const Footer = () => {
     <footer>
       <div className='container-custom mx-auto px-4 pt-16'>
         <div className=''>
-          <nav className='flex flex-col items-center justify-between md:flex-row'>
+          <nav className='flex flex-col items-center gap-y-10 justify-between md:flex-row'>
             {/* Logo */}
             <div className='mb-4 flex items-center md:mb-0'>
               <div className='mr-3 h-10 w-10'>
@@ -87,7 +87,7 @@ const Footer = () => {
             </span>
           </div>
           <div className={`${poppins.className} text-sm font-semibold text-gray-600`}>
-            All rights Reserved || {new Date().getFullYear()}{' '}
+            All rights Reserved || {new Date().getFullYear()}
           </div>
         </div>
       </div>

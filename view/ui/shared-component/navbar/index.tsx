@@ -14,12 +14,13 @@ const Navbar = () => {
   return (
     <div>
       <div
-        className={`fixed top-0 z-[101] md:static md:z-auto w-full px-0 py-0 duration-700 ease-in-out md:px-4 md:py-4`}
+        className={`fixed top-0 z-[101] md:static md:z-auto w-full px-0 py-0 duration-700 ease-in-out md:px-8 md:py-4`}
       >
         <div className=''>
           <div className='hidden md:flex container-custom flex-row justify-between mx-auto '>
           <div className='mb-4 flex items-center md:mb-0'>
               <div className='mr-3 h-10 w-10'>
+
                 <svg viewBox='0 0 24 24' className='h-full w-full'>
                   <path fill='currentColor' d='M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z' />
                 </svg>
@@ -46,8 +47,8 @@ const Navbar = () => {
 
 
           </div>
-          <hr className='container-custom w-full mt-6 mb-2 border-gray-300' />
-          <div className=' mx-auto flex max-w-[1170px] flex-row justify-between gap-20 px-0 py-2 md:justify-between md:px-0 md:py-0 '>
+          <hr className=' hidden md:block container-custom w-full md:mt-6 md:mb-2 border-gray-300' />
+          <div className=' custom-nav  mx-auto flex max-w-[1170px] flex-row justify-between gap-20 px-0 py-2 md:justify-between md:px-0 md:py-0 '>
            
            
            
@@ -62,7 +63,7 @@ const Navbar = () => {
             <Image src={'/logo/logo-small.png'} className='w-12 pl-4' alt='bus' width={1000} height={1000} priority /> 
             <p className='text-white pl-4 font-bold text-[25px] '>ADAM</p>
           </Link> */}
-            <ul className='hidden items-center space-x-8 lg:flex'>
+            <ul className='hidden items-center space-x-8 md:flex'>
               {navbarData.navbarList.map((item: any, index: number) => (
                 <li key={index} className={'group relative block'}>
                   {item.subMenu ? (
@@ -83,7 +84,7 @@ const Navbar = () => {
                   ) : (
                     <Link
                       href={item.link}
-                      className='font-work flex items-center gap-1 bg-transparent px-0 py-3 text-base font-[500] text-black transition hover:text-primary hover:duration-300'
+                      className='font-work flex items-center gap-1 bg-transparent px-0 py-1.5 text-base font-[500] text-black relative ease-in after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full'
                     >
                       {item.name}
                     </Link>
@@ -108,7 +109,7 @@ const Navbar = () => {
             </div>
             </div>
 
-            <div className='w-full flex items-center justify-between gap-4 lg:hidden'>
+            <div className='w-full flex items-center justify-between gap-4 md:hidden'>
               <div className='flex items-center gap-4'>
                 <Link href='/#contact' className='pl-8 font-bold text-white'>
                   Adam John

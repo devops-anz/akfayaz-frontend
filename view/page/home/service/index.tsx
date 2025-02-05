@@ -71,10 +71,11 @@ const Services = () => {
       {
         breakpoint: 1224,
         settings: {
-          slidesToShow: 2.5,
+          slidesToShow: 3,
           arrows: true,
-          dots: true,
+          dots: false,
           infinite: false
+
         }
       },
       {
@@ -82,17 +83,19 @@ const Services = () => {
         settings: {
           slidesToShow: 2.5,
           arrows: true,
-          dots: true,
+          dots: false,
           infinite: false
+
         }
       },
       {
         breakpoint: 820,
         settings: {
-          slidesToShow: 2.1,
+          slidesToShow: 2,
           arrows: true,
-          dots: true,
+          dots: false,
           infinite: false
+
         }
       },
       {
@@ -107,8 +110,8 @@ const Services = () => {
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 2.5,
-          arrows: false,
+          slidesToShow: 2,
+          arrows: true,
           dots: false,
           infinite: false
         }
@@ -116,8 +119,8 @@ const Services = () => {
       {
         breakpoint: 590,
         settings: {
-          slidesToShow: 1.5,
-          arrows: false,
+          slidesToShow: 1,
+          arrows: true,
           dots: false,
           infinite: false
         }

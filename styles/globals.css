@@ -147,10 +147,9 @@ body {
   border: none;
   border-radius: 50%;
   padding: 5px;
-
   cursor: pointer;
   position: absolute;
-  top: 55%;
+  top: 50%;
 
   transform: translateY(-50%);
   z-index: 100;
@@ -171,7 +170,7 @@ body {
 
 
 .custom-nav {
-  padding-right: 20px !important;
+  /* padding-right: 0px !important; */
   position: relative;
   z-index: 100;
   /* background-color: #efefef;
@@ -231,6 +230,10 @@ body {
     background: none;
     backdrop-filter: none !important;
   } */
+
+  .custom-nav{
+    padding-right: 20px !important;
+  }
   
   .custom-nav::before {
     content: '';
