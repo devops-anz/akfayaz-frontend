@@ -34,10 +34,12 @@ const contactMethods = [
 
 const Contact = () => {
   return (
-    <div className="bg-[#d9e1c5] mx-10 py-20">
+    <div id='contact-me' className="bg-[#d9e1c5] px-10 md:px-0 md:mx-10 py-20">
       <div className="container-custom mx-auto px-4">
         {/* Header */}
         <div className="mb-16">
+
+
           <h2 className={`${poppins.className} text-4xl md:text-6xl font-bold mb-4`}>
             Hire Me for Your Project
           </h2>
@@ -67,7 +69,7 @@ const Contact = () => {
               </h3>
 
               {/* Value */}
-              <p className="text-gray-800 font-mono">
+              <p className="text-gray-900 font-[700] text-2xl">
                 {method.value}
               </p>
             </div>
