@@ -130,12 +130,12 @@ const RecentWorks = () => {
           <div className='pr-1 md:pr-0 w-full md:w-7/12'>  
             <Slider {...settings}>
               {data.map(item => (
-                <div key={item.id} className='md:px-2'>
+                <div key={item.id} className=''>
                   <Image
                     src={item.image}
                     alt={item.id.toString()}
                     className='object-cover object-center hover:cursor-pointer'
-                    style={{ height: '200px', width: '100%' }}
+                    style={{ height: '200px', width: '400px' }}
                     width={400}
                     height={400}
                     onClick={() => setOpen(true)}
