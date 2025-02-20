@@ -5,7 +5,7 @@
 <img src="https://reactnative.dev/img/header_logo.svg" height="100" width="100" alt="reactnative logo" title="React Native" />
 
 <br>
-ADAM
+A K Fayaz
 
 </h1>
 
@@ -27,7 +27,7 @@ ADAM
 
 ## Introduction
 
-ADAM
+A K Fayaz
 
 ### Languages/Technologies
 

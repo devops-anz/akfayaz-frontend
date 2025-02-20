@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <div
       className='h-[60vh] sm:h-[70vh] md:h-[100vh] mt-8 sm:mt-12 md:mt-0 mx-3 sm:mx-6 md:mx-10'
-      style={{backgroundImage: "url('/image/hero/cover.png')", backgroundSize: "cover", backgroundPosition: "center"}}
+      style={{backgroundImage: "url('/image/hero/cover.webp')", backgroundSize: "cover", backgroundPosition: "center"}}
     >
       <div className='flex flex-col justify-center h-full'>
         <div className='container-custom px-4 sm:px-6 md:px-8 lg:px-0'>
