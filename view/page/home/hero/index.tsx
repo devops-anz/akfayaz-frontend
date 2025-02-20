@@ -10,10 +10,10 @@ const Hero = () => {
         <div className='container-custom px-4 sm:px-6 md:px-8 lg:px-0'>
           <p className={`text-black font-[700] ${poppins.className} text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-tight sm:leading-snug md:leading-tight`}>
 
-            Hello,<br className="md:hidden" /> I'm A K Fayaz!
+            Hello,<br className="md:hidden" /> I'm Fayaz!
           </p>
           <p className='text-black text-lg sm:text-xl md:text-3xl font-[600] mt-4 sm:mt-6 md:mt-10'>
-            Business Consultant <br className="md:hidden" /> in Melbourne —
+          Eager to help you with  Sales, Marketing, <br /> Procurement, & Acquisition <br className="md:hidden" /> —
           </p>
           <a href="#contact">
 

@@ -26,7 +26,7 @@ const Navbar = () => {
                 </svg>
               </div>
               <div>
-                <h1 className={`${poppins.className} text-3xl font-bold`}>A K Fayaz</h1>
+                <h1 className={`${poppins.className} text-2xl font-bold`}>Ahsanul K. Fayaz</h1>
                 <p className='text-sm text-gray-600'>Business Consultant</p>
               </div>
             </div>
@@ -112,7 +112,7 @@ const Navbar = () => {
             <div className='w-full flex items-center justify-between gap-4 md:hidden'>
               <div className='flex items-center gap-4'>
                 <Link href='/#contact' className='pl-8 font-bold text-white'>
-                  A K Fayaz
+                  Ahsanul K. Fayaz
 
                 </Link>
               </div>

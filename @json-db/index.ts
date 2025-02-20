@@ -53,7 +53,7 @@ export const services = [
 
 export const navbarData = {
   companyName: {
-    title: 'A K Fayaz',
+    title: 'Ahsanul K. Fayaz',
     link: '/'
   },
   navbarList: [
