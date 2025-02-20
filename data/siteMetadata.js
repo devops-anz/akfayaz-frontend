@@ -1,9 +1,9 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'ADAM.',
-  author: 'pxl-studio',
-  headerTitle: 'ADAM',
-  description: 'ADAM',
+  title: 'A K Fayaz',
+  author: 'ANZ Web Studios',
+  headerTitle: 'A K Fayaz',
+  description: 'A K Fayaz',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: '',

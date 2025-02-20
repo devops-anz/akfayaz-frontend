@@ -1,7 +1,7 @@
 import PageBody from './PageBody'
 
 export const metadata = {
-    title: 'ADAM - Home',
+    title: 'A K Fayaz - Home',
     description: 'Access top-tier Web solutions to address your tech challenges with ease.',
 }
 

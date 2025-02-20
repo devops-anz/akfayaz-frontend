@@ -26,8 +26,8 @@ const Navbar = () => {
                 </svg>
               </div>
               <div>
-                <h1 className={`${poppins.className} text-xl font-bold`}>Adam Smith</h1>
-                <p className='text-sm text-gray-600'>architect & designer</p>
+                <h1 className={`${poppins.className} text-3xl font-bold`}>A K Fayaz</h1>
+                <p className='text-sm text-gray-600'>Business Consultant</p>
               </div>
             </div>
 
@@ -35,7 +35,7 @@ const Navbar = () => {
               <div className='flex flex-row gap-4'>
                 <div>
                   <p className='text-sm text-gray-600/50'>Write me</p>
-                  <p className='text-md text-gray-700'>info@adam.com.au</p>
+                  <p className='text-md text-gray-700'>hello@akfayaz.com.au</p>
                 </div>
                 <div>
                   <p className='text-sm text-gray-600/50'>Call me</p>
@@ -112,7 +112,7 @@ const Navbar = () => {
             <div className='w-full flex items-center justify-between gap-4 md:hidden'>
               <div className='flex items-center gap-4'>
                 <Link href='/#contact' className='pl-8 font-bold text-white'>
-                  Adam John
+                  A K Fayaz
 
                 </Link>
               </div>
