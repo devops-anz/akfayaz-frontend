@@ -34,7 +34,7 @@ const contactMethods = [
 
 const Contact = () => {
   return (
-    <div id='contact-me' className="bg-[#d9e1c5] px-10 md:px-0 md:mx-10 py-20">
+    <div id='contact' className="bg-[#d9e1c5] px-10 md:px-0 md:mx-10 py-20">
       <div className="container-custom mx-auto px-4">
         {/* Header */}
         <div className="mb-16">

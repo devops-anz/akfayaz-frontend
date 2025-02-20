@@ -80,7 +80,7 @@ body {
 }
 
 .slick-slide > div {
-  padding: 0 15px !important;
+  padding: 0 10px !important;
 }
 .slick-list {
   padding: 0 -15px !important;
@@ -110,7 +110,7 @@ body {
 }
 
 .slick-center {
-  -webkit-transform: scale(1.1);
+  -webkit-transform: scale(1.1); 
   -moz-transform: scale(1.1);
   transform: scale(1.1);
 }
