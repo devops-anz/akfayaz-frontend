@@ -21,7 +21,7 @@ export const socialLinks = [
   { icon: 'facebook', href: 'https://facebook.com' },
   { icon: 'twitter', href: 'https://twitter.com' },
   { icon: 'youtube', href: 'https://youtube.com' },
-  { icon: 'linkedin', href: 'https://linkedin.com' }
+  { icon: 'linkedin', href: 'https://www.linkedin.com/in/ahsanulkfayaz/' }
 ];
 
 

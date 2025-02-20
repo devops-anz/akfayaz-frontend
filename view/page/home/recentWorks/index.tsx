@@ -130,7 +130,7 @@ const RecentWorks = () => {
           <div className='pr-1 md:pr-0 w-full md:w-7/12'>  
             <Slider {...settings}>
               {data.map(item => (
-                <div key={item.id} className=''>
+                <div key={item.id} className='max-w-full'>
                   <Image
                     src={item.image}
                     alt={item.id.toString()}
