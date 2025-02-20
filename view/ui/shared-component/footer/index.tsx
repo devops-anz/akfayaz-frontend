@@ -41,7 +41,7 @@ const Footer = () => {
                 </svg>
               </div>
               <div>
-                <h1 className={`${poppins.className} text-xl font-bold`}>A K Fayaz</h1>
+                <h1 className={`${poppins.className} text-xl font-bold`}>Ahsanul K. Fayaz</h1>
                 <p className='text-sm text-gray-600'>architect & designer</p>
               </div>
             </div>
