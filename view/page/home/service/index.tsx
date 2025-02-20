@@ -6,31 +6,32 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 const data = [
   {
-    title: 'Prototyping',
-    image: '/image/services/1.svg',
-    content: 'I will help you plan your existing or new space in the best possible.'
+    title: 'Business Consultancy',
+    image: '/image/services/advisor.png',
+    content: 'I provide expert guidance to help grow and streamline your business.'
   },
   {
-    title: 'Space Planning',
-    image: '/image/services/2.svg',
-    content: 'I will help you plan your existing or new space in the best possible.'
+    title: 'Personal  Coaching',
+    image: '/image/services/consulting.png',
+    content: 'I help you enhance your skills, mindset, and confidence for success.'
   },
   {
-    title: '3D Rendering',
-    image: '/image/services/3.svg',
-    content: 'A 3D render will help you to visually see and approve the offered design project.'
-
-
-
+    title: 'Entrepreneurial Mentorship',
+    image: '/image/services/mentorship.png',
+    content: 'I guide entrepreneurs in building and scaling their business ideas.'
   },
   {
-    title: 'Commercial Property',
-    image: '/image/services/4.svg',
-    content: 'I develop design projects and supervise the construction of commercial buildings.'
-
-
+    title: 'Strategy Consulting',
+    image: '/image/services/marketing.png',
+    content: 'I create tailored marketing plans to boost your brand visibility.'
+  },
+  {
+    title: 'Career Coaching',
+    image: '/image/services/coaching.png',
+    content: 'I assist in career planning, job transitions, and professional growth.'
   }
 ];
+
 
 const Services = () => {
   // const [sliderIndex, setSliderIndex] = useState(0);
