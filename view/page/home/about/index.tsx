@@ -55,10 +55,9 @@ const About = () => {
             A Few Words <br className='hidden sm:block' /> About Me
           </h1>
 
-          <h2 className='text-lg sm:text-xl text-black'>Architecture driven by innovations —</h2>
-
+          <h2 className='text-lg sm:text-xl text-black'>Sales & Business Growth Driven by Innovation —</h2>
           <p className='text-gray-600 text-sm sm:text-base'>
-            I'm a licensed architect and interior designer located in New York and working all over the USA.
+          I'm a dynamic sales leader and business strategist with a proven track record in driving revenue growth and operational success across multiple industries
           </p>
 
           {/* Skills Section */}
@@ -66,11 +65,11 @@ const About = () => {
             <div className='grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4'>
               {[
                 "I'm good at:",
-                'Architecture',
-                'Interior Design',
-                'Building Design',
-                '3D Rendering',
-                'Supervision'
+                'Sales Strategy',
+                'Business Development',
+                'Team Leadership',
+                'Client  Management',
+                'Negotiation'
               ].map((skill, index) => (
                 <div key={skill} className='flex items-center space-x-2'>
                   {index === 0 ? (
@@ -89,9 +88,7 @@ const About = () => {
           </div>
 
           <p className='text-gray-600 text-sm sm:text-base'>
-            I specialize as a design and full-service architect for new residences, home additions, and commercial
-            buildings. I also provide additional services like obtaining permits, due diligence, and architectural
-            supervision. If you like what I do, contact me to discuss our new great project!
+          I specialize in scaling businesses, optimizing sales processes, and implementing data-driven strategies to enhance revenue and market presence. With expertise in leading high-performing teams and executing innovative solutions, I drive sustainable business success. If you're looking for growth, let’s connect and discuss new opportunities!
           </p>
 
           {/* Buttons */}

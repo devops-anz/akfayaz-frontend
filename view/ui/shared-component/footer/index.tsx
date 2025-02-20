@@ -35,14 +35,19 @@ const Footer = () => {
           <nav className='flex flex-col items-center gap-y-10 justify-between md:flex-row'>
             {/* Logo */}
             <div className='mb-4 flex items-center md:mb-0'>
-              <div className='mr-3 h-10 w-10'>
-                <svg viewBox='0 0 24 24' className='h-full w-full'>
-                  <path fill='currentColor' d='M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z' />
-                </svg>
+              <div className='mr-3 '>
+              <Image
+                  src={'/image/logo/logo.png'}
+                  className='w-16'
+                  alt='bus'
+                  width={1000}
+                  height={1000}
+                  priority
+                />
               </div>
               <div>
                 <h1 className={`${poppins.className} text-xl font-bold`}>Ahsanul K. Fayaz</h1>
-                <p className='text-sm text-gray-600'>architect & designer</p>
+                <p className='text-sm text-gray-600 mt-2'>Business Consultant | Life Coach</p>
               </div>
             </div>
 

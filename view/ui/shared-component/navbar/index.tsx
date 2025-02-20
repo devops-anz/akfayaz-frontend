@@ -6,6 +6,7 @@ import { navbarData } from '@json-db';
 import { IoMdMail } from 'react-icons/io';
 import { SocialIcon, socialLinks } from '../footer';
 import { poppins } from 'styles/fonts';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -14,46 +15,40 @@ const Navbar = () => {
   return (
     <div>
       <div
-        className={`fixed top-0 z-[101] md:static md:z-auto w-full px-0 py-0 duration-700 ease-in-out md:px-8 md:py-4`}
+        className={`fixed top-0 z-[101] w-full px-0 py-0 duration-700 ease-in-out md:static md:z-auto md:px-8 md:py-4`}
       >
         <div className=''>
-          <div className='hidden md:flex container-custom flex-row justify-between mx-auto '>
-          <div className='mb-4 flex items-center md:mb-0'>
-              <div className='mr-3 h-10 w-10'>
-
-                <svg viewBox='0 0 24 24' className='h-full w-full'>
-                  <path fill='currentColor' d='M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z' />
-                </svg>
+          <div className='container-custom mx-auto hidden flex-row justify-between md:flex '>
+            <div className='mb-4 flex items-center md:mb-0'>
+              <div className='mr-3 '>
+                <Image
+                  src={'/image/logo/logo.png'}
+                  className='w-16'
+                  alt='bus'
+                  width={1000}
+                  height={1000}
+                  priority
+                />
               </div>
               <div>
                 <h1 className={`${poppins.className} text-2xl font-bold`}>Ahsanul K. Fayaz</h1>
-                <p className='text-sm text-gray-600'>Business Consultant</p>
+                <p className='pt-2 text-sm text-gray-600'>Business Consultant | Life Coach</p>
               </div>
             </div>
 
-            
-              <div className='flex flex-row gap-4'>
-                <div>
-                  <p className='text-sm text-gray-600/50'>Write me</p>
-                  <p className='text-md text-gray-700'>hello@akfayaz.com.au</p>
-                </div>
-                <div>
-                  <p className='text-sm text-gray-600/50'>Call me</p>
-                  <p className='text-md text-gray-700'>+61 4 1234 5678</p>
-                </div>
+            <div className='flex flex-row gap-4'>
+              <div>
+                <p className='text-sm text-gray-600/50'>Write me</p>
+                <p className='text-md text-gray-700'>hello@akfayaz.com.au</p>
               </div>
-
-            
-
-
+              <div>
+                <p className='text-sm text-gray-600/50'>Call me</p>
+                <p className='text-md text-gray-700'>+61 4 1234 5678</p>
+              </div>
+            </div>
           </div>
-          <hr className=' hidden md:block container-custom w-full md:mt-6 md:mb-2 border-gray-300' />
+          <hr className=' container-custom hidden w-full border-gray-300 md:mb-2 md:mt-6 md:block' />
           <div className=' custom-nav  mx-auto flex max-w-[1170px] flex-row justify-between gap-20 px-0 py-2 md:justify-between md:px-0 md:py-0 '>
-           
-           
-           
-
-           
             {/* <Link
             href={navbarData?.companyName?.link}
             aria-label='Company'
@@ -84,7 +79,7 @@ const Navbar = () => {
                   ) : (
                     <Link
                       href={item.link}
-                      className='font-work flex items-center gap-1 bg-transparent px-0 py-1.5 text-base font-[500] text-black relative ease-in after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full'
+                      className='font-work relative flex items-center gap-1 bg-transparent px-0 py-1.5 text-base font-[500] text-black ease-in after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full'
                     >
                       {item.name}
                     </Link>
@@ -94,26 +89,25 @@ const Navbar = () => {
               ))}
             </ul>
             <div className='z-20 hidden items-center gap-2 text-lg font-semibold text-black md:flex'>
-            <div className='hidden items-center space-x-1.5 md:flex'>
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className='border bg-[#d9e2c6] p-1 text-gray-600 transition-colors  duration-300 ease-in-out hover:bg-black hover:text-white '
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <SocialIcon name={social.icon} />
-                </a>
-              ))}
-            </div>
+              <div className='hidden items-center space-x-1.5 md:flex'>
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    className='border bg-[#d9e2c6] p-1 text-gray-600 transition-colors  duration-300 ease-in-out hover:bg-black hover:text-white '
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    <SocialIcon name={social.icon} />
+                  </a>
+                ))}
+              </div>
             </div>
 
-            <div className='w-full flex items-center justify-between gap-4 md:hidden'>
+            <div className='flex w-full items-center justify-between gap-4 md:hidden'>
               <div className='flex items-center gap-4'>
                 <Link href='/#contact' className='pl-8 font-bold text-white'>
                   Ahsanul K. Fayaz
-
                 </Link>
               </div>
               <div>
