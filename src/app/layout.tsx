@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <meta name='google-site-verification' content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION} /> <GoogleAnalytics />
+      <meta name='google-site-verification' content={process.env.GOOGLE_SITE_VERIFICATION} /> <GoogleAnalytics />
       <body className={`${inconsolata.className}`}>{children}</body>
     </html>
   );
