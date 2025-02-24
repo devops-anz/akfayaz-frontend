@@ -18,7 +18,7 @@ const inconsolata = Inconsolata({
 
 
 export const metadata: Metadata = {
-  title: 'A K Fayaz',
+  title: 'Ahsanul K. Fayaz',
   description: "Eager to help you with Sales, Marketing, Procurement & Acquisition"   
 };
 
