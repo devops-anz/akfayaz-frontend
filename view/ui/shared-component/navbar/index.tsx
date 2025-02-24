@@ -3,8 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import MobileNavbar from './mobile-navbar';
 import { navbarData } from '@json-db';
-import { IoMdMail } from 'react-icons/io';
-import { SocialIcon, socialLinks } from '../footer';
+import {  socialLinks } from '../footer';
 import { poppins } from 'styles/fonts';
 import Image from 'next/image';
 
@@ -22,8 +21,8 @@ const Navbar = () => {
             <div className='mb-4 flex items-center md:mb-0'>
               <div className='mr-3 '>
                 <Image
-                  src={'/image/logo/logo.png'}
-                  className='w-16'
+                  src={'/image/logo/logo-2.png'}
+                  className='w-28'
                   alt='bus'
                   width={1000}
                   height={1000}
@@ -32,7 +31,7 @@ const Navbar = () => {
               </div>
               <div>
                 <h1 className={`${poppins.className} text-2xl font-bold`}>Ahsanul K. Fayaz</h1>
-                <p className='pt-2 text-sm text-gray-600'>Business Consultant | Life Coach</p>
+                <p className='text-sm text-gray-600'>Entrepreneur | Business Consultant | Life Coach</p>
               </div>
             </div>
 
@@ -94,12 +93,13 @@ const Navbar = () => {
                   <a
                     key={index}
                     href={social.href}
-                    className='border bg-[#d9e2c6] p-1 text-gray-600 transition-colors  duration-300 ease-in-out hover:bg-black hover:text-white '
+                    className=''
                     target='_blank'
                     rel='noopener noreferrer'
-                  >
-                    <SocialIcon name={social.icon} />
-                  </a>
+                    title={social.title}
+                    >
+                        <Image src={social.icon} alt='social' width={20} height={20} />
+                    </a>
                 ))}
               </div>
             </div>

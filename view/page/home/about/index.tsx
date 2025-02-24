@@ -4,32 +4,32 @@ import { poppins } from '../../../../styles/fonts';
 
 const timelineData = [
   {
-    year: '2000',
+    year: '2021',
     number: '01', 
     category: 'EDUCATION',
-    title: 'Bachelor of Architecture',
-    description: 'I graduated with a Bachelor of Architecture from New York Institute of Technology.'
+    title: 'Bachelor of IT',
+    description: 'I graduated with a Bachelor of IT from La Trobe University, Melbourne.'
   },
   {
-    year: '2007',
+    year: '2022',
     number: '02',
-    category: 'FIRST JOB', 
-    title: 'Apprentice Draftsman',
-    description: 'For 7 years, I had been working at Cooper and Sons, one of the best studios in NY.'
+    category: 'HEAD OF SALES ', 
+    title: 'ALCHEMY GLOBAL SOLUTIONS ',
+    description: 'I had been working at Alchemy Global Solutions as a Head of Sales for 3 years.'
   },
   {
     year: '2015',
     number: '03',
-    category: 'UPGRADE',
-    title: 'Started Freelancing',
-    description: 'Since 2015, I have been working as a freelancer with private and corporate clients.'
+    category: 'SALES DIRECTOR',
+    title: 'KM ASSETS PTY. LTD',
+    description: 'I had been working at KM Assets Pty. Ltd as a Sales Director for 2 years.'
   },
   {
-    year: '2024',
+    year: '2020',
     number: '04',
-    category: 'AWARDS',
-    title: 'The Best in Modern Design',
-    description: 'One of my recent projects received an award from AAS Arch for the best modern design.'
+    category: 'Business', 
+    title: 'Budget Phone Australia',
+    description: 'I started Budget Phone Australia in 2020 to provide affordable phone plans to the people of Australia.'
   }
 ];
 
@@ -40,7 +40,7 @@ const About = () => {
         {/* Image Section */}
         <div className='relative h-[300px] sm:h-[400px] md:h-full'>
           <Image
-            src='/image/about/about.webp'
+            src='/image/about/about-1.png'
             alt='Modern Architecture'
             className='h-full w-full object-cover'
             width={1000}

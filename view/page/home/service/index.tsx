@@ -141,15 +141,14 @@ const Services = () => {
         <Slider {...settings}>
           {data.map((item, index) => (
             <div key={index} className="px-4">
-              <div className="flex flex-col">
-                <div className="relative w-[50px] h-[50px] mb-4">
+              <div className="flex flex-col items-center">
+                <div className="relative w-[80px] h-[80px] mb-4">
                   <Image 
                     src={item.image} 
                     alt={item.title} 
                     fill
-                    style={{ objectFit: 'cover' }}
-                    className="rounded-lg"
-
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
+                    className="rounded-lg mx-auto"
                   />
                 </div>
                 <h3 className='text-left text-lg font-bold text-zinc-800 mt-4'>{item.title}</h3>
