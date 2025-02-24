@@ -1,7 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { HiMailOpen } from 'react-icons/hi';
-import { MdLocationOn } from 'react-icons/md';
 import { poppins } from 'styles/fonts';
 import { FaInstagram } from 'react-icons/fa';
 import { TbBrandFacebook } from 'react-icons/tb';
@@ -17,11 +14,14 @@ const navLinks = [
 ];
 
 export const socialLinks = [
-  { icon: 'instagram', href: 'https://instagram.com' },
-  { icon: 'facebook', href: 'https://facebook.com' },
-  { icon: 'twitter', href: 'https://twitter.com' },
-  { icon: 'youtube', href: 'https://youtube.com' },
-  { icon: 'linkedin', href: 'https://www.linkedin.com/in/ahsanulkfayaz/' }
+  // { icon: 'instagram', href: 'https://instagram.com' },
+  // { icon: 'facebook', href: 'https://facebook.com' },
+  // { icon: 'twitter', href: 'https://twitter.com' },
+  // { icon: 'youtube', href: 'https://youtube.com' },
+  { title: 'Anz Web Studios', icon: '/image/logo/webstudio.png', href: 'https://anzwebstudios.com.au' },
+  { title: 'Anz Biz Consultants', icon: '/image/logo/favicon.ico', href: 'https://anzbizconsultants.com.au' },
+  { title: 'LinkedIn', icon: '/image/logo/linkedin.png', href: 'https://www.linkedin.com/in/ahsanulkfayaz/' },
+  // { icon: 'linkedin', href: 'https://www.linkedin.com/in/ahsanulkfayaz/' }
 ];
 
 
@@ -37,7 +37,7 @@ const Footer = () => {
             <div className='mb-4 flex items-center md:mb-0'>
               <div className='mr-3 '>
               <Image
-                  src={'/image/logo/logo.png'}
+                  src={'/image/logo/logo-2.png'}
                   className='w-16'
                   alt='bus'
                   width={1000}
@@ -47,7 +47,7 @@ const Footer = () => {
               </div>
               <div>
                 <h1 className={`${poppins.className} text-xl font-bold`}>Ahsanul K. Fayaz</h1>
-                <p className='text-sm text-gray-600 mt-2'>Business Consultant | Life Coach</p>
+                <p className='text-sm text-gray-600 mt-2'>Entrepreneur | Business Consultant | Life Coach</p>
               </div>
             </div>
 
@@ -69,8 +69,9 @@ const Footer = () => {
                   className='border border-gray-600 p-1 text-gray-600 transition-colors  duration-300 ease-in-out hover:bg-black hover:text-white '
                   target='_blank'
                   rel='noopener noreferrer'
+                  title={social.title}
                 >
-                  <SocialIcon name={social.icon} />
+                  <Image src={social.icon} alt='social' width={20} height={20} />
                 </a>
               ))}
             </div>

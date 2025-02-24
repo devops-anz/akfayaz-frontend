@@ -19,7 +19,7 @@ const inconsolata = Inconsolata({
 
 export const metadata: Metadata = {
   title: 'A K Fayaz',
-  description: "Eager to help you with Sales, Marketing, Procurement, & Acquisition"   
+  description: "Eager to help you with Sales, Marketing, Procurement & Acquisition"   
 };
 
 export default function RootLayout({

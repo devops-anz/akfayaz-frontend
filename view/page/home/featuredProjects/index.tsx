@@ -5,16 +5,16 @@ const projects = [
   {
     date: '14 / DEC,2023',
     image: '/image/featured-projects/1.png',
-    title: 'Australian Business Journal',
+    title: '10 Questions With A Circular Tech Leader – Exclusive Interview With Ahsanul Karim Fayaz',
     description:
       'Renowned in Australia’s circular tech industry, he founded his first startup at 22 to drive sustainability and reuse.',
     services: ['Tech Industry Leadership', 'Circular Economy Advocate', 'Sales & Business Development Expert'],
-    link: 'https://auspreneur.com.au/the-10-young-entrepreneurs-making-a-difference-in-2023/'
+    link: 'https://theabj.com.au/2023/12/05/exclusive-interview-with-ahsanul-karim-fayaz-the-circular-tech-leaders-journey/#google_vignette'
   },
   {
     date: '09 / JAN, 2023',
     image: '/image/featured-projects/2.png',
-    title: 'Auspreneur',
+    title: '10 Young Entrepreneurs Making a Difference in 2023',
     description:
       'Founder of Budget Phones Australia at 22, now Head of Sales at Alchemy Global, driving global sustainability',
     services: [
@@ -27,7 +27,7 @@ const projects = [
   {
     date: '30 / JULY,2021',
     image: '/image/featured-projects/3.png',
-    title: 'TechBullion',
+    title: 'In the Spotlight: Ahsanul Karim Fayaz’s Journey from Startup Founder to a Global Sales Leader in the Circular Tech Industry',
     description:
       'Ahsanul Karim Fayaz, a pioneer in circular tech, launched his first startup at 22, driving sustainability and innovation..',
     services: [
@@ -50,7 +50,7 @@ const FeaturedProjects = () => {
           <p
             className={`font-[700] text-black ${poppins.className} pt-12 text-3xl sm:pt-16 sm:text-4xl md:pt-24 md:text-5xl lg:text-6xl`}
           >
-            Featured Projects
+            Featured Magazines
           </p>
           <p className='mb-3 pt-6 sm:mb-4 sm:pt-8 md:mb-5 md:pt-10'>
             I treat each completed project with special trepidation. See some of the featured projects below.
@@ -66,7 +66,7 @@ const FeaturedProjects = () => {
               } group flex flex-col overflow-hidden bg-white md:flex-row`}
             >
               {/* Image Container */}
-              <div className='relative h-[300px] w-full overflow-hidden sm:h-[350px] md:h-[420px] lg:w-1/2'>
+              <div className='relative h-[300px] w-full overflow-hidden sm:h-[350px] md:h-[430px] lg:w-1/2'>
                 <img
                   src={project.image}
                   alt={project.title}
@@ -75,7 +75,7 @@ const FeaturedProjects = () => {
               </div>
 
               {/* Content Container */}
-              <div className='w-full p-6 sm:p-10 md:pt-10 md:pb-10 lg:w-1/2 lg:pt-14 lg:pb-4'>
+              <div className='w-full p-6 sm:p-10 md:pt-10 md:pb-10 lg:w-1/2 lg:pt-12 lg:pb-4'>
                 {/* Date */}
                 <div className='mb-3 text-sm text-gray-600 sm:mb-4'>{project.date}</div>
 
@@ -103,7 +103,7 @@ const FeaturedProjects = () => {
                     </li>
                   ))}
                 </ul>
-                <div className='pt-10'>
+                <div className='pt-5'>
                   <a href={project.link} target='_blank' className='font-work relative flex items-center gap-1 bg-transparent px-0 py-1.5 text-base font-[500] text-black ease-in after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-[70px]' rel='noopener noreferrer'>
                     Read More
                   </a>

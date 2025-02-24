@@ -13,7 +13,7 @@ const Hero = () => {
             Hello,<br className="md:hidden" /> I'm Fayaz!
           </p>
           <p className='text-black text-lg sm:text-xl md:text-3xl font-[600] mt-4 sm:mt-6 md:mt-10'>
-          Eager to help you with  Sales, Marketing, <br /> Procurement, & Acquisition <br className="md:hidden" /> —
+          Eager to help you with  Sales, Marketing, <br /> Procurement & Acquisition <br className="md:hidden" /> —
           </p>
           <a href="#contact">
 
