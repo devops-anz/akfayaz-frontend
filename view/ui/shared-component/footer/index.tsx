@@ -38,7 +38,7 @@ const Footer = () => {
               <div className='mr-3 '>
               <Image
                   src={'/image/logo/logo-2.png'}
-                  className='w-16'
+                  className='w-28'
                   alt='bus'
                   width={1000}
                   height={1000}
@@ -47,7 +47,7 @@ const Footer = () => {
               </div>
               <div>
                 <h1 className={`${poppins.className} text-xl font-bold`}>Ahsanul K. Fayaz</h1>
-                <p className='text-sm text-gray-600 mt-2'>Entrepreneur | Business Consultant | Life Coach</p>
+                <p className='text-sm text-gray-600'>Entrepreneur | Business Consultant | Life Coach</p>
               </div>
             </div>
 
