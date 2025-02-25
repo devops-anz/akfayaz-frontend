@@ -62,8 +62,12 @@ export const navbarData = {
       link: '/#about-me'
     },
     {
-      name: 'Featured Projects',
-      link: '/#featured-projects'
+      name: 'Services',
+      link: '/#services'
+    },
+    {
+      name: 'Featured Magazines',
+      link: '/#featured-magazine'
     },
     {
       name: 'Testimonials',

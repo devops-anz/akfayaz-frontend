@@ -8,9 +8,9 @@ import { FaLinkedinIn } from 'react-icons/fa';
 
 const navLinks = [
   { title: 'About Me', href: '/#about-me' },
-  { title: 'Featured Projects', href: '/#featured-projects' },
-  { title: 'Testimonials', href: '/#testimonials' },
-  { title: 'Contact Me', href: '/#contact-me' }
+  { title: 'Featured Magazines', href: '/#featured-magazine' },
+  { title: 'Services', href: '/#services' },
+  // { title: 'Contact Me', href: '/#contact-me' }
 ];
 
 export const socialLinks = [
@@ -46,7 +46,7 @@ const Footer = () => {
                 />
               </div>
               <div>
-                <h1 className={`${poppins.className} text-xl font-bold`}>Ahsanul K. Fayaz</h1>
+                <h1 className={`${poppins.className} text-xl font-bold`}>Ahsanul Karim Fayaz</h1>
                 <p className='text-sm text-gray-600'>Entrepreneur | Business Consultant | Life Coach</p>
               </div>
             </div>

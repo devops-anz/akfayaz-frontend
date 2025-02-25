@@ -12,6 +12,10 @@ const Hero = () => {
 
             Hello,<br className="md:hidden" /> I'm Fayaz!
           </p>
+
+          <div className='md:hidden flex justify-center'>
+            <Image src="/image/hero/ak_fayaz.webp" className="" alt="hero" width={320} height={150} />
+          </div>
           <p className='text-black text-lg sm:text-xl md:text-3xl font-[600] mt-4 sm:mt-6 md:mt-10'>
           Eager to help you with  Sales, Marketing, <br /> Procurement & Acquisition <br className="md:hidden" /> —
           </p>
@@ -23,9 +27,7 @@ const Hero = () => {
 
           </a>
         </div>
-          <div className='md:hidden flex justify-center'>
-            <Image src="/image/hero/ak_fayaz.webp" className="" alt="hero" width={300} height={100} />
-          </div>
+
       </div>
     </div>
   );

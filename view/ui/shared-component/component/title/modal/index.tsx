@@ -10,15 +10,15 @@ import Image from 'next/image';
 const data = [
   {
     id: 1,
-    image: '/image/recent-projects/1.webp'
+    image: '/image/recent-projects/1.jpg'
   },
   {
     id: 2,
-    image: '/image/recent-projects/2.webp'
+    image: '/image/recent-projects/2.jpg'
   },
   {
     id: 3,
-    image: '/image/recent-projects/3.webp'
+    image: '/image/recent-projects/3.jpg'
   }
 ];
 
