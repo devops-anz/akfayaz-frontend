@@ -1,5 +1,8 @@
 import React from 'react'
 import { poppins } from 'styles/fonts';
+
+
+
 const contactMethods = [
     {
       title: 'WRITE ME',
@@ -28,13 +31,13 @@ const contactMethods = [
           <circle cx="4" cy="4" r="2" strokeWidth={2} />
         </svg>
       ),
-      value: 'www.linkedin.com/in/ahsanul-karim-fayaz'
+      value: 'linkedin.com/in/ahsanul-karim-fayaz'
     }
   ];
 
 const Contact = () => {
   return (
-    <div id='contact' className="bg-[#d9e1c5] px-10 md:px-0 md:mx-10 py-20">
+    <div id='contact-me' className="bg-[#d9e1c5] px-10 md:px-0 md:mx-10 py-20">
       <div className="container-custom mx-auto px-4">
         {/* Header */}
         <div className="mb-16">
@@ -73,7 +76,7 @@ const Contact = () => {
                   method.title === 'FIND ME' ? `https://${method.value}` :
                   method.title === 'CALL ME' ? `tel:${method.value}` : '#'
                 }
-                className="text-gray-900 font-[700] text-2xl hover:underline"
+                className={`text-gray-900 font-[700] text-2xl hover:underline ${method.title === 'FIND ME' ? 'text-xl' : ''}`}
               >
                 {method.value}
               </a>

@@ -5,49 +5,47 @@ import { poppins } from 'styles/fonts';
 
 const topServices = [
   {
-    image: '/image/topservices/1.webp',
-    category: 'Residential Architecture',
-    title: 'Residential Architecture'
+    image: '/image/topservices/1.png',
+    category: 'Strategic Sales Solutions to Boost Revenue and Client Engagement',
+    title: 'Sales '
   },
   {
-    image: '/image/topservices/2.webp',
-    category: 'Commercial Architecture',
-    title: 'Commercial Architecture'
-  },
-
-  {
-    image: '/image/topservices/3.webp',
-    category: 'Interior Design',
-    title: 'Interior Design'
-  },
-
-  {
-    image: '/image/topservices/1.webp',
-    category: 'Architectural Supervision',
-    title: 'Architectural Supervision'
+    image: '/image/topservices/2.png',
+    category: 'Innovative Marketing Strategies for Brand Growth and Visibility',
+    title: 'Marketing'
   },
   {
-    image: '/image/topservices/2.webp',
-    category: 'Architectural Supervision',
-    title: 'Architectural Supervision'
+    image: '/image/topservices/3.png',
+    category: 'Efficient Procurement Processes for Cost-Effective Resource Management',
+    title: 'Procurement'
   },
   {
-    image: '/image/topservices/3.webp',
-    category: 'Architectural Supervision',
-    title: 'Architectural Supervision'
+    image: '/image/topservices/4.png', 
+    category: 'Smart Acquisition Strategies for Seamless Business Expansion',
+    title: 'Acquisition'
+  },
+  {
+    image: '/image/topservices/5.png',
+    category: ' Expert Consultancy Services for Optimized Business Performance',
+    title: 'Consultancy'
+  },
+  {
+    image: '/image/topservices/6.png',
+    category: 'Creative Web Design for Engaging Digital User Experiences',
+    title: 'Web Design'
   }
 ];
 
 const TopServices = () => {
   return (
-    <div>
+    <div id='services'>
       <div className='container-custom pt-20 sm:pt-28 md:pt-40'>
         <div className='mb-10 sm:mb-16 md:mb-20 px-4 sm:px-6'>
           <p className={`font-[700] text-black ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
             Top Services
           </p>
           <p className='mb-3 sm:mb-4 md:mb-5 pt-6 sm:pt-8 md:pt-10'>
-            As a licensed architect and designer, I can help you create your dream home or office.
+              I offer a range of services to help you grow your business and reach new customers.
           </p>
           <hr className='border border-solid border-gray-200' />
         </div>
@@ -64,15 +62,15 @@ const TopServices = () => {
                 className='w-full object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110'
               />
 
-              <div className='absolute inset-0 flex flex-col items-center justify-evenly bg-black/70 md:bg-gray-500/0 transition-all duration-500 ease-in-out md:group-hover:bg-black/70'>
-                <p className='text-xl sm:text-2xl font-medium text-white md:opacity-0 transition-opacity duration-300 ease-in-out md:group-hover:opacity-100'>
+              <div className='absolute inset-0 flex flex-col items-center justify-evenly bg-black/70 md:bg-gray-500/0 transition-all duration-500 ease-in-out md:group-hover:bg-black/85'>
+                <p className='text-2xl sm:text-2xl font-medium text-white md:opacity-0 transition-opacity duration-300 ease-in-out md:group-hover:opacity-100'>
                   {item.title}
                 </p>
 
-                <p className='text-xs sm:text-sm text-white md:opacity-0 transition-opacity duration-300 md:group-hover:opacity-100'>
+                <p className='p-5 text-center text-xs sm:text-sm text-white md:opacity-0 transition-opacity duration-300 md:group-hover:opacity-100'>
                   {item.category}
                 </p>
-                <button className='bg-[#cfd8b9] px-4 sm:px-6 py-2 sm:py-2.5 text-black md:opacity-0 transition-opacity duration-300 md:group-hover:opacity-100'>
+                <button className='bg-[#cfd8b9] px-4 sm:px-6 py-2 sm:py-2.5 text-black font-bold md:opacity-0 transition-opacity duration-300 ease-in-out hover:bg-amber-500 md:group-hover:opacity-100'>
                   Learn More
                 </button>
               </div>

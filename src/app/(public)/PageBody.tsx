@@ -19,8 +19,8 @@ const PageBody = () => {
       <About />
       <TopServices />
       <FeaturedProjects />
-      <Testimonials />
-      <RecentWorks />
+      {/* <Testimonials /> */}
+      {/* <RecentWorks /> */}
       <Contact />
       <Footer />
       <ScrollTop />

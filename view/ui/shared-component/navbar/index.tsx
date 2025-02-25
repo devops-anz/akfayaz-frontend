@@ -30,7 +30,7 @@ const Navbar = () => {
                 />
               </div>
               <div>
-                <h1 className={`${poppins.className} text-2xl font-bold`}>Ahsanul K. Fayaz</h1>
+                <h1 className={`${poppins.className} text-2xl font-bold`}>Ahsanul Karim Fayaz</h1>
                 <p className='text-sm text-gray-600'>Entrepreneur | Business Consultant | Life Coach</p>
               </div>
             </div>

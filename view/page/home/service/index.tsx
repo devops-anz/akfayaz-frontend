@@ -130,7 +130,7 @@ const Services = () => {
   };
 
   return (
-    <div id='services' className='pb-10'>
+    <div id='' className='pb-10'>
       <div className='pt-[27px] lg:pt-[29px] '>
         {/* <p className="font-['Istok Web'] text-center text-base font-bold text-indigo-600">SERVICES</p>
         <h2 className="font-['Istok Web'] mx-auto mt-3 max-w-[565px] text-center text-lg font-bold text-zinc-800 max-md:px-5 lg:text-4xl">

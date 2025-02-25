@@ -10,19 +10,34 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 const testimonials = [
   {
     name: 'Jessica Gordons',
-    image: 'image/testimonials/profile-pic-1.webp',
-    project: 'PRIVATE HOUSE, USA, 2024.',
+    image: 'image/testimonials/woman-1.png',
+    project: 'BUSINESS EXPANSION STRATEGY, USA, 2024.',
     quote:
-      'We decided to approach the construction of our country house seriously and hire an experienced architect. Cooperation with Adam has brought us only positive emotions! From the first minute, we were on the same wavelength, and the results are gorgeous!'
+      'Fayaz’s strategic insights transformed our sales approach, driving remarkable revenue growth. His has expertise in business development and market expansion!'
   },
   {
     name: 'Douglas Fenders',
-    image: 'image/testimonials/profile-pic-2.webp',
-    project: 'INTERIOR DESIGN, USA, 2024.',
+    image: 'image/testimonials/man.png',
+    project: 'SALES PROCESS OPTIMIZATION, USA, 2024.',
     quote:
-      'We did a complete replanning of our apartment and hired Adam for a design project and supervision. It is very pleasant to work and communicate with Adam, he immediately understands our ideas and easily implements them, first in a 3D model, and then live.'
+      'Working with Fayaz was a game-changer! He streamlined our sales process, improved client engagement, and helped us scale efficiently with data-driven strategies.'
+  },
+  {
+    name: 'Sophia Reynolds',
+      image: 'image/testimonials/woman-2.png',
+    project: 'TEAM LEADERSHIP TRAINING, UK, 2024.',
+    quote:
+      'Fayaz helped us build a high-performing sales team with expert leadership training. His guidance empowered our team and boosted productivity significantly.'
+  },
+  {
+    name: 'Michael Stevens',
+    image: 'image/testimonials/boy.png',
+    project: 'NEGOTIATION & CLIENT MANAGEMENT, CANADA, 2024.',
+    quote:
+      'Fayaz’s negotiation skills and client management strategies gave us a competitive edge. His methods strengthened our relationships and increased our deal closure rate!'
   }
 ];
+
 
 const Testimonials = () => {
   const PrevButton = (props: any) => (
@@ -132,9 +147,9 @@ const Testimonials = () => {
                   <PiQuotes size={80} className='text-[#cfd8b9] sm:text-[90px] md:text-[100px]' />
                 </div>
 
-                <div className='mb-4 sm:mb-5 md:mb-6 flex items-center space-x-3 sm:space-x-4'>
+                <div className='mb-4 sm:mb-5 md:mb-6  flex items-center space-x-3 sm:space-x-4'>
                   <div className='h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 flex-shrink-0 overflow-hidden rounded-full'>
-                    <img src={testimonial.image} alt={testimonial.name} className='h-full w-full object-cover' />
+                    <img src={testimonial.image} alt={testimonial.name} className={`h-full w-full pt-1 object-cover bg-slate-300 `} />
                   </div>
 
                   <div>

@@ -12,15 +12,15 @@ import ProjectModal from 'view/ui/shared-component/component/title/modal';
 const data = [
   {
     id: 1,
-    image: '/image/recent-projects/1.webp'
+    image: '/image/recent-projects/1.jpg'
   },
   {
     id: 2,
-    image: '/image/recent-projects/2.webp'
+    image: '/image/recent-projects/2.jpg'
   },
   {
     id: 3,
-    image: '/image/recent-projects/3.webp'
+    image: '/image/recent-projects/3.jpg'
   }
 ];
 
@@ -115,9 +115,9 @@ const RecentWorks = () => {
         <div className='flex flex-col md:flex-row py-10 sm:py-16 md:py-20 gap-8 md:gap-0 md:items-center'>
           <div className='w-full px-5 md:px-0 md:w-5/12 space-y-4 sm:space-y-6'>
             <h1 className={`${poppins.className} leading-tight sm:leading-[1.2] md:leading-[70px] text-3xl sm:text-4xl md:text-[55px] font-bold`}>
-              More Recent <br className='hidden md:block' /> Works on    <span>  </span>
+              Recent <br className='hidden md:block' /> Awards and    <span>  </span>
               <br className='hidden md:block' />
-              Instagram
+              Seminar
             </h1>
             <div className='flex items-center gap-2 pt-2 text-gray-500'>
               <span>

@@ -42,7 +42,7 @@ const projects = [
 const FeaturedProjects = () => {
   return (
     <div
-      id='featured-projects'
+      id='featured-magazine'
       className='mx-0 mb-0 mb-6 bg-[#d9e1c5] px-5 pb-10 sm:mx-0 sm:mb-8 sm:pb-16 md:mx-10 md:mb-10 md:pb-20 lg:px-0'
     >
       <div className='container-custom'>
@@ -53,7 +53,7 @@ const FeaturedProjects = () => {
             Featured Magazines
           </p>
           <p className='mb-3 pt-6 sm:mb-4 sm:pt-8 md:mb-5 md:pt-10'>
-            I treat each completed project with special trepidation. See some of the featured projects below.
+            Some of the magazines the I have been featured in are below.
           </p>
           <hr className='border border-solid border-gray-400/50' />
         </div>
