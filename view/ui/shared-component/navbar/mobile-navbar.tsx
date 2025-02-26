@@ -1,4 +1,5 @@
 import { Disclosure, Transition } from '@headlessui/react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { HiMiniChevronDown } from 'react-icons/hi2';
@@ -34,6 +35,14 @@ const MobileNavbar = ({ isMenuOpen, setIsMenuOpen, navbarData }: SidebarLayoutPr
         >
 
           <div className='z-50 bg-base-100 pt-10 relative m-1.5 mt-2 flex flex-col rounded-xl  p-6 text-lg font-normal leading-6'>
+            <Image
+                    src={'/image/logo/logo-2.png'}
+                    className='w-20 object-contain'
+                    alt='bus'
+                    width={2000}
+                    height={2000}
+                    priority
+                  />
             <div className='mb-6 flex items-center justify-between'>
               <Link
                 href={navbarData.companyName.link}
@@ -44,15 +53,9 @@ const MobileNavbar = ({ isMenuOpen, setIsMenuOpen, navbarData }: SidebarLayoutPr
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className='flex items-center gap-2'>
-                  {/* <Image
-                    src={'/logo/logo-small.png'}
-                    className='w-7 object-contain'
-                    alt='bus'
-                    width={2000}
-                    height={2000}
-                    priority
-                  /> */}
-                </span><span className='text-white pt-1 font-bold text-[18px]'>ADAM</span>
+
+              <div className='text-white pt-1 font-bold text-[18px]'>Ahsanul Karim Fayaz</div>
+                </span>
               </Link>
               <button
                 aria-label='Close Menu'

@@ -1,9 +1,9 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Ahsanul K. Fayaz',
+  title: 'Ahsanul Karim Fayaz',
   author: 'ANZ Web Studios',
-  headerTitle: 'Ahsanul K. Fayaz',
-  description: 'Ahsanul K. Fayaz',
+  headerTitle: 'Ahsanul Karim Fayaz',
+  description: 'Ahsanul Karim Fayaz',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: '',
