@@ -86,15 +86,18 @@ const TopServices = () => {
       <div className='mx-4 sm:mx-6 md:mx-10 mb-10 bg-black py-20 sm:py-32 md:py-36 lg:py-44'>
         <div className='container-custom px-4 sm:px-6'>
           <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-20'>
-            <div className='flex flex-col justify-center gap-3 sm:gap-4 md:gap-5'>
-              <p className='text-uppercase text-[10px] sm:text-[26px] text-gray-400'> Steven Bartlett said ——</p>
+            <div className='flex flex-col justify-center gap-3 sm:gap-4 md:gap-1'>
+              {/* <p className=' px-3  text-uppercase text-[16px] sm:text-[26px] text-gray-400'> Steven Bartlett said ——</p> */}
 
-              <p style={{lineHeight: '180%'}} className={`${poppins.className}  text-4xl sm:text-5xl md:text-5xl lg:text-4xl font-bold text-white`}>
+              <p style={{lineHeight: '180%'}} className={`${poppins.className} px-3  text-center text-xl sm:text-2xl md:text-5xl lg:text-4xl font-bold text-white`}>
               "The cost of being different is highest when you’re young—when the system forces you to fit in. But as you grow, the world starts clapping for the unique ones, learning from them, stealing from them, and aspiring to be them"
               </p>
 
-              <p className='text-[10px] sm:text-[26px] text-gray-400'>
-              From MrBeast interview on The Diary Of A CEO
+              <p className=' pt-5 px-3 text-[16px] text-center sm:text-[26px] text-gray-400'>
+              Steven Bartlette
+              </p>
+              <p className=' px-3 text-[16px] text-center sm:text-[20px] text-gray-400'>
+              The Diary Of A CEO
               </p>
             </div>
 
