@@ -35,7 +35,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className='flex flex-row gap-4'>
+            <div className='flex flex-row gap-10'>
               <div>
                 <p className='text-sm text-gray-600/50'>Write me</p>
                 <p className='text-md text-gray-700'>hello@akfayaz.com.au</p>
