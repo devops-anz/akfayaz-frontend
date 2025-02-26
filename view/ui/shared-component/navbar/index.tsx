@@ -106,8 +106,8 @@ const Navbar = () => {
 
             <div className='flex w-full items-center justify-between gap-4 md:hidden'>
               <div className='flex items-center gap-4'>
-                <Link href='/#contact' className='pl-8 font-bold text-white'>
-                  Ahsanul K. Fayaz
+                <Link href='/#' className='pl-8 font-bold text-white'>
+                  Ahsanul Karim Fayaz
                 </Link>
               </div>
               <div>

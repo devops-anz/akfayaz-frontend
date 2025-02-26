@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { MdOutlineSlowMotionVideo } from 'react-icons/md';
 import { poppins } from 'styles/fonts';
@@ -27,12 +28,14 @@ const topServices = [
   {
     image: '/image/topservices/5.png',
     category: ' Expert Consultancy Services for Optimized Business Performance',
-    title: 'Consultancy'
+    title: 'Consultancy',
+    link: 'https://www.anzbizconsultants.com.au/'
   },
   {
     image: '/image/topservices/6.png',
     category: 'Creative Web Design for Engaging Digital User Experiences',
-    title: 'Web Design'
+    title: 'Web Design',
+    link: 'https://www.anzwebstudios.com.au/'
   }
 ];
 
@@ -71,7 +74,9 @@ const TopServices = () => {
                   {item.category}
                 </p>
                 <button className='bg-[#cfd8b9] px-4 sm:px-6 py-2 sm:py-2.5 text-black font-bold md:opacity-0 transition-opacity duration-300 ease-in-out hover:bg-amber-500 md:group-hover:opacity-100'>
-                  Learn More
+                 <Link href={item.link || ''} target='_blank'>
+                    { item.link ? 'Learn More' : 'Coming Soon'}
+                 </Link>
                 </button>
               </div>
             </div>
@@ -80,25 +85,25 @@ const TopServices = () => {
       </div>
       <div className='mx-4 sm:mx-6 md:mx-10 mb-10 bg-black py-20 sm:py-32 md:py-36 lg:py-44'>
         <div className='container-custom px-4 sm:px-6'>
-          <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-5'>
+          <div className='flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-20'>
             <div className='flex flex-col justify-center gap-3 sm:gap-4 md:gap-5'>
-              <p className='text-uppercase text-[10px] sm:text-[12px] text-gray-400'>VIDEO PRESENTATION</p>
+              <p className='text-uppercase text-[10px] sm:text-[26px] text-gray-400'> Steven Bartlett said ——</p>
 
-              <p className={`${poppins.className} text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-bold text-white`}>
-                Designing With <br /> Balance and Care
+              <p style={{lineHeight: '180%'}} className={`${poppins.className}  text-4xl sm:text-5xl md:text-5xl lg:text-4xl font-bold text-white`}>
+              "The cost of being different is highest when you’re young—when the system forces you to fit in. But as you grow, the world starts clapping for the unique ones, learning from them, stealing from them, and aspiring to be them"
               </p>
 
-              <p className='text-[10px] sm:text-[12px] text-gray-400'>
-                Functional building and design is a new approach that resonates with me completely.{' '}
+              <p className='text-[10px] sm:text-[26px] text-gray-400'>
+              From MrBeast interview on The Diary Of A CEO
               </p>
             </div>
 
-            <div>
+            {/* <div>
               <div className='flex items-center gap-x-8 sm:gap-x-12 md:gap-x-20'>
                 <p className='text-white'> Watch Video - </p>
                 <MdOutlineSlowMotionVideo size={10} className='rounded-full bg-[#d9e1c5] w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 p-3 sm:p-4 text-black' />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

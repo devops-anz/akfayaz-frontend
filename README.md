@@ -5,7 +5,7 @@
 <img src="https://reactnative.dev/img/header_logo.svg" height="100" width="100" alt="reactnative logo" title="React Native" />
 
 <br>
-Ahsanul K. Fayaz   
+Ahsanul Karim Fayaz   
 
 </h1>
 
@@ -27,7 +27,7 @@ Ahsanul K. Fayaz
 
 ## Introduction
 
-Ahsanul K. Fayaz
+Ahsanul Karim Fayaz
 
 ### Languages/Technologies
 
