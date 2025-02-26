@@ -18,10 +18,10 @@ const data = [
     id: 2,
     image: '/image/recent-projects/2.jpg'
   },
-  {
-    id: 3,
-    image: '/image/recent-projects/3.jpg'
-  }
+  // {
+  //   id: 3,
+  //   image: '/image/recent-projects/3.jpg'
+  // }
 ];
 
 const RecentWorks = () => {
