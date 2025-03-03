@@ -174,7 +174,7 @@ export default function DownloadCVModal({ open, setOpen }: { open: boolean; setO
 
                       <button
                         type="submit"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        className="inline-flex justify-center rounded-md border border-transparent bg-black py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       >
                         {isLoading ? 'Sending...' : 'Submit'}
                       </button>
@@ -185,7 +185,7 @@ export default function DownloadCVModal({ open, setOpen }: { open: boolean; setO
           </div>} */}
 
                     {response?.status === true && (
-                      <div className='text-black'>
+                      <div className='text-black pt-4'>
                         <p>{response.data}</p>
                       </div>
                     )}
