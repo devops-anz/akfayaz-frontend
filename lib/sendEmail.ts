@@ -4,7 +4,7 @@ import { mailOptions, transporter } from "../config/nodemailler";
 
 
 
-const CONTACT_MESSAGE_FIELDS = {
+const CONTACT_MESSAGE_FIELDS: Record<string, string> = {
   name: "Name",
   email: "Email",
   phone: "Phone",
@@ -13,14 +13,15 @@ const companyName = process.env.COMPANYNAME || "Company Name";
 
 
 const generateEmailContent = (data: any) => {
-  const stringData = Object.entries(data).reduce(
+  const stringData = Object.entries(data).filter(([key, val]) => val && CONTACT_MESSAGE_FIELDS[key]).reduce(
     (str, [key, val]) =>
       (str += `${
         CONTACT_MESSAGE_FIELDS[key as keyof typeof CONTACT_MESSAGE_FIELDS]
       }: \n${val} \n \n`),
     ""
   );
-  const htmlData = Object.entries(data).reduce((str, [key, val]) => {
+  
+  const htmlData = Object.entries(data).filter(([key, val]) => val && CONTACT_MESSAGE_FIELDS[key]).reduce((str, [key, val]) => {
     return (str += `<h3 class="form-heading" align="left">${
       CONTACT_MESSAGE_FIELDS[key as keyof typeof CONTACT_MESSAGE_FIELDS]
     }</h3><p class="form-answer" align="left">${val}</p>`);
