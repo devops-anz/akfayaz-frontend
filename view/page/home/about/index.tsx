@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import { poppins } from '../../../../styles/fonts';
+import DownloadCVModal from 'view/ui/shared-component/component/downloadCV';
 
 const timelineData = [
   {
@@ -34,6 +35,9 @@ const timelineData = [
 ];
 
 const About = () => {
+  // const [open, setOpen] = useState(false);
+  const [openCV, setOpenCV] = useState(false);
+
   return (
     <div id='about-me' className='container-custom min-h-screen bg-white px-4 py-8 sm:py-12 md:py-16 sm:px-6 lg:px-8'>
       <div className='mx-auto grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-2'>
@@ -96,7 +100,7 @@ const About = () => {
             <p className='w-full sm:w-fit cursor-pointer border-solid bg-[#cfd8b9] px-4 py-2 text-center text-sm sm:text-base font-[500] text-black transition-all duration-300 ease-in-out hover:shadow-lg sm:px-5 sm:py-3'>
               Portfolio
             </p>
-            <p className='w-full sm:w-fit cursor-pointer border-2 border-solid border-black px-4 py-2 text-sm sm:text-base font-[500] text-black transition-all duration-300 ease-in-out hover:bg-black hover:text-white sm:px-5 sm:py-3'>
+            <p onClick={() => setOpenCV(true)} className='w-full sm:w-fit cursor-pointer border-2 border-solid border-black px-4 py-2 text-sm sm:text-base font-[500] text-black transition-all duration-300 ease-in-out hover:bg-black hover:text-white sm:px-5 sm:py-3'>
               Download CV
             </p>
           </div>
@@ -187,6 +191,7 @@ const About = () => {
           </div>
         ))}
       </div>
+      <DownloadCVModal open={openCV} setOpen={setOpenCV} />
     </div>
   );
 };
