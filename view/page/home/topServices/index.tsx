@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { MdOutlineSlowMotionVideo } from 'react-icons/md';
+// import { MdOutlineSlowMotionVideo } from 'react-icons/md';
 import { poppins } from 'styles/fonts';
 
 const topServices = [
@@ -64,7 +64,6 @@ const TopServices = () => {
                 style={{ height: '280px', width: '100%' }}
                 className='w-full object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110'
               />
-
               <div className='absolute inset-0 flex flex-col items-center justify-evenly bg-black/70 md:bg-gray-500/0 transition-all duration-500 ease-in-out md:group-hover:bg-black/85'>
                 <p className='text-2xl sm:text-2xl font-medium text-white md:opacity-0 transition-opacity duration-300 ease-in-out md:group-hover:opacity-100'>
                   {item.title}

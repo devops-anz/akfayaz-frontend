@@ -14,13 +14,13 @@ const contactMethods = [
       value: 'hello@akfayaz.com.au'
     },
     {
-      title: 'CALL ME',
+      title: 'Talk to me',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
         </svg>
       ),
-      value: '+1 (234) 567 89 00'
+      value: 'Request a Meeting'
     },
     {
       title: 'FIND ME',
@@ -45,13 +45,10 @@ const Contact = () => {
             Hire Me for Your Project
           </h2>
           <p className="text-gray-600">
-
-
             Contact me in any convenient way to discuss the details.
           </p>
           <hr className='border mt-6 border-solid border-gray-500/50' />
         </div>
-
         {/* Contact Methods */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {contactMethods.map((method, index) => (
@@ -74,8 +71,9 @@ const Contact = () => {
                 href={
                   method.title === 'WRITE ME' ? `mailto:${method.value}` :
                   method.title === 'FIND ME' ? `https://${method.value}` :
-                  method.title === 'CALL ME' ? `tel:${method.value}` : '#'
+                  method.title === 'Talk to me' ? `https://cal.com/a.fayaz`  : '#'
                 }
+                target='_blank'
                 className={`text-gray-900 font-[700] text-2xl hover:underline ${method.title === 'FIND ME' ? 'text-xl' : ''}`}
               >
                 {method.value}

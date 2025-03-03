@@ -1,28 +1,30 @@
-'use server';
+"use server";
 
-import { transporter, mailOptions } from 'config/nodemailler';
+import { mailOptions, transporter } from "../config/nodemailler";
+
+
 
 const CONTACT_MESSAGE_FIELDS = {
-  name: 'Name',
-  project_category: 'Project category',
-  phone: 'Contact Phone',
-  email: 'Email',
-  message: 'Message'
+  name: "Name",
+  email: "Email",
+  phone: "Phone",
 };
+const companyName = process.env.COMPANYNAME || "Company Name";
+
 
 const generateEmailContent = (data: any) => {
-  const companyName = process.env.COMPANYNAME || 'Company Name';
-
   const stringData = Object.entries(data).reduce(
     (str, [key, val]) =>
-      (str += `${CONTACT_MESSAGE_FIELDS[key as keyof typeof CONTACT_MESSAGE_FIELDS]}: \n${val} \n \n`),
-    ''
+      (str += `${
+        CONTACT_MESSAGE_FIELDS[key as keyof typeof CONTACT_MESSAGE_FIELDS]
+      }: \n${val} \n \n`),
+    ""
   );
   const htmlData = Object.entries(data).reduce((str, [key, val]) => {
     return (str += `<h3 class="form-heading" align="left">${
       CONTACT_MESSAGE_FIELDS[key as keyof typeof CONTACT_MESSAGE_FIELDS]
     }</h3><p class="form-answer" align="left">${val}</p>`);
-  }, '');
+  }, "");
 
   return {
     text: stringData,
@@ -49,44 +51,43 @@ const generateEmailContent = (data: any) => {
     <h2>New Contact Us Message for ${companyName}</h2> 
     <div class="form-container">${htmlData}</div>
     </td></tr></table> </td></tr></table> </td></tr></table> </td></tr></table> 
-    </body></html>`
+    </body></html>`,
   };
 };
 
 type IContactProps = {
-  name?: string;
-  project_category?: string;
-  phone?: string;
-  email?: string;
-  message?: string;
+  name: string;
+  email: string;
+  phone: string;
 };
 
 const sendMessage = async (data: IContactProps) => {
+    console.log("data", data);
   try {
     const res = await transporter.sendMail({
       ...mailOptions,
       ...generateEmailContent(data),
-      subject: 'A contact request from NAZX website'
+      subject: `Contact Email request from ${companyName}`,
     });
 
-    // console.log("server", res);
+    console.log("server", res);
 
     if (res.accepted.length > 0) {
       return {
         status: true,
-        message: 'Thank you for your message. will will be contact soon.',
-        data: res
+        message: "Thank you. Opening the CV in a new tab.",
+        data: res,
       };
     }
 
     return {
       status: false,
-      message: 'something wrong please try again later.',
-      data: res
+      message: "Something went wrong. Please try again later.",
+      data: res,
     };
   } catch (err) {
     // console.log(err);
-    return { status: false, message: 'Bad request', data: err };
+    return { status: false, message: "Bad request", data: err };
   }
 };
 
