@@ -44,8 +44,8 @@ const About = () => {
         {/* Image Section */}
         <div className='relative h-[300px] sm:h-[400px] md:h-full'>
           <Image
-            src='/image/about/about-1.png'
-            alt='Modern Architecture'
+            src='/image/about/about-edited.png'
+            alt='about me '
             className='h-full w-full object-cover'
             width={1000}
             height={1000}
