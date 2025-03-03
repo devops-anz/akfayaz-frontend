@@ -34,7 +34,7 @@ const MobileNavbar = ({ isMenuOpen, setIsMenuOpen, navbarData }: SidebarLayoutPr
             }`}
         >
 
-          <div className='z-50 bg-base-100 pt-10 relative m-1.5 mt-2 flex flex-col rounded-xl  p-6 text-lg font-normal leading-6'>
+          <div className='z-50 bg-base-100 pt-10 relative m-1.5 mt-2 flex flex-col justify-items-start rounded-xl  p-6 text-lg font-normal leading-6'>
             <Image
                     src={'/image/logo/logo-2.png'}
                     className='w-20 object-contain'
@@ -111,6 +111,8 @@ const MobileNavbar = ({ isMenuOpen, setIsMenuOpen, navbarData }: SidebarLayoutPr
                                       {item.name}
                                     </Link>
                                   </p>
+
+
                                 ))}
                               </Disclosure.Panel>
                             </Transition>
@@ -149,6 +151,13 @@ const MobileNavbar = ({ isMenuOpen, setIsMenuOpen, navbarData }: SidebarLayoutPr
                 </li>
               ))}
             </ul>
+            <div className='bg-white mt-5'>
+              <a href='https://cal.com/a.fayaz' target='_blank' rel='noopener noreferrer' className='bg-black text-white rounded-md hover:shadow-lg  transition-all duration-300'>
+                 <div className='p-3 flex items-center justify-center'>
+                  <p className='text-center text-black'>Request a Meeting</p>
+                 </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>

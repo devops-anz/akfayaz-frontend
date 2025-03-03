@@ -40,10 +40,11 @@ const Navbar = () => {
                 <p className='text-sm text-gray-600/50'>Write me</p>
                 <p className='text-md text-gray-700'>hello@akfayaz.com.au</p>
               </div>
-              <div>
-                <p className='text-sm text-gray-600/50'>Call me</p>
-                <p className='text-md text-gray-700'>+61 4 1234 5678</p>
-              </div>
+              <a href='https://cal.com/a.fayaz' target='_blank' rel='noopener noreferrer' className='bg-black text-white rounded-md hover:shadow-lg  transition-all duration-300'>
+                 <div className='p-4 flex items-center justify-center'>
+                  Request a Meeting
+                 </div>
+              </a>
             </div>
           </div>
           <hr className=' container-custom hidden w-full border-gray-300 md:mb-2 md:mt-6 md:block' />
