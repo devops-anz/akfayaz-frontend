@@ -106,7 +106,25 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className='mx-auto grid grid-cols-1 items-center gap-6 sm:gap-12 md:grid-cols-2 mt-28'>
+
+
+      <div className='mt-12 sm:mt-16 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8'>
+        {timelineData.map((item, index) => (
+          <div key={index} className='relative p-4 sm:p-6 bg-gray-50 rounded-lg'>
+            <div className='mb-3 sm:mb-4 flex items-center gap-2 text-xs sm:text-sm text-gray-600'>
+              <span className='font-medium'>{item.number} \</span>
+              <span className='uppercase'>{item.category}</span>
+            </div>
+
+            <div className={`text-[#cfd8b9] ${poppins.className} mb-3 sm:mb-4 text-4xl sm:text-5xl font-bold`}>{item.year}</div>
+            <h3 className='text-sm sm:text-md mb-2 sm:mb-3 font-semibold text-gray-900'>
+              {item.title} <span className='font-bold text-[#cfd8b9]'>—</span>
+            </h3>
+            <p className='text-gray-600 text-sm'>{item.description}</p>
+          </div>
+        ))}
+      </div>
+      <div className='mx-auto grid grid-cols-1 items-center gap-6 sm:gap-12 md:grid-cols-2 mt-20'>
         {/* Image Section */}
 
 
@@ -175,22 +193,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className='mt-12 sm:mt-16 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8'>
-        {timelineData.map((item, index) => (
-          <div key={index} className='relative p-4 sm:p-6 bg-gray-50 rounded-lg'>
-            <div className='mb-3 sm:mb-4 flex items-center gap-2 text-xs sm:text-sm text-gray-600'>
-              <span className='font-medium'>{item.number} \</span>
-              <span className='uppercase'>{item.category}</span>
-            </div>
 
-            <div className={`text-[#cfd8b9] ${poppins.className} mb-3 sm:mb-4 text-4xl sm:text-5xl font-bold`}>{item.year}</div>
-            <h3 className='text-sm sm:text-md mb-2 sm:mb-3 font-semibold text-gray-900'>
-              {item.title} <span className='font-bold text-[#cfd8b9]'>—</span>
-            </h3>
-            <p className='text-gray-600 text-sm'>{item.description}</p>
-          </div>
-        ))}
-      </div>
       <DownloadCVModal open={openCV} setOpen={setOpenCV} />
     </div>
   );

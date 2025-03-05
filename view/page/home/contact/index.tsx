@@ -50,11 +50,17 @@ const Contact = () => {
           <hr className='border mt-6 border-solid border-gray-500/50' />
         </div>
         {/* Contact Methods */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid  grid-cols-1 md:grid-cols-3 gap-8">
           {contactMethods.map((method, index) => (
-            <div 
+            <a 
+              href={
+                method.title === 'WRITE TO ME' ? `mailto:${method.value}` :
+                method.title === 'FIND ME' ? `https://${method.value}` :
+                method.title === 'Talk to me' ? `https://cal.com/a.fayaz`  : '#'
+              }
+              target='_blank'
               key={index}
-              className="flex flex-col"
+              className="flex flex-col hover:shadow-lg hover:shadow-gray-500/50 transition-all duration-300 ease-in-out hover:cursor-pointer border-2 rounded-md border-solid border-gray-500/50 px-6 py-4"
             >
               {/* Icon Circle */}
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4">
@@ -67,18 +73,12 @@ const Contact = () => {
               </h3>
 
               {/* Value */}
-              <a
-                href={
-                  method.title === 'WRITE ME' ? `mailto:${method.value}` :
-                  method.title === 'FIND ME' ? `https://${method.value}` :
-                  method.title === 'Talk to me' ? `https://cal.com/a.fayaz`  : '#'
-                }
-                target='_blank'
-                className={`text-gray-900 font-[700] text-2xl hover:underline ${method.title === 'FIND ME' ? 'text-xl' : ''}`}
+              <div
+                className={`text-gray-900 font-[700] text-2xl hover:underline ${method.title === 'FIND ME' ? 'text-base' : ''}`}
               >
                 {method.value}
-              </a>
-            </div>
+              </div>
+            </a>
           ))}
         </div>
       </div>
