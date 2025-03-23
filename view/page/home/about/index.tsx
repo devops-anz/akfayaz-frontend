@@ -9,7 +9,7 @@ const timelineData = [
     number: '01', 
     category: 'EDUCATION',
     title: 'Bachelor of IT',
-    description: 'I graduated with a Bachelor of IT from La Trobe University, Melbourne.'
+    description: 'Bachelor of IT - Graduated from the department of Science, Health & Engineering at La Trobe University, Melbourne. I’ve participated in active student union politics and was the elected student rep for 2 years'
   },
   {
     year: '2022',
@@ -30,7 +30,7 @@ const timelineData = [
     number: '04',
     category: 'Business', 
     title: 'Budget Phone Australia',
-    description: 'I started Budget Phone Australia in 2020 to provide affordable phone plans to the people of Australia.'
+    description: 'Budget Phones Australia - Launched my own startup at the age of 22 focusing on sustainability and circular economy by giving Tech products a second life, winning multiple awards across Startup, Retail & Customer Service categories.'
   }
 ];
 
