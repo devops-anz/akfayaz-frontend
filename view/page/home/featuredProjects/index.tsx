@@ -7,8 +7,8 @@ const projects = [
     image: '/image/featured-projects/1.png',
     title: '10 Questions With A Circular Tech Leader – Exclusive Interview With Ahsanul Karim Fayaz',
     description:
-      'Renowned in Australia’s circular tech industry, he founded his first startup at 22 to drive sustainability and reuse.',
-    services: ['Tech Industry Leadership', 'Circular Economy Advocate', 'Sales & Business Development Expert'],
+      'Driving innovation through circular technology, Ahsanul Karim Fayaz is redefining sustainability in the digital era.',
+    services: ['Pioneering Circular Tech Solutions', 'Bridging Innovation & Sustainability', 'Shaping a Sustainable Tech Future'],
     link: 'https://theabj.com.au/2023/12/05/exclusive-interview-with-ahsanul-karim-fayaz-the-circular-tech-leaders-journey/#google_vignette'
   },
   {
@@ -29,11 +29,11 @@ const projects = [
     image: '/image/featured-projects/3.png',
     title: 'In the Spotlight: Ahsanul Karim Fayaz’s Journey from Startup Founder to a Global Sales Leader in the Circular Tech Industry',
     description:
-      'Ahsanul Karim Fayaz, a pioneer in circular tech, launched his first startup at 22, driving sustainability and innovation..',
+      'From startup to global sales leader, Ahsanul Karim Fayaz is transforming tech industry with innovation and sustainability.',
     services: [
-      'Expert in Tech Sales & Leadership',
-      'Sustainability & Circular Economy Advocate',
-      'Award-Winning Entrepreneur'
+      'Strategic Growth & Market Expansion',
+      'Innovative Leadership in Circular Tech',
+      'Visionary Entrepreneurial Beginnings'
     ],
     link: 'https://techbullion.com/in-the-spotlight-ahsanul-karim-fayazs-journey-from-startup-founder-to-a-global-sales-leader-in-the-circular-tech-industry/'
   }

@@ -8,28 +8,49 @@ const data = [
   {
     title: 'Business Consultancy',
     image: '/image/services/advisor.png',
-    content: 'I provide expert guidance to help grow and streamline your business.'
+    content: 'I help businesses grow, streamline operations, and unlock their full potential.'
   },
   {
-    title: 'Personal  Coaching',
-    image: '/image/services/consulting.png',
-    content: 'I help you enhance your skills, mindset, and confidence for success.'
+    title: 'Sales',
+    image: '/image/services/sales.png',
+    content: 'I craft winning sales strategies that drive revenue and build lasting client relationships'
   },
   {
-    title: 'Entrepreneurial Mentorship',
-    image: '/image/services/mentorship.png',
-    content: 'I guide entrepreneurs in building and scaling their business ideas.'
-  },
-  {
-    title: 'Strategy Consulting',
+    title: 'Marketing',
     image: '/image/services/marketing.png',
-    content: 'I create tailored marketing plans to boost your brand visibility.'
+    content: 'I create innovative marketing solutions that amplify brand visibility and engagement.'
   },
   {
-    title: 'Career Coaching',
+    title: 'Procurement',
+    image: '/image/services/procurement.png',
+    content: 'I optimize procurement processes to ensure cost-effective and efficient resource management.'
+  },
+  {
+    title: 'Life Coaching',
     image: '/image/services/coaching.png',
-    content: 'I assist in career planning, job transitions, and professional growth.'
-  }
+    content: 'I empower individuals to overcome challenges, achieve goals, and unlock their best selves..'
+  },
+  {
+    title: 'Startup Mentorship',
+    image: '/image/services/mentorship.png',
+    content: 'I guide startups from idea to execution, helping them scale and succeed.'
+  },
+  {
+    title: 'Financial Consulting',
+    image: '/image/services/financial-consulting.png',
+    content: 'I provide expert financial strategies to drive growth, stability, and profitability.'
+  },
+
+  {
+    title: 'Management Consulting',
+    image: '/image/services/management-consulting.png',
+    content: 'I refine leadership, processes, and strategies to enhance business efficiency and success.'
+  },
+  {
+    title: 'Web Designing',
+    image: '/image/services/web-design.png',
+    content: 'I craft stunning, user-friendly websites that captivate audiences and elevate brands.'
+  },
 ];
 
 

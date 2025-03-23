@@ -38,7 +38,7 @@ const Navbar = () => {
             <div className='flex flex-row gap-10'>
               <div>
                 <p className='text-sm text-gray-600/50'>Write to me</p>
-                <p className='text-md text-gray-700'>hello@akfayaz.com.au</p>
+                <p className='text-md text-gray-700'>fayaz@akmassets.com.au</p>
               </div>
               <a href='https://cal.com/a.fayaz' target='_blank' rel='noopener noreferrer' className='bg-black text-white rounded-md hover:shadow-lg  transition-all duration-300'>
                  <div className='p-4 flex items-center justify-center'>
