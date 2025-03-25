@@ -1,4 +1,5 @@
 import React from 'react';
+import { poppins } from 'styles/fonts';
 
 const TimelineItem = ({
   date,
@@ -70,7 +71,8 @@ const Timeline = () => {
     {
       date: '2021',
       title: 'Graduated from La Trobe University, Melbourne',
-      description: 'Earned a Bachelor of IT, laying the foundation for a career in tech, entrepreneurship, and sustainability..'
+      description:
+        'Earned a Bachelor of IT, laying the foundation for a career in tech, entrepreneurship, and sustainability..'
     },
     {
       date: '2020',
@@ -85,7 +87,8 @@ const Timeline = () => {
     {
       date: '2019',
       title: 'Recognized as Best International Host at La Trobe University',
-      description: 'Acknowledged for exceptional leadership, community engagement, and support for international students.'
+      description:
+        'Acknowledged for exceptional leadership, community engagement, and support for international students.'
     },
     {
       date: '2015',
@@ -95,7 +98,11 @@ const Timeline = () => {
   ];
 
   return (
-    <div className='container-custom mx-auto  p-6'>
+    <div className='container-custom mx-auto '>
+      <p className={`font-[700] pt-16 pb-12 text-black ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
+        Career Highlights
+      </p>
+
       <div className='pl-4'>
         {timelineData.map((item, index) => (
           <TimelineItem

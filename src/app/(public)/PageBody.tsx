@@ -18,11 +18,11 @@ const PageBody = () => {
       <Hero />
       <Services />
       <About />
+       <Timeline />
       <TopServices />
       <FeaturedProjects />
        <Testimonials /> 
        <RecentWorks /> 
-       <Timeline />
       <Contact />
       <Footer />
       <ScrollTop />
