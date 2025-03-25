@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { poppins } from '../../../../styles/fonts';
 import DownloadCVModal from 'view/ui/shared-component/component/downloadCV';
+import PortfolioModal from 'view/ui/shared-component/component/portfolio';
 
 const timelineData = [
   {
@@ -37,6 +38,7 @@ const timelineData = [
 const About = () => {
   // const [open, setOpen] = useState(false);
   const [openCV, setOpenCV] = useState(false);
+  const [openPortfolio, setOpenPortfolio] = useState(false);
 
   return (
     <div id='about-me' className='container-custom min-h-screen bg-white px-4 py-8 sm:py-12 md:py-16 sm:px-6 lg:px-8'>
@@ -97,8 +99,8 @@ const About = () => {
 
           {/* Buttons */}
           <div className='flex flex-row gap-4 sm:space-x-4 pt-4'>
-            <p className='w-full sm:w-fit cursor-pointer border-solid bg-[#cfd8b9] px-4 py-2 text-center text-sm sm:text-base font-[500] text-black transition-all duration-300 ease-in-out hover:shadow-lg sm:px-5 sm:py-3'>
-              Portfolio
+            <p onClick={() => setOpenPortfolio(true)} className='w-full sm:w-fit cursor-pointer border-solid bg-[#cfd8b9] px-4 py-2 text-center text-sm sm:text-base font-[500] text-black transition-all duration-300 ease-in-out hover:shadow-lg sm:px-5 sm:py-3'>
+              Portfolio 
             </p>
             <p onClick={() => setOpenCV(true)} className='w-full sm:w-fit cursor-pointer border-2 border-solid border-black px-4 py-2 text-sm sm:text-base font-[500] text-black transition-all duration-300 ease-in-out hover:bg-black hover:text-white sm:px-5 sm:py-3'>
               Download CV
@@ -120,7 +122,7 @@ const About = () => {
             <h3 className='text-sm sm:text-md mb-2 sm:mb-3 font-semibold text-gray-900'>
               {item.title} <span className='font-bold text-[#cfd8b9]'>—</span>
             </h3>
-            <p className='text-gray-600 text-sm'>{item.description}</p>
+            <p className='text-gray-600 text-sm text-justify'>{item.description}</p>
           </div>
         ))}
       </div>
@@ -195,6 +197,7 @@ const About = () => {
 
 
       <DownloadCVModal open={openCV} setOpen={setOpenCV} />
+      <PortfolioModal open={openPortfolio} setOpen={setOpenPortfolio} />
     </div>
   );
 };
