@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 // import { MdOutlineSlowMotionVideo } from 'react-icons/md';
 import { poppins } from 'styles/fonts';
+import TopServicesModal from 'view/ui/shared-component/component/topservices';
 
 const topServices = [
   {
@@ -40,6 +40,14 @@ const topServices = [
 ];
 
 const TopServices = () => {
+  const [openTopServices, setOpenTopServices] = useState(false);
+  const [selectedService, setSelectedService] = useState(topServices[0]);
+
+  const handleOpenModal = (item: any) => {
+    setSelectedService(item);
+    setOpenTopServices(true);
+  };
+
   return (
     <div id='services'>
       <div className='container-custom pt-20 sm:pt-28 md:pt-40'>
@@ -72,10 +80,13 @@ const TopServices = () => {
                 <p className='p-5 text-center text-xs sm:text-sm text-white md:opacity-0 transition-opacity duration-300 md:group-hover:opacity-100'>
                   {item.category}
                 </p>
-                <button className='bg-[#cfd8b9] px-4 sm:px-6 py-2 sm:py-2.5 text-black font-bold md:opacity-0 transition-opacity duration-300 ease-in-out hover:bg-amber-500 md:group-hover:opacity-100'>
-                 <Link href={item.link || ''} target='_blank'>
+                <button onClick={() => handleOpenModal(item)}  className='bg-[#cfd8b9] px-4 sm:px-6 py-2 sm:py-2.5 text-black font-bold md:opacity-0 transition-opacity duration-300 ease-in-out hover:bg-amber-500 md:group-hover:opacity-100'>
+                 {/* <Link href={item.link || ''} target='_blank'>
                     { item.link ? 'Learn More' : 'Coming Soon'}
-                 </Link>
+                 </Link> */}
+
+                 Learn More
+
                 </button>
               </div>
             </div>
@@ -109,6 +120,7 @@ const TopServices = () => {
           </div>
         </div>
       </div>
+      <TopServicesModal  open={openTopServices} setOpen={setOpenTopServices} selectedService={selectedService} />
     </div>
   );
 };
