@@ -99,9 +99,15 @@ const Timeline = () => {
 
   return (
     <div className='container-custom mx-auto '>
-      <p className={`font-[700] pt-16 pb-12 text-black ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
-        Career Highlights
-      </p>
+          <div className='mb-10  md:pt-10 px-4 sm:mb-16 sm:px-6 md:mb-12'>
+            <p className={`font-[700] text-black ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
+              Career Highlights
+            </p>
+            <p className='mb-3 pt-6 sm:mb-4 sm:pt-8 md:mb-5 md:pt-10'>
+              A brief journey of educational and professional career.
+            </p>
+            <hr className='border border-solid border-gray-200' />
+          </div>
 
       <div className='pl-4'>
         {timelineData.map((item, index) => (

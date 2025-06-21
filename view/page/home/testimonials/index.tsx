@@ -36,6 +36,7 @@ const testimonials = [
     quote:
       'Fayaz’s negotiation skills and client management strategies gave us a competitive edge. His methods strengthened our relationships and increased our deal closure rate!'
   }
+  
 ];
 
 

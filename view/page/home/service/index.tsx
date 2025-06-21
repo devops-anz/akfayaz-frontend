@@ -6,7 +6,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 const data = [
   {
-    title: 'Business Consultancy',
+    title: 'Consultancy',
     image: '/image/services/advisor.png',
     content: 'I help businesses grow, streamline operations, and unlock their full potential.'
   },
@@ -141,7 +141,7 @@ const Services = () => {
       {
         breakpoint: 590,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           arrows: true,
           dots: false,
           infinite: false
@@ -158,12 +158,12 @@ const Services = () => {
           Experience a comprehensive IT solution for all your needs.
         </h2> */}
       </div>
-      <div className='mx-auto mt-10 px-10 md:max-w-[850px] lg:max-w-[1225px]   '>
+      <div className='mx-auto mt-10 px-4 md:px-10 md:max-w-[850px] lg:max-w-[1225px]   '>
         <Slider {...settings}>
           {data.map((item, index) => (
-            <div key={index} className="px-4">
+            <div key={index} className="pl-5 sm:pl-3">
               <div className="flex flex-col items-center">
-                <div className="relative w-[80px] h-[80px] mb-4">
+                <div className="relative w-[60px] h-[60px] md:w-[80px] md:h-[80px] mb-4">
                   <Image 
                     src={item.image} 
                     alt={item.title} 

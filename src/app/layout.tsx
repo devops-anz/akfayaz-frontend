@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inconsolata,  } from 'next/font/google';
+import { Inconsolata,   } from 'next/font/google';
 import '../../styles/globals.css';
 import GoogleAnalytics from './components/GoogleAnalytics';
 // import dynamic from "next/dynamic";
@@ -18,8 +18,14 @@ const inconsolata = Inconsolata({
 
 
 export const metadata: Metadata = {
-  title: 'Ahsanul Karim Fayaz',
-  description: "Eager to help you with Sales, Marketing, Procurement & Acquisition"   
+  title: 'Ahsanul Karim Fayaz - Home',
+  description: "Eager to help you with Sales, Marketing, Procurement & Acquisition"  ,
+  keywords: ['Ahsanul Karim Fayaz', 'Sales', 'Marketing', 'Procurement', 'Acquisition'],
+  authors: [{ name: 'Ahsanul Karim Fayaz', url: 'https://akfayaz.com.au' }],
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

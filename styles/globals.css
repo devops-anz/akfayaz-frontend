@@ -64,7 +64,7 @@ body {
   overflow-x: hidden;
   margin: 0;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  /* background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
 }
 
 @layer base {
@@ -88,6 +88,12 @@ body {
 
 .slick-dots {
   bottom: -60px !important;
+}
+
+@media (max-width: 768px) {
+  .slick-slide > div {
+    padding: 0 3px !important;
+  }
 }
 
 .slick-dots li {
