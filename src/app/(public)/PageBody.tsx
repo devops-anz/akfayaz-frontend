@@ -4,6 +4,7 @@ import About from 'view/page/home/about';
 import Contact from 'view/page/home/contact';
 import FeaturedProjects from 'view/page/home/featuredProjects';
 import Hero from 'view/page/home/hero';
+import Quote from 'view/page/home/quote';
 import RecentWorks from 'view/page/home/recentWorks';
 import Services from 'view/page/home/service';
 import Testimonials from 'view/page/home/testimonials';
@@ -18,8 +19,9 @@ const PageBody = () => {
       <Hero />
       <Services />
       <About />
-       <Timeline />
       <TopServices />
+       <Timeline />
+       <Quote />
       <FeaturedProjects />
        <Testimonials /> 
        <RecentWorks /> 

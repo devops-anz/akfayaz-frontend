@@ -6,8 +6,9 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import { TfiInstagram } from "react-icons/tfi";
+import {  TfiLinkedin } from "react-icons/tfi";
 import ProjectModal from 'view/ui/shared-component/component/title/modal';
+import Link from 'next/link';
 
 const data = [
   {
@@ -119,11 +120,13 @@ const RecentWorks = () => {
               <br className='hidden md:block' />
               Seminar
             </h1>
-            <div className='flex items-center gap-2 pt-2 text-gray-500'>
+            <div className='flex items-center gap-2 pt-4 text-gray-500'>
               <span>
-                <TfiInstagram />
+                <TfiLinkedin color='black'  className='-mt-1'/>
               </span>
-              Follow me -
+              <Link href='https://www.linkedin.com/in/ahsanulkfayaz/' target='_blank' rel='noopener noreferrer'>
+                Follow me -
+              </Link>
             </div>
           </div>
 

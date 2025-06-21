@@ -32,7 +32,7 @@ const config: Config = {
         custom: '4.48px'
       },
       colors: {
-        primary: '#FBFBFB',
+        primary: 'red',
         primary_2: '#FFFFFF', //dark color
         secondary_1: '#E6A147',
         secondary_2: '#F26F9C',

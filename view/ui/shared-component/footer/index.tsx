@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import { poppins } from 'styles/fonts';
-import { FaInstagram } from 'react-icons/fa';
-import { TbBrandFacebook } from 'react-icons/tb';
-import { FaTwitter } from 'react-icons/fa';
-import { FaYoutube } from 'react-icons/fa';
-import { FaLinkedinIn } from 'react-icons/fa';
+// import { FaInstagram } from 'react-icons/fa';
+// import { TbBrandFacebook } from 'react-icons/tb';
+// import { FaTwitter } from 'react-icons/fa';
+// import { FaYoutube } from 'react-icons/fa';
+// import { FaLinkedinIn } from 'react-icons/fa';
 
 const navLinks = [
   { title: 'About Me', href: '/#about-me' },
@@ -18,8 +18,10 @@ export const socialLinks = [
   // { icon: 'facebook', href: 'https://facebook.com' },
   // { icon: 'twitter', href: 'https://twitter.com' },
   // { icon: 'youtube', href: 'https://youtube.com' },
-  { title: 'Anz Web Studios', icon: '/image/logo/webstudio.png', href: 'https://anzwebstudios.com.au' },
-  { title: 'Anz Biz Consultants', icon: '/image/logo/favicon.ico', href: 'https://anzbizconsultants.com.au' },
+  { title: 'ANZ Web Studios', icon: '/image/logo/webstudio.png', href: 'https://anzwebstudios.com.au' },
+  { title: 'ANZ Business Consultants', icon: '/image/logo/favicon.ico', href: 'https://anzbizconsultants.com.au' },
+  { title: 'AKM Assets', icon: '/image/logo/akm-assets.webp', href: 'https://akmsassets.com.au' },
+  { title: 'ANZ Clearance House', icon: '/image/logo/anz-clearance-house.webp', href: 'https://anzclearancehouse.com.au' },
   { title: 'LinkedIn', icon: '/image/logo/linkedin.png', href: 'https://www.linkedin.com/in/ahsanulkfayaz/' },
   // { icon: 'linkedin', href: 'https://www.linkedin.com/in/ahsanulkfayaz/' }
 ];
@@ -66,7 +68,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className='border border-gray-600 p-1 text-gray-600 transition-colors  duration-300 ease-in-out hover:bg-black hover:text-white '
+                  className='border border-gray-600 p-1 text-gray-600 transition-colors  duration-300 ease-in-out hover:bg-black/50 hover:text-white '
                   target='_blank'
                   rel='noopener noreferrer'
                   title={social.title}
@@ -101,17 +103,17 @@ const Footer = () => {
   );
 };
 
-export const SocialIcon = ({ name }: { name: string }) => {
-  const icons = {
-    instagram: <FaInstagram size={20} />,
-    facebook: <TbBrandFacebook size={20} />,
-    twitter: <FaTwitter size={20} />,
-    youtube: <FaYoutube size={20} />,
-    linkedin: <FaLinkedinIn size={20} />
+// export const SocialIcon = ({ name }: { name: string }) => {
+//   const icons = {
+//     instagram: <FaInstagram size={20} />,
+//     facebook: <TbBrandFacebook size={20} />,
+//     twitter: <FaTwitter size={20} />,
+//     youtube: <FaYoutube size={20} />,
+//     linkedin: <FaLinkedinIn size={20} />
 
-  };
+//   };
 
-  return icons[name as keyof typeof icons] || null;
-};
+//   return icons[name as keyof typeof icons] || null;
+// };
 
 export default Footer;
