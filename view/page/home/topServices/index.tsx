@@ -8,36 +8,109 @@ const topServices = [
   {
     image: '/image/topservices/1.png',
     category: 'Strategic Sales Solutions to Boost Revenue and Client Engagement',
-    title: 'Sales '
+    title: 'Sales',
+    data: {
+      paragraph1: 'Driving revenue requires more than ambition—it needs a structured sales system built for consistency and scale. I help businesses design tailored sales strategies that increase close rates, boost team performance, and improve customer relationships.',
+      paragraph2: 'By aligning your goals with proven tactics, I build systems that shorten your sales cycle and deliver measurable outcomes. Whether you’re building a team or revamping your pitch, I provide the tools and insights to drive growth.',
+      points: [ 
+        'I\'m good at:',
+        'Sales Process Development',
+        'High-Ticket Deal Closing',
+        'CRM & Funnel Optimization',
+        'Team Coaching & Enablement',
+        'Client Retention Strategy'
+      ]
+    }
   },
   {
     image: '/image/topservices/2.png',
     category: 'Innovative Marketing Strategies for Brand Growth and Visibility',
-    title: 'Marketing'
+    title: 'Marketing',
+    data: {
+      paragraph1: 'Effective marketing builds connection, not just visibility. I work with businesses to develop creative, data-driven campaigns that attract, engage, and convert the right audiences. From strategy to execution, I bring clarity to your brand voice.',
+      paragraph2: 'Whether you’re launching a new product or scaling your digital presence, I deliver marketing strategies that build trust and create demand that lasts.',
+      points: [ 
+        'I\'m good at:',
+        'Brand Positioning & Messaging',
+        'Lead Generation Campaigns',
+        'Funnel Strategy & CRO',
+        'SEO & Content Planning',
+        'Social & Paid Advertising'
+      ]
+    }
   },
   {
     image: '/image/topservices/3.png',
     category: 'Efficient Procurement Processes for Cost-Effective Resource Management',
-    title: 'Procurement'
+    title: 'Procurement',
+    data: {
+      paragraph1: 'Procurement plays a crucial role in keeping operations lean and resources well-managed. I support businesses in building procurement systems that ensure timely sourcing, cost savings, and better supplier relationships.',
+      paragraph2: 'From supplier selection to end-to-end procurement transformation, I help businesses gain control, improve efficiency, and scale their operations with confidence.',
+      points: [ 
+        'I\'m good at:',
+        'Strategic Sourcing & Bidding',
+        'Vendor Relationship Management',
+        'Cost Optimization & Forecasting',
+        'Risk & Contract Compliance',
+        'Inventory & Supply Chain Planning'
+      ]
+    }
   },
   {
     image: '/image/topservices/4.png',
     category: 'Smart Acquisition Strategies for Seamless Business Expansion',
-    title: 'Acquisition'
+    title: 'Acquisition',
+    data: {
+      paragraph1: 'Growth through acquisition can accelerate your business—if done with the right structure. I support entrepreneurs and teams through every phase of the acquisition journey, from discovery to integration.',
+      paragraph2: 'Whether you’re acquiring to expand capabilities or consolidate your market position, I’ll help you make informed decisions and execute deals that drive long-term value.',
+      points: [ 
+        'I\'m good at:',
+        'Target Research & Evaluation',
+        'Deal Structuring & Negotiation',
+        'Due Diligence Frameworks',
+        'Integration & Change Management',
+        'Stakeholder & Investor Alignment'
+      ]
+    }
   },
   {
     image: '/image/topservices/5.png',
     category: ' Expert Consultancy Services for Optimized Business Performance',
     title: 'Consultancy',
-    link: 'https://www.anzbizconsultants.com.au/'
+    link: 'https://www.anzbizconsultants.com.au/',
+    data: {
+      paragraph1: 'Growing a business comes with challenges—scaling teams, building systems, and navigating market shifts. I provide tailored consulting to help businesses gain clarity, improve efficiency, and unlock their next stage of growth.',
+      paragraph2: 'With a hands-on, collaborative approach, I guide teams to identify gaps, streamline operations, and build the infrastructure needed to grow with purpose and resilience.',
+      points: [ 
+        'I\'m good at:',
+        'Business Model Planning',
+        'Systems & Process Scaling',
+        'Team Development & Culture',
+        'Performance Metrics & Audits',
+        'Strategic Execution Support'
+      ]
+    }
   },
   {
     image: '/image/topservices/6.png',
     category: 'Creative Web Design for Engaging Digital User Experiences',
     title: 'Web Design',
-    link: 'https://www.anzwebstudios.com.au/'
+    link: 'https://www.anzwebstudios.com.au/',
+    data: {
+      paragraph1: 'Your website is often the first impression—and it needs to perform. I design digital experiences that reflect your brand, engage users, and convert traffic into action. Function meets form in every build.',
+      paragraph2: 'From corporate sites to eCommerce builds, I create designs that are clean, scalable, and results-driven—so your online presence works as hard as you do.',
+      points: [ 
+        'I\'m good at:',
+        'UX/UI Strategy & Layout',
+        'WordPress, Shopify, Webflow',
+        'Mobile-First Development',
+        'Conversion-Focused Pages',
+        'SEO & Performance Optimization'
+      ]
+    }
   }
 ];
+
 
 const TopServices = () => {
   const [openTopServices, setOpenTopServices] = useState(false);
@@ -51,7 +124,7 @@ const TopServices = () => {
   return (
     <>
       <div id='services'>
-        <div className='container-custom pt-20 sm:pt-28 md:pt-20'>
+        <div className='container-custom pt-10 sm:pt-28 md:pt-20'>
           <div className='mb-10 px-4 sm:mb-16 sm:px-6 md:mb-20'>
             <p className={`font-[700] text-black ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
               Top Services

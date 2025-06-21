@@ -137,8 +137,7 @@ const RecentWorks = () => {
                   <Image
                     src={item.image}
                     alt={item.id.toString()}
-                    className='object-cover object-center hover:cursor-pointer'
-                    style={{ height: '200px', width: '400px' }}
+                    className='object-cover object-center hover:cursor-pointer w-full h-[450px] sm:h-[180px] md:h-[200px] lg:h-[250px] xl:h-[300px]'
                     width={400}
                     height={400}
                     onClick={() => setOpen(true)}

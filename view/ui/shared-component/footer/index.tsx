@@ -49,7 +49,7 @@ const Footer = () => {
               </div>
               <div>
                 <h1 className={`${poppins.className} text-xl font-bold`}>Ahsanul Karim Fayaz</h1>
-                <p className='text-sm text-gray-600'>Entrepreneur | Business Consultant | Life Coach</p>
+                <p className='text-sm text-gray-600'>Entrepreneur | Business Consultant <span className='hidden md:inline'>|</span> <br className='md:hidden' /> Life Coach</p>
               </div>
             </div>
 
@@ -84,7 +84,7 @@ const Footer = () => {
         <div className='flex flex-col items-center justify-between pt-10 pb-5 md:flex-row'>
           <div className={`${poppins.className} text-sm font-semibold text-gray-600 `}>
             {' '}
-            Created by ©
+            Developed by ©
             <span className='text-black hover:text-amber-600'>
 
               {' '}
