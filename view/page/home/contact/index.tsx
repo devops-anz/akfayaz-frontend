@@ -83,7 +83,7 @@ const Contact = () => {
 
               {/* Value */}
               <div
-                className={`text-2xl font-[700] text-gray-900 hover:underline ${method.title === 'FIND ME' ? 'text-[22px]' : ''}`}
+                className={`text-2xl font-[700] text-gray-900 hover:underline ${method.title === 'FIND ME' ? 'text-[18px] sm:text-[22px]' : ''}`}
               >
                 {method.value}
               </div>
