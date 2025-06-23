@@ -48,6 +48,8 @@ const contactMethods = [
   }
 ];
 
+// dummy comment
+
 const Contact = () => {
   return (
     <div id='contact-me' className='bg-[#d9e1c5] px-5 py-20 md:mx-10 md:px-0'>
