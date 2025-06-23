@@ -14,7 +14,7 @@ const TimelineItem = ({
   isLast: boolean;
 }) => {
   return (
-    <div className={`relative flex   `}>
+    <div className={`relative flex mr-5 sm:mr-0  `}>
       {/* Circle and line */}
       <div className='mr-4 flex flex-col items-center'>
         <div
