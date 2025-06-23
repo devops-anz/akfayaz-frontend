@@ -50,7 +50,7 @@ const contactMethods = [
 
 const Contact = () => {
   return (
-    <div id='contact-me' className='bg-[#d9e1c5] px-10 py-20 md:mx-10 md:px-0'>
+    <div id='contact-me' className='bg-[#d9e1c5] px-5 py-20 md:mx-10 md:px-0'>
       <div className='container-custom mx-auto px-4'>
         {/* Header */}
         <div className='mb-16'>
@@ -83,7 +83,7 @@ const Contact = () => {
 
               {/* Value */}
               <div
-                className={`text-2xl font-[700] text-gray-900 hover:underline ${method.title === 'FIND ME' ? 'text-[18px] sm:text-[22px]' : ''}`}
+                className={`text-2xl font-[700] text-gray-900 hover:underline ${method.title === 'FIND ME' || method.title === 'WRITE ME' ? 'text-[17px] sm:text-[22px]' : ''}`}
               >
                 {method.value}
               </div>

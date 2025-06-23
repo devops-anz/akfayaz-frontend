@@ -151,7 +151,7 @@ const Services = () => {
   };
 
   return (
-    <div id='' className='pb-10'>
+    <div id='' className='pb-0 sm:pb-10'>
       <div className='pt-[27px] lg:pt-[29px] '>
         {/* <p className="font-['Istok Web'] text-center text-base font-bold text-indigo-600">SERVICES</p>
         <h2 className="font-['Istok Web'] mx-auto mt-3 max-w-[565px] text-center text-lg font-bold text-zinc-800 max-md:px-5 lg:text-4xl">
@@ -159,9 +159,9 @@ const Services = () => {
         </h2> */}
       </div>
       <div className='mx-auto mt-10 px-4 md:px-10 md:max-w-[850px] lg:max-w-[1225px]   '>
-        <Slider {...settings}>
+        <Slider className='pl-5 sm:pl-3' {...settings}>
           {data.map((item, index) => (
-            <div key={index} className="pl-5 sm:pl-3">
+            <div key={index} className="">
               <div className="flex flex-col items-center">
                 <div className="relative w-[60px] h-[60px] md:w-[80px] md:h-[80px] mb-4">
                   <Image 

@@ -8,7 +8,7 @@ const Hero = () => {
       <div className='flex h-full flex-col justify-center'>
         <div className='container-custom px-4 sm:px-6 md:px-8 lg:px-0'>
           <p
-            className={`font-[700] text-black ${poppins.className} mt-5 text-3xl leading-tight sm:text-4xl sm:leading-snug md:text-6xl md:leading-tight lg:text-7xl`}
+            className={`font-[700] text-black ${poppins.className} mt-5 text-[27px] leading-tight sm:text-4xl sm:leading-snug md:text-6xl md:leading-tight lg:text-7xl`}
           >
             Hello,
              I'm Fayaz!
