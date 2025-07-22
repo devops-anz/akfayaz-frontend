@@ -61,7 +61,7 @@ const Contact = () => {
           <hr className='mt-6 border border-solid border-gray-500/50' />
         </div>
         {/* Contact Methods */}
-        <div className='grid  grid-cols-1 gap-8 md:grid-cols-3'>
+        <div className='grid  grid-cols-1 gap-4 md:grid-cols-3'>
           {contactMethods.map((method, index) => (
             <a
               href={
@@ -75,7 +75,7 @@ const Contact = () => {
               }
               target='_blank'
               key={index}
-              className='flex flex-col rounded-md border-2 border-solid border-gray-500/50 px-6 py-4 transition-all duration-300 ease-in-out hover:cursor-pointer hover:shadow-lg hover:shadow-gray-500/50'
+              className='flex flex-col rounded-md border-2 border-solid border-gray-500/50 pl-6 py-6 transition-all duration-300 ease-in-out hover:border-black hover:cursor-pointer hover:shadow-lg hover:shadow-gray-500/50'
             >
               {/* Icon Circle */}
               <div className='mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white'>{method.icon}</div>

@@ -131,7 +131,7 @@ const TopServices = () => {
     <>
       <div id='services'>
         <div className='container-custom pt-10 sm:pt-28 md:pt-20'>
-          <div className='mb-10 px-4 sm:mb-16 sm:px-6 md:mb-20'>
+          <div className='mb-10 px-4 sm:mb-16 sm:px-6 md:px-0 md:mb-20'>
             <p className={`font-[700] text-black ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
               Top Services
             </p>
@@ -141,7 +141,7 @@ const TopServices = () => {
             <hr className='border border-solid border-gray-200' />
           </div>
 
-          <div className='mb-10 grid grid-cols-1 gap-4 px-4 sm:mb-16 sm:grid-cols-2 sm:gap-6 sm:px-6 md:mb-20 md:grid-cols-3 md:gap-8'>
+          <div className='mb-10 grid grid-cols-1 gap-4 px-4 sm:mb-16 sm:grid-cols-2 sm:gap-6 sm:px-6 md:px-0 md:mb-20 md:grid-cols-3 md:gap-8'>
             {topServices.map((item, index) => (
               <div key={index} style={{backgroundColor: item.color}} className={`group sm:bg-transparent relative overflow-hidden`}>
                 <Image

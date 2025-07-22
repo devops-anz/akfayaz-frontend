@@ -32,7 +32,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className='container-custom mx-auto px-4 pt-16'>
+      <div className='container-custom mx-auto px-4 md:px-0 pt-16'>
         <div className=''>
           <nav className='flex flex-col items-center gap-y-10 justify-between md:flex-row'>
             {/* Logo */}
@@ -68,7 +68,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className='border border-gray-600 p-1 text-gray-600 transition-colors  duration-300 ease-in-out hover:bg-black/50 hover:text-white '
+                  className='border border-gray-600 p-1.5 text-gray-600 transition-colors rounded-md  duration-300 ease-in-out hover:bg-slate-200 hover:text-white '
                   target='_blank'
                   rel='noopener noreferrer'
                   title={social.title}
@@ -82,7 +82,7 @@ const Footer = () => {
         </div>
 
         <div className='flex flex-col items-center justify-between pt-10 pb-5 md:flex-row'>
-          <div className={`${poppins.className} text-sm font-semibold text-gray-600 `}>
+          <div className={`${poppins.className} text-sm font-medium text-gray-600 `}>
             {' '}
             Developed by ©
             <span className='text-black hover:text-amber-600'>
@@ -94,7 +94,7 @@ const Footer = () => {
               </a>
             </span>
           </div>
-          <div className={`${poppins.className} text-sm font-semibold text-gray-600`}>
+          <div className={`${poppins.className} text-sm font-medium text-gray-600`}>
             All rights Reserved || {new Date().getFullYear()}
           </div>
         </div>

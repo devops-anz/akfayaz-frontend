@@ -99,7 +99,7 @@ const Timeline = () => {
 
   return (
     <div className='container-custom mx-auto '>
-          <div className='mb-10  md:pt-10 px-4 sm:mb-16 sm:px-6 md:mb-12'>
+          <div className='mb-10  md:pt-10 px-4 sm:mb-16 sm:px-6 md:px-0 md:mb-12'>
             <p className={`font-[700] text-black ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
               Career Highlights
             </p>
@@ -109,7 +109,7 @@ const Timeline = () => {
             <hr className='border border-solid border-gray-200' />
           </div>
 
-      <div className='pl-4'>
+      <div className='pl-4 md:px-0'>
         {timelineData.map((item, index) => (
           <TimelineItem
             key={index}

@@ -1,5 +1,5 @@
 'use client'; 
-// import Footer from 'view/ui/shared-component/footer';
+import Footer from 'view/ui/shared-component/footer';
 import Navbar from 'view/ui/shared-component/navbar';
 import useAOS from '../hooks/useAOS';
 import useScrollToTop from '../hooks/useScrollToTop';
@@ -14,7 +14,7 @@ export default function LayoutProvider({ children }: { children: React.ReactNode
     <div className='relative overflow-hidden'>
       <Navbar />
       {children}
-      {/* <Footer /> */}
+      <Footer />    
     </div>
   );
 }
