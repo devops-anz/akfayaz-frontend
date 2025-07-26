@@ -11,7 +11,7 @@ import Testimonials from 'view/page/home/testimonials';
 import Timeline from 'view/page/home/timeline';
 import TopServices from 'view/page/home/topServices';
 import ScrollTop from 'view/ui/shared-component/scrollTop';
-import Blog from 'view/page/home/blogs';
+// import Blog from 'view/page/home/blogs';
 
 const PageBody = () => {
 
@@ -28,7 +28,7 @@ const PageBody = () => {
       <FeaturedProjects />
        <Testimonials /> 
        {/* <RecentWorks />  */}
-       <Blog />
+       {/* <Blog /> */}
       <Contact />
       <ScrollTop />
     </Fragment>

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { poppins } from 'styles/fonts';
 // import { FaInstagram } from 'react-icons/fa';
 // import { TbBrandFacebook } from 'react-icons/tb';
@@ -18,16 +19,17 @@ export const socialLinks = [
   // { icon: 'facebook', href: 'https://facebook.com' },
   // { icon: 'twitter', href: 'https://twitter.com' },
   // { icon: 'youtube', href: 'https://youtube.com' },
-  { title: 'ANZ Web Studios', icon: '/image/logo/webstudio.png', href: 'https://anzwebstudios.com.au' },
-  { title: 'ANZ Business Consultants', icon: '/image/logo/favicon.ico', href: 'https://anzbizconsultants.com.au' },
-  { title: 'AKM Assets', icon: '/image/logo/akm-assets.webp', href: 'https://akmsassets.com.au' },
-  { title: 'ANZ Clearance House', icon: '/image/logo/anz-clearance-house.webp', href: 'https://anzclearancehouse.com.au' },
-  { title: 'LinkedIn', icon: '/image/logo/linkedin.png', href: 'https://www.linkedin.com/in/ahsanulkfayaz/' },
+  { title: 'Visit - ANZ Web Studios ', icon: '/image/logo/webstudio.png', href: 'https://anzwebstudios.com.au' },
+  { title: 'Visit - ANZ Business Consultants', icon: '/image/logo/favicon.ico', href: 'https://anzbizconsultants.com.au' },
+  { title: 'Visit - AKM Assets', icon: '/image/logo/akm-assets.webp', href: 'https://akmassets.com.au' },
+  { title: 'Visit - ANZ Clearance House', icon: '/image/logo/anz-clearance-house.webp', href: 'https://anzclearancehouse.com.au' },
+  { title: 'Visit - A K Fayaz - LinkedIn', icon: '/image/logo/linkedin.png', href: 'https://www.linkedin.com/in/ahsanulkfayaz/' },
   // { icon: 'linkedin', href: 'https://www.linkedin.com/in/ahsanulkfayaz/' }
 ];
 
 
 const Footer = () => {
+  const router = useRouter();
   // const currentYear = new Date().getFullYear();
 
   return (
@@ -47,7 +49,7 @@ const Footer = () => {
                   priority
                 />
               </div>
-              <div>
+              <div onClick={() => router.push('/')} className='cursor-pointer'>
                 <h1 className={`${poppins.className} text-xl font-bold`}>Ahsanul Karim Fayaz</h1>
                 <p className='text-sm text-gray-600'>Entrepreneur | Business Consultant <span className='hidden md:inline'>|</span> <br className='md:hidden' /> Life Coach</p>
               </div>
@@ -56,7 +58,9 @@ const Footer = () => {
             {/* Navigation Links */}
             <div className='flex flex-col items-center space-y-4 md:flex-row md:space-x-8 md:space-y-0'>
               {navLinks.map((link, index) => (
-                <a key={index} href={link.href} className='text-gray-600 transition-colors hover:text-gray-900'>
+                <a key={index} href={link.href}
+                                       className='cursor-pointer font-work relative flex items-center gap-1 bg-transparent px-0 py-1.5 text-base font-[500] text-black ease-in after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full'
+                 >
                   {link.title}
                 </a>
               ))}
@@ -72,6 +76,9 @@ const Footer = () => {
                   target='_blank'
                   rel='noopener noreferrer'
                   title={social.title}
+                  data-tooltip-id="my-tooltip"
+                  data-tooltip-content={social.title}
+                  data-tooltip-place="top"
                 >
                   <Image src={social.icon} alt='social' width={20} height={20} />
                 </a>
@@ -86,7 +93,6 @@ const Footer = () => {
             {' '}
             Developed by ©
             <span className='text-black hover:text-amber-600'>
-
               {' '}
               <a href='https://anzwebstudios.com.au' target='_blank' rel='noopener noreferrer'>
                 {' '}

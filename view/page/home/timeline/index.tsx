@@ -18,7 +18,7 @@ const TimelineItem = ({
       {/* Circle and line */}
       <div className='mr-4 flex flex-col items-center'>
         <div
-          className={`z-10 flex  items-center justify-center rounded-full border-4 border-gray-100 bg-gray-400 ${isLast ? 'h-8 w-8' : 'h-[35px] w-8'}`}
+          className={`z-10 flex  items-center justify-center rounded-full border-4 border-gray-100 bg-gray-400 ${isLast ? 'h-[34px] w-8' : 'h-[45px] w-8'}`}
         >
           <div className='h-3 w-3 rounded-full bg-black'></div>
         </div>
@@ -26,9 +26,10 @@ const TimelineItem = ({
       </div>
 
       {/* Content */}
+      
       <div className='w-full  pb-12'>
         <p className='mb-1 font-medium  text-gray-700'>{date}</p>
-        <h3 className='mb-4 text-3xl font-medium text-black'>{title}</h3>
+        <h3 className='mb-1 text-3xl font-medium text-black'>{title}</h3>
         <p className='text-gray-600'>{description}</p>
       </div>
     </div>

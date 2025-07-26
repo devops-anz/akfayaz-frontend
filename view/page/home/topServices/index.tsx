@@ -150,23 +150,20 @@ const TopServices = () => {
                   width={500}
                   height={500}
                   style={{ height: '280px', width: '100%' }}
-                  className='opacity-0 md:opacity-100 w-full object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110'
+                  className='opacity-0 md:opacity-100 w-full object-cover object-center transition-transform duration-1000 ease-in-out group-hover:scale-105'
                 />
-                <div className='absolute inset-0 flex flex-col items-center justify-evenly bg-black/70 transition-all duration-500 ease-in-out md:bg-gray-500/0 md:group-hover:bg-black/85'>
-                  <p className='text-3xl font-medium text-white transition-opacity duration-300 ease-in-out sm:text-3xl md:opacity-0 md:group-hover:opacity-100'>
+                <div className='absolute inset-0 flex flex-col items-center justify-evenly bg-black/90 transition-all duration-700 ease-in-out md:bg-gray-500/0 md:group-hover:bg-black/85'>
+                  <p className='text-3xl font-medium text-white transition-all duration-1000 delay-100 ease-in-out sm:text-3xl md:translate-y-10 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100'>
                     {item.title}
                   </p>
 
-                  <p className='p-5 text-center text-sm text-white transition-opacity duration-300 sm:text-sm md:opacity-0 md:group-hover:opacity-100'>
+                  <p className='p-5 text-center text-sm text-white transition-all duration-1000 delay-100 ease-in-out sm:text-sm md:opacity-0 md:group-hover:opacity-100'>
                     {item.category}
                   </p>
                   <button
                     onClick={() => handleOpenModal(item)}
-                    className='bg-[#cfd8b9] px-4 py-2 font-bold text-black transition-opacity duration-300 ease-in-out hover:bg-amber-500 sm:px-6 sm:py-2.5 md:opacity-0 md:group-hover:opacity-100'
+                    className='bg-[#cfd8b9] px-4 py-2 font-bold text-black transition-all duration-1000 delay-100 ease-in-out hover:bg-amber-500 sm:px-6 sm:py-2.5 md:translate-y-[-10px] md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100'
                   >
-                    {/* <Link href={item.link || ''} target='_blank'>
-                      { item.link ? 'Learn More' : 'Coming Soon'}
-                  </Link> */}
                     Learn More
                   </button>
                 </div>

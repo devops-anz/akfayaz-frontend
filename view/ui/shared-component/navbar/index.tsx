@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link'; 
 import { useEffect, useState } from 'react';
 import MobileNavbar from './mobile-navbar';
 import { navbarData } from '@json-db';
@@ -61,7 +60,21 @@ const Navbar = () => {
             <div className='flex flex-row gap-10'>
               <div>
                 <p className='text-sm text-gray-600/50'>Write to me</p>
-                <p className='text-md text-gray-700'>fayaz@akmassets.com.au</p>
+                <p 
+                  className='text-md text-gray-700 cursor-pointer hover:text-gray-900 transition-colors'
+                  onClick={() => {
+                    navigator.clipboard.writeText('fayaz@akmassets.com.au');
+                    const target = event?.target as HTMLElement;
+                    const originalText = target.innerText;
+                    target.innerText = 'Copied to Clipboard';
+                    setTimeout(() => {
+                      target.innerText = originalText;
+                    }, 1500);
+                  }}
+                  title="Click to copy email"
+                >
+                  fayaz@akmassets.com.au
+                </p>
               </div>
               <a href='https://cal.com/a.fayaz' target='_blank' rel='noopener noreferrer' className='bg-black text-white rounded-md hover:shadow-lg  transition-all duration-300'>
                  <div className='p-4 flex items-center justify-center'>
@@ -85,7 +98,7 @@ const Navbar = () => {
               {navbarData.navbarList.map((item: any, index: number) => (
                 <li key={index} className={'group relative block'}>
                   {item.subMenu ? (
-                    <span className='font-work flex items-center gap-1 px-0 py-3 text-base font-[500] text-black transition hover:text-primary hover:duration-300'>
+                    <span className='font-work flex items-center gap-1 px-0 py-3 text-base font-[500] text-black transition  hover:duration-300'>
                       {item.name}
                       {item.subMenu && (
                         <svg
@@ -111,17 +124,21 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <div className='z-20 hidden items-center gap-2 text-lg font-semibold text-black md:flex'>
-              <div className='hidden items-center space-x-1.5 md:flex'>
+            <div className='z-20 hidden items-center gap-3 text-lg font-semibold text-black md:flex'>
+              <div className='hidden items-center space-x-2 md:flex'>
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
-                    className=''
+                    className='hover:scale-110 transition-all duration-300'
                     target='_blank'
                     rel='noopener noreferrer'
                     title={social.title}
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content={social.title}
+                    data-tooltip-place="top"
                     >
+
                         <Image src={social.icon} alt='social' width={20} height={20} />
                     </a>
                 ))}
@@ -130,9 +147,9 @@ const Navbar = () => {
 
             <div className='flex w-full items-center justify-between gap-4 md:hidden'>
               <div className='flex items-center gap-4'>
-                <Link href='/#' className='pl-8 font-bold text-white'>
+                <a onClick={() => router.push('/')} className='pl-8 font-bold text-white'>
                   Ahsanul Karim Fayaz 
-                </Link>
+                </a>
               </div>
               <div>
                 <button
