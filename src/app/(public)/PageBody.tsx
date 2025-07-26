@@ -1,19 +1,22 @@
 'use client';
-import { Fragment } from 'react';
+import { Fragment  } from 'react';
 import About from 'view/page/home/about';
 import Contact from 'view/page/home/contact';
 import FeaturedProjects from 'view/page/home/featuredProjects';
 import Hero from 'view/page/home/hero';
 import Quote from 'view/page/home/quote';
-import RecentWorks from 'view/page/home/recentWorks';
+// import RecentWorks from 'view/page/home/recentWorks';
 import Services from 'view/page/home/service';
 import Testimonials from 'view/page/home/testimonials';
 import Timeline from 'view/page/home/timeline';
 import TopServices from 'view/page/home/topServices';
-import Footer from 'view/ui/shared-component/footer';
 import ScrollTop from 'view/ui/shared-component/scrollTop';
+// import Blog from 'view/page/home/blogs';
 
 const PageBody = () => {
+
+
+  
   return (
     <Fragment>
       <Hero />
@@ -24,9 +27,9 @@ const PageBody = () => {
        <Quote />
       <FeaturedProjects />
        <Testimonials /> 
-       <RecentWorks /> 
+       {/* <RecentWorks />  */}
+       {/* <Blog /> */}
       <Contact />
-      <Footer />
       <ScrollTop />
     </Fragment>
   );

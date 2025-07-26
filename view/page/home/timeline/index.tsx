@@ -18,7 +18,7 @@ const TimelineItem = ({
       {/* Circle and line */}
       <div className='mr-4 flex flex-col items-center'>
         <div
-          className={`z-10 flex  items-center justify-center rounded-full border-4 border-gray-100 bg-gray-400 ${isLast ? 'h-8 w-8' : 'h-[35px] w-8'}`}
+          className={`z-10 flex  items-center justify-center rounded-full border-4 border-gray-100 bg-gray-400 ${isLast ? 'h-[34px] w-8' : 'h-[45px] w-8'}`}
         >
           <div className='h-3 w-3 rounded-full bg-black'></div>
         </div>
@@ -26,9 +26,10 @@ const TimelineItem = ({
       </div>
 
       {/* Content */}
+      
       <div className='w-full  pb-12'>
         <p className='mb-1 font-medium  text-gray-700'>{date}</p>
-        <h3 className='mb-4 text-3xl font-medium text-black'>{title}</h3>
+        <h3 className='mb-1 text-3xl font-medium text-black'>{title}</h3>
         <p className='text-gray-600'>{description}</p>
       </div>
     </div>
@@ -99,7 +100,7 @@ const Timeline = () => {
 
   return (
     <div className='container-custom mx-auto '>
-          <div className='mb-10  md:pt-10 px-4 sm:mb-16 sm:px-6 md:mb-12'>
+          <div className='mb-10  md:pt-10 px-4 sm:mb-16 sm:px-6 md:px-0 md:mb-12'>
             <p className={`font-[700] text-black ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
               Career Highlights
             </p>
@@ -109,7 +110,7 @@ const Timeline = () => {
             <hr className='border border-solid border-gray-200' />
           </div>
 
-      <div className='pl-4'>
+      <div className='pl-4 md:px-0'>
         {timelineData.map((item, index) => (
           <TimelineItem
             key={index}

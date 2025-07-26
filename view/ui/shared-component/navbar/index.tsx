@@ -1,32 +1,54 @@
 'use client';
-import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import MobileNavbar from './mobile-navbar';
 import { navbarData } from '@json-db';
 import {  socialLinks } from '../footer';
 import { poppins } from 'styles/fonts';
 import Image from 'next/image';
 
+import { useRouter } from "next/navigation";
+
 const Navbar = () => {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  // const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleNavbarClick = (link: string) => {
+    router.push(link);
+    setTimeout(() => {
+      router.push(link);
+    }, 200);
+}
+  
+
 
   return (
-    <div>
+    <div className={`fixed top-0 left-0 right-0 bg-white shadow-md z-[101] ${isScrolled ? 'shadow-md' : 'shadow-none'}`}>
       <div
-        className={`fixed top-0 z-[101] w-full px-0 py-0 duration-700 ease-in-out md:static md:z-auto md:px-8 md:py-4`}
+        className={`w-full px-0 py-0 duration-700 ease-in-out md:px-8  ${isScrolled ? 'md:py-1.5' : 'md:py-4'}`}
       >
         <div className=''>
-          <div className='container-custom mx-auto hidden flex-row justify-between md:flex '>
+          <div className='max-w-[1200px] mx-auto hidden flex-row justify-between md:flex '>
             <div className='mb-4 flex items-center md:mb-0'>
               <div className='mr-3 '>
                 <Image
                   src={'/image/logo/logo-2.png'}
-                  className='w-28'
+                  className='w-28 -ml-1'
                   alt='bus'
                   width={1000}
                   height={1000}
                   priority
+                  onClick={() => router.push('/')}
+                  style={{ cursor: 'pointer' }}
                 />
               </div>
               <div>
@@ -38,7 +60,21 @@ const Navbar = () => {
             <div className='flex flex-row gap-10'>
               <div>
                 <p className='text-sm text-gray-600/50'>Write to me</p>
-                <p className='text-md text-gray-700'>fayaz@akmassets.com.au</p>
+                <p 
+                  className='text-md text-gray-700 cursor-pointer hover:text-gray-900 transition-colors'
+                  onClick={() => {
+                    navigator.clipboard.writeText('fayaz@akmassets.com.au');
+                    const target = event?.target as HTMLElement;
+                    const originalText = target.innerText;
+                    target.innerText = 'Copied to Clipboard';
+                    setTimeout(() => {
+                      target.innerText = originalText;
+                    }, 1500);
+                  }}
+                  title="Click to copy email"
+                >
+                  fayaz@akmassets.com.au
+                </p>
               </div>
               <a href='https://cal.com/a.fayaz' target='_blank' rel='noopener noreferrer' className='bg-black text-white rounded-md hover:shadow-lg  transition-all duration-300'>
                  <div className='p-4 flex items-center justify-center'>
@@ -47,8 +83,8 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-          <hr className=' container-custom hidden w-full border-gray-300 md:mb-2 md:mt-6 md:block' />
-          <div className=' custom-nav  mx-auto flex max-w-[1170px] flex-row justify-between gap-20 px-0 py-2 md:justify-between md:px-0 md:py-0 '>
+          <hr className={` container-custom  hidden md:block w-full border-gray-300  ${isScrolled ? 'md:mt-2' : 'md:mt-6 md:mb-2'}`}   />
+          <div className=' custom-nav  mx-auto flex max-w-[1200px] flex-row justify-between gap-20 px-0 py-2 md:justify-between md:px-0 md:py-0 '>
             {/* <Link
             href={navbarData?.companyName?.link}
             aria-label='Company'
@@ -62,7 +98,7 @@ const Navbar = () => {
               {navbarData.navbarList.map((item: any, index: number) => (
                 <li key={index} className={'group relative block'}>
                   {item.subMenu ? (
-                    <span className='font-work flex items-center gap-1 px-0 py-3 text-base font-[500] text-black transition hover:text-primary hover:duration-300'>
+                    <span className='font-work flex items-center gap-1 px-0 py-3 text-base font-[500] text-black transition  hover:duration-300'>
                       {item.name}
                       {item.subMenu && (
                         <svg
@@ -77,28 +113,32 @@ const Navbar = () => {
                       )}
                     </span>
                   ) : (
-                    <Link
-                      href={item.link}
-                      className='font-work relative flex items-center gap-1 bg-transparent px-0 py-1.5 text-base font-[500] text-black ease-in after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full'
+                    <div
+                      onClick={() => handleNavbarClick(item.link)}
+                      className='cursor-pointer font-work relative flex items-center gap-1 bg-transparent px-0 py-1.5 text-base font-[500] text-black ease-in after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full'
                     >
                       {item.name}
-                    </Link>
+                    </div>
                   )}
-                  {item.subMenu && item.subMenu.length > 0 && <SubMenu subMenu={item.subMenu} />}
+                  {/* {item.subMenu && item.subMenu.length > 0 && <SubMenu subMenu={item.subMenu} />} */}
                 </li>
               ))}
             </ul>
-            <div className='z-20 hidden items-center gap-2 text-lg font-semibold text-black md:flex'>
-              <div className='hidden items-center space-x-1.5 md:flex'>
+            <div className='z-20 hidden items-center gap-3 text-lg font-semibold text-black md:flex'>
+              <div className='hidden items-center space-x-2 md:flex'>
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
-                    className=''
+                    className='hover:scale-110 transition-all duration-300'
                     target='_blank'
                     rel='noopener noreferrer'
                     title={social.title}
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content={social.title}
+                    data-tooltip-place="top"
                     >
+
                         <Image src={social.icon} alt='social' width={20} height={20} />
                     </a>
                 ))}
@@ -107,9 +147,9 @@ const Navbar = () => {
 
             <div className='flex w-full items-center justify-between gap-4 md:hidden'>
               <div className='flex items-center gap-4'>
-                <Link href='/#' className='pl-8 font-bold text-white'>
+                <a onClick={() => router.push('/')} className='pl-8 font-bold text-white'>
                   Ahsanul Karim Fayaz 
-                </Link>
+                </a>
               </div>
               <div>
                 <button
@@ -149,39 +189,38 @@ const Navbar = () => {
 
 export default Navbar;
 
-const SubMenu = ({ subMenu }: any) => {
-  return (
-    <ul className='glassmorphism font-work font-work invisible absolute top-[48px] z-[101]	w-full  min-w-[180px]  max-w-[230px] rounded-b-lg  p-0 opacity-0 shadow-md group-hover:visible group-hover:opacity-100'>
-      {subMenu.map((subItem: any, index: number) => (
-        <li key={index} className={'main-subSubMenu relative block'}>
-          {subItem.subMenu ? (
-            <span className=' block flex items-center justify-between gap-1 whitespace-normal px-4 text-sm  text-white transition hover:text-primary hover:duration-300'>
-              {subItem.name}
-              <svg
-                className='-rotate-90 fill-current'
-                xmlns='http://www.w3.org/2000/svg'
-                width='20'
-                height='20'
-                viewBox='0 0 24 24'
-              >
-                <path d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z' />
-              </svg>
-            </span>
-          ) : (
-            <Link
-              href={subItem.link}
-              className='block whitespace-normal px-4 py-3 text-sm text-white transition hover:text-primary hover:duration-300'
-            >
-              {subItem.name}
-            </Link>
-          )}
-          {/* {subItem.subMenu && <SubSubMenu subSubMenu={subItem.subMenu} />} */}
-        </li>
-      ))}
-    </ul>
-  );
-};
-
+// const SubMenu = ({ subMenu }: any) => {
+//   return (
+//     <ul className='glassmorphism font-work font-work invisible absolute top-[48px] z-[101]	w-full  min-w-[180px]  max-w-[230px] rounded-b-lg  p-0 opacity-0 shadow-md group-hover:visible group-hover:opacity-100'>
+//       {subMenu.map((subItem: any, index: number) => (
+//         <li key={index} className={'main-subSubMenu relative block'}>
+//           {subItem.subMenu ? (
+//             <span className=' block flex items-center justify-between gap-1 whitespace-normal px-4 text-sm  text-white transition hover:text-primary hover:duration-300'>
+//               {subItem.name}
+//               <svg
+//                 className='-rotate-90 fill-current'
+//                 xmlns='http://www.w3.org/2000/svg'
+//                 width='20'
+//                 height='20'
+//                 viewBox='0 0 24 24'
+//               >
+//                 <path d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z' />
+//               </svg>
+//             </span>
+//           ) : (
+//             <Link
+//               href={subItem.link}
+//               className='block whitespace-normal px-4 py-3 text-sm text-white transition hover:text-primary hover:duration-300'
+//             >
+//               {subItem.name}
+//             </Link>
+//           )}
+//           {/* {subItem.subMenu && <SubSubMenu subSubMenu={subItem.subMenu} />} */}
+//         </li>
+//       ))}
+//     </ul>
+//   );
+// };
 // const SubSubMenu = ({ subSubMenu }: any) => {
 //   return (
 //     <ul className='navbar-bg-color bg-base-100 font-work subSubMenu-hover invisible absolute left-full top-0 z-[101] w-full min-w-[230px] rounded-lg p-0 opacity-0 shadow-md'>
@@ -214,3 +253,4 @@ const SubMenu = ({ subMenu }: any) => {
 //     </ul>
 //   );
 // };
+

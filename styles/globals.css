@@ -69,7 +69,7 @@ body {
 
 @layer base {
   .container-custom {
-    @apply mx-auto w-full max-w-[1170px] overflow-hidden ;
+    @apply mx-auto w-full max-w-[1200px] overflow-hidden ;
   }
 }
 

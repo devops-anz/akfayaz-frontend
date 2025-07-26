@@ -3,9 +3,9 @@ import { poppins } from '../../../../styles/fonts'; // Import poppins
 const Hero = () => {
   return (
     <div
-      className={`mx-3 h-[27vh] mt-20 bg-cover bg-center sm:mx-6 sm:mt-12 sm:h-[70vh] md:mx-10 md:mt-0 md:h-[100vh] bg-[url('/image/hero/cover.webp')] bg-no-repeat `}
+      className={`mx-3 h-[25vh] mt-20 bg-cover bg-center sm:mx-6 sm:mt-12 sm:h-[70vh] md:mx-10 md:mt-40 md:h-[85vh] bg-[url('/image/hero/cover.webp')] bg-no-repeat `}
     >
-      <div className='flex h-full flex-col justify-center'>
+      <div className='flex h-full  flex-col justify-center'>
         <div className='container-custom px-4 sm:px-6 md:px-8 lg:px-0'>
           <p
             className={`font-[700] text-black ${poppins.className} mt-5 text-[27px] leading-tight sm:text-4xl sm:leading-snug md:text-6xl md:leading-tight lg:text-7xl`}

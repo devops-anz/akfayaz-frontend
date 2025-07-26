@@ -53,7 +53,7 @@ const contactMethods = [
 const Contact = () => {
   return (
     <div id='contact-me' className='bg-[#d9e1c5] px-5 py-20 md:mx-10 md:px-0'>
-      <div className='container-custom mx-auto px-4'>
+      <div className='container-custom mx-auto px-4 md:px-0'>
         {/* Header */}
         <div className='mb-16'>
           <h2 className={`${poppins.className} mb-4 text-4xl font-bold md:text-6xl`}>Hire Me for Your Project</h2>
@@ -61,7 +61,7 @@ const Contact = () => {
           <hr className='mt-6 border border-solid border-gray-500/50' />
         </div>
         {/* Contact Methods */}
-        <div className='grid  grid-cols-1 gap-8 md:grid-cols-3'>
+        <div className='grid  grid-cols-1 gap-4 md:grid-cols-3'>
           {contactMethods.map((method, index) => (
             <a
               href={
@@ -75,7 +75,10 @@ const Contact = () => {
               }
               target='_blank'
               key={index}
-              className='flex flex-col rounded-md border-2 border-solid border-gray-500/50 px-6 py-4 transition-all duration-300 ease-in-out hover:cursor-pointer hover:shadow-lg hover:shadow-gray-500/50'
+              className='flex flex-col rounded-md border-2 border-solid border-gray-500/50 py-6 px-6 transition-all duration-300 ease-in-out 
+
+
+              '
             >
               {/* Icon Circle */}
               <div className='mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white'>{method.icon}</div>
@@ -85,7 +88,9 @@ const Contact = () => {
 
               {/* Value */}
               <div
-                className={`text-2xl font-[700] text-gray-900 hover:underline ${method.title === 'FIND ME' || method.title === 'WRITE ME' ? 'text-[17px] sm:text-[22px]' : ''}`}
+                className={`text-2xl font-[700] text-gray-900 ${method.title === 'FIND ME' || method.title === 'WRITE ME' ? 'text-[17px] sm:text-[22px]' : ''}
+                relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full
+                `}
               >
                 {method.value}
               </div>
