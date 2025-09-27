@@ -54,18 +54,18 @@ const data = [
 ];
 
 
-const Services = () => {
+const Services = ({ serviceData }: { serviceData: any }) => {
   // const [sliderIndex, setSliderIndex] = useState(0);
 
   const PrevButton = (props: any) => (
     <button {...props} className='custom-prev-button'>
-      <IoIosArrowBack  size={37} />
+      <IoIosArrowBack size={37} />
     </button>
   );
 
   const NextButton = (props: any) => (
     <button {...props} className='custom-next-button'>
-      <IoIosArrowForward  size={37} />
+      <IoIosArrowForward size={37} />
     </button>
   );
 
@@ -164,9 +164,9 @@ const Services = () => {
             <div key={index} className="">
               <div className="flex flex-col items-center">
                 <div className="relative w-[60px] h-[60px] md:w-[80px] md:h-[80px] mb-4">
-                  <Image 
-                    src={item.image} 
-                    alt={item.title} 
+                  <Image
+                    src={item.image}
+                    alt={item.title}
                     fill
                     style={{ objectFit: 'cover', objectPosition: 'center' }}
                     className="rounded-lg mx-auto"

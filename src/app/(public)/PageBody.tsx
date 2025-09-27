@@ -1,5 +1,5 @@
 'use client';
-import { Fragment  } from 'react';
+import { Fragment } from 'react';
 import About from 'view/page/home/about';
 import Contact from 'view/page/home/contact';
 import FeaturedProjects from 'view/page/home/featuredProjects';
@@ -13,22 +13,22 @@ import TopServices from 'view/page/home/topServices';
 import ScrollTop from 'view/ui/shared-component/scrollTop';
 // import Blog from 'view/page/home/blogs';
 
-const PageBody = () => {
+const PageBody = ({ heroData, serviceData }: { heroData: any, serviceData: any }) => {
 
 
-  
+
   return (
     <Fragment>
-      <Hero />
-      <Services />
+      <Hero heroData={heroData?.data} />
+      <Services serviceData={serviceData?.data} />
       <About />
       <TopServices />
-       <Timeline />
-       <Quote />
+      <Timeline />
+      <Quote />
       <FeaturedProjects />
-       <Testimonials /> 
-       {/* <RecentWorks />  */}
-       {/* <Blog /> */}
+      <Testimonials />
+      {/* <RecentWorks />  */}
+      {/* <Blog /> */}
       <Contact />
       <ScrollTop />
     </Fragment>
