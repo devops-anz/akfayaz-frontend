@@ -5,10 +5,15 @@ import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 import BlogCard from "view/ui/shared-component/component/BlogCard";
 import { useRouter, useSearchParams } from "next/navigation";
+import { BlogSearchParams, GetBlogsResponse, MappedBlogData } from "@/types/blogs";
+
+interface BlogsPageProps {
+  blogsData?: GetBlogsResponse;
+  searchParams?: BlogSearchParams;
+}
 
 
-
-const BlogsPage = ({ blogsData, searchParams }: any) => {
+const BlogsPage = ({ blogsData, searchParams }: BlogsPageProps) => {
   const router = useRouter();
   const urlSearchParams = useSearchParams();
   const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -17,7 +22,7 @@ const BlogsPage = ({ blogsData, searchParams }: any) => {
 
   // Extract and map API data with fallback to static data
   const apiBlogs = blogsData?.data?.data || [];
-  const mappedApiBlogs = apiBlogs.map((blog: any) => ({
+  const mappedApiBlogs: MappedBlogData[] = apiBlogs.map((blog) => ({
     id: blog.id,
     slug: blog.slug,
     title: blog.title,
@@ -50,7 +55,7 @@ const BlogsPage = ({ blogsData, searchParams }: any) => {
   const [noBlogsFound, setNoBlogsFound] = useState(false);
 
   // Function to update URL parameters
-  const updateURL = (newParams: Partial<any>) => {
+  const updateURL = (newParams: Partial<BlogSearchParams>) => {
     const params = new URLSearchParams(urlSearchParams.toString());
 
     Object.entries(newParams).forEach(([key, value]) => {
@@ -276,7 +281,7 @@ const BlogsPage = ({ blogsData, searchParams }: any) => {
                       </p>
                     </div>
                     <div className="space-y-3">
-                      {[...new Set(allBlogs.map((blog: any) => blog.category))].map(
+                      {Array.from(new Set(allBlogs.map((blog) => blog.category))).map(
                         (category) => {
                           const count = allBlogs.filter(
                             (blog: any) => blog.category === category
@@ -305,7 +310,7 @@ const BlogsPage = ({ blogsData, searchParams }: any) => {
                         </p>
                         <div className="flex flex-wrap items-center gap-2">
                           {[
-                            ...new Set(allBlogs.map((blog: any) => blog.tags).flat()),
+                            ...Array.from(new Set(allBlogs.map((blog) => blog.tags).flat())),
                           ].map((tag) => (
                             <p
                               onClick={() => handleTag(tag)}

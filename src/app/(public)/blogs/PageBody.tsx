@@ -1,7 +1,13 @@
+import { BlogSearchParams, GetBlogsResponse } from '@/types/blogs';
 import React from 'react'
 import BlogsPage from 'view/page/blogs'
 
-const PageBody = ({ blogsData, searchParams }: any) => {
+interface PageBodyProps {
+  blogsData: GetBlogsResponse;
+  searchParams: BlogSearchParams;
+}
+
+const PageBody = ({ blogsData, searchParams }: PageBodyProps) => {
   return (
     <div>
 
