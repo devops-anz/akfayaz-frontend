@@ -13,23 +13,43 @@ import TopServices from 'view/page/home/topServices';
 import ScrollTop from 'view/ui/shared-component/scrollTop';
 // import Blog from 'view/page/home/blogs';
 
-const PageBody = ({ heroData, serviceData }: { heroData: any, serviceData: any }) => {
+interface PageBodyProps {
+  heroData: any;
+  serviceData: any;
+  aboutData: any;
+  topServicesData: any;
+  timelineData: any;
+  quoteData: any;
+  featuredProjectsData: any;
+  testimonialsData: any;
+  contactData: any;
+}
 
-
+const PageBody = ({ 
+  heroData, 
+  serviceData, 
+  aboutData, 
+  topServicesData, 
+  timelineData, 
+  quoteData, 
+  featuredProjectsData, 
+  testimonialsData, 
+  contactData 
+}: PageBodyProps) => {
 
   return (
     <Fragment>
       <Hero heroData={heroData?.data} />
       <Services serviceData={serviceData?.data} />
-      <About />
-      <TopServices />
-      <Timeline />
-      <Quote />
-      <FeaturedProjects />
-      <Testimonials />
+      <About aboutData={aboutData?.data} />
+      <TopServices topServicesData={topServicesData?.data} />
+      <Timeline timelineData={timelineData?.data} />
+      <Quote quoteData={quoteData?.data} />
+      <FeaturedProjects featuredProjectsData={featuredProjectsData?.data} />
+      <Testimonials testimonialsData={testimonialsData?.data} />
       {/* <RecentWorks />  */}
       {/* <Blog /> */}
-      <Contact />
+      <Contact contactData={contactData?.data} />
       <ScrollTop />
     </Fragment>
   );

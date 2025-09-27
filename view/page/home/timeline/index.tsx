@@ -26,7 +26,7 @@ const TimelineItem = ({
       </div>
 
       {/* Content */}
-      
+
       <div className='w-full  pb-12'>
         <p className='mb-1 font-medium  text-gray-700'>{date}</p>
         <h3 className='mb-1 text-3xl font-medium text-black'>{title}</h3>
@@ -36,89 +36,32 @@ const TimelineItem = ({
   );
 };
 
-const Timeline = () => {
-  const timelineData = [
-    {
-      date: '2023',
-      title: 'Featured in The Australian Business Journal',
-      description: 'Recognized for leadership in circular tech and sustainability-driven business growth.'
-    },
-    {
-      date: '2023',
-      title: 'Highlighted in Auspreneur',
-      description: 'Showcased as an inspiring entrepreneur driving innovation in the refurbished tech industry.'
-    },
-    {
-      date: '2022',
-      title: 'Recognized for Excellence in Retail & Customer Service',
-      description: 'Won the Hume City Council Business Award for outstanding achievements in retail and customer.'
-    },
-    {
-      date: '2022',
-      title: ' Began Role as Head of Sales at Alchemy Global Solutions',
-      description:
-        'Initiated strategic sales approaches that generated significant revenue and expanded global market presence.'
-    },
-    {
-      date: '2021',
-      title: 'Awarded for Startup Innovation',
-      description: 'Received the Hume City Council Business Award for excellence in the startup sector.'
-    },
-    {
-      date: '2021',
-      title: 'Interviewed by Tech Bullion',
-      description: 'Shared insights on reducing e-waste and building a sustainable tech ecosystem.'
-    },
-    {
-      date: '2021',
-      title: 'Graduated from La Trobe University, Melbourne',
-      description:
-        'Earned a Bachelor of IT, laying the foundation for a career in tech, entrepreneurship, and sustainability..'
-    },
-    {
-      date: '2020',
-      title: 'Entrepreneurial Journey as Business Owner at Budget Phones Australia',
-      description: 'Developed a successful retail business with personal branding and operational excellence.'
-    },
-    {
-      date: '2020',
-      title: 'Welfare Officer at La Trobe Student Union ',
-      description: 'Actively contributed to student well-being through leadership and support initiatives.'
-    },
-    {
-      date: '2019',
-      title: 'Recognized as Best International Host at La Trobe University',
-      description:
-        'Acknowledged for exceptional leadership, community engagement, and support for international students.'
-    },
-    {
-      date: '2015',
-      title: 'Sales Leadership at KM Assets Pty. LTD',
-      description: 'Demonstrated progressive leadership and sales expertise in a family business setting.'
-    }
-  ];
+const Timeline = ({ timelineData }: { timelineData: any }) => {
+  
+  console.log("timelineData", timelineData)
+
 
   return (
     <div className='container-custom mx-auto '>
-          <div className='mb-10  md:pt-10 px-4 sm:mb-16 sm:px-6 md:px-0 md:mb-12'>
-            <p className={`font-[700] text-black ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
-              Career Highlights
-            </p>
-            <p className='mb-3 pt-6 sm:mb-4 sm:pt-8 md:mb-5 md:pt-10'>
-              A brief journey of educational and professional career.
-            </p>
-            <hr className='border border-solid border-gray-200' />
-          </div>
+      <div className='mb-10  md:pt-10 px-4 sm:mb-16 sm:px-6 md:px-0 md:mb-12'>
+        <p className={`font-[700] text-black ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
+          {timelineData?.title}
+        </p>
+        <p className='mb-3 pt-6 sm:mb-4 sm:pt-8 md:mb-5 md:pt-10'>
+          {timelineData?.description}
+        </p>
+        <hr className='border border-solid border-gray-200' />
+      </div>
 
       <div className='pl-4 md:px-0'>
-        {timelineData.map((item, index) => (
+        {timelineData.career_highlights.map((item: any, index: number) => (
           <TimelineItem
             key={index}
             index={index}
-            date={item.date}
+            date={item.year}
             title={item.title}
             description={item.description}
-            isLast={index === timelineData.length - 1}
+            isLast={index === timelineData.career_highlights.length - 1}
           />
         ))}
       </div>

@@ -61,13 +61,18 @@ export default function TopServicesModal({
               <div className='p-4 sm:p-6'>
                 <div className='flex flex-col gap-3 sm:gap-4'>
                   <p className='text-center text-lg font-bold text-black sm:text-xl md:text-3xl lg:text-4xl'>
-                    {selectedService.title}
+                    {selectedService?.name}
                   </p>
 
                   <div className='space-y-4 sm:space-y-8'>
-                    <p className='text-sm sm:text-base'>{selectedService.data.paragraph1}</p>
+                    <div
+                      className="prose max-w-none [&>h2]:pt-3 [&>h3]:pt-3 [&>h3]:pb-3 [&>h2]:text-2xl [&>h3]:text-xl [&>p]:mb-2 last:[&>p]:mb-0"
+                      dangerouslySetInnerHTML={{ __html: selectedService?.description }}
+                    />
 
-                    <div className='grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 sm:gap-4'>
+                    {/* <p className='text-sm sm:text-base'>{selectedService?.description}</p> */}
+
+                    {/* <div className='grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 sm:gap-4'>
                       {selectedService.data.points.map((point: string, index: number) => (
                         <div key={point} className='flex items-center space-x-2'>
                           {index === 0 ? (
@@ -91,7 +96,7 @@ export default function TopServicesModal({
                       ))}
                     </div>
 
-                    <p className='text-sm sm:text-base'>{selectedService.data.paragraph2}</p>
+                    <p className='text-sm sm:text-base'>{selectedService.data.paragraph2}</p> */}
                   </div>
                 </div>
               </div>

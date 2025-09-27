@@ -626,14 +626,147 @@ export const getHomePageHeroData = {
 
 export const getHomePageAboutData = {
   success: true,
-  data: null,
-  message: 'About section is not active'
+  data: {
+    id: 1,
+    title: 'A Few Words About Me',
+    post_title: 'Sales & Business Growth Driven by Innovation —',
+    description_1:
+      "I'm a dynamic sales leader and business strategist with a proven track record in driving revenue growth and operational success across multiple industries.",
+    good_at: ['Sales Strategy', 'Business Development', 'Team Leadership', 'Client Management', 'Negotiation'],
+    description_2:
+      "I specialize in scaling businesses, optimizing sales processes, and implementing data-driven strategies to enhance revenue and market presence. With expertise in leading high-performing teams and executing innovative solutions, I drive sustainable business success. If you're looking for growth, let's connect and discuss new opportunities!",
+    button_text_1: 'Portfolio',
+    button_url_1: null,
+    button_1_detailed_text:
+      'With over a decade of experience driving business growth and empowering individuals, I am a dynamic leader, consultant, and mentor. As the Head of Sales at a leading multinational corporation, I have consistently delivered outstanding results by leading high-performing teams, implementing innovative strategies, and building strong client relationships across diverse markets.\r\n\r\nBeyond the corporate world, I am an accomplished business consultant, specializing in scaling startups, optimizing operations, and driving sustainable growth for businesses of all sizes. Recognized as an award-winning entrepreneur, I have firsthand experience navigating the challenges and triumphs of building successful ventures.\r\n\r\nAs a certified life coach, I am passionate about helping individuals unlock their potential and achieve personal and professional fulfillment. Whether guiding a business to its next milestone or coaching someone through a life transition, I bring a unique blend of strategic insight, empathy, and actionable advice. Driven by a commitment to excellence and a belief in the power of collaboration, I am dedicated to making a lasting impact on businesses and lives alike.',
+    button_text_2: 'Download Cv',
+    button_url_2: null,
+    image: 'https://akfayaz.anzbizconsultants.com.au/storage/about/images/lpCWUlLyFa5hxAAbzY3LXfMMLXuMqviWhk6X1MWV.png',
+    is_active: true,
+    created_at: '2025-09-27T06:37:56.000000Z',
+    updated_at: '2025-09-27T06:38:57.000000Z'
+  },
+  message: 'About section retrieved successfully'
 };
 
 export const getHomePageTopServicesData = {
-  data: null,
+  data: {
+    id: 1,
+    pre_title: 'Our Services',
+    title: 'Top Services',
+    subtitle: 'We offer a range of top services to help you achieve your business goals.',
+    button_text: 'View All Services',
+    button_link: '/services',
+    is_active: 1,
+    created_at: '2025-09-27T06:25:39.000000Z',
+    updated_at: '2025-09-27T06:25:39.000000Z',
+    top_services: [
+      {
+        id: 1,
+        top_service_main_id: 1,
+        name: 'Sales',
+        short_description: 'Strategic Sales Solutions to Boost Revenue and Client Engagement',
+        description:
+          "\u003Cp\u003EDriving revenue requires more than ambition—it needs a structured sales system built for consistency and scale. I help businesses design tailored sales strategies that increase close rates, boost team performance, and improve customer relationships.\u003C/p\u003E\u003Cul\u003E\u003Cli\u003EI'm good at:\u003C/li\u003E\u003Cli\u003ESales Process Development\u003C/li\u003E\u003Cli\u003EHigh-Ticket Deal Closing\u003C/li\u003E\u003Cli\u003ECRM &amp; Funnel Optimization\u003C/li\u003E\u003Cli\u003ETeam Coaching &amp; Enablement\u003C/li\u003E\u003Cli\u003EClient Retention Strategy\u003C/li\u003E\u003C/ul\u003E\u003Cp\u003EBy aligning your goals with proven tactics, I build systems that shorten your sales cycle and deliver measurable outcomes. Whether you’re building a team or revamping your pitch, I provide the tools and insights to drive growth.\u003C/p\u003E",
+        button_text: 'Learn More',
+        button_url: '#',
+        image: null,
+        order: 1,
+        is_active: true,
+        deleted_at: null,
+        created_at: '2025-09-27T06:39:17.000000Z',
+        updated_at: '2025-09-27T07:23:31.000000Z',
+        image_url: 'https://akfayaz.anzbizconsultants.com.au/storage'
+      },
+      {
+        id: 2,
+        top_service_main_id: 1,
+        name: 'Marketing',
+        short_description: 'Innovative Marketing Strategies for Brand Growth and Visibility',
+        description:
+          "\u003Cp\u003EEffective marketing builds connection, not just visibility. I work with businesses to develop creative, data-driven campaigns that attract, engage, and convert the right audiences. From strategy to execution, I bring clarity to your brand voice.\u003C/p\u003E\u003Cul\u003E\u003Cli\u003EI'm good at:\u003C/li\u003E\u003Cli\u003EBrand Positioning &amp; Messaging\u003C/li\u003E\u003Cli\u003ELead Generation Campaigns\u003C/li\u003E\u003Cli\u003EFunnel Strategy &amp; CRO\u003C/li\u003E\u003Cli\u003ESEO &amp; Content Planning\u003C/li\u003E\u003Cli\u003ESocial &amp; Paid Advertising\u003C/li\u003E\u003C/ul\u003E\u003Cp\u003EWhether you’re launching a new product or scaling your digital presence, I deliver marketing strategies that build trust and create demand that lasts.\u003C/p\u003E",
+        button_text: 'Learn More',
+        button_url: '#',
+        image: null,
+        order: 2,
+        is_active: true,
+        deleted_at: null,
+        created_at: '2025-09-27T06:39:17.000000Z',
+        updated_at: '2025-09-27T07:23:40.000000Z',
+        image_url: 'https://akfayaz.anzbizconsultants.com.au/storage'
+      },
+      {
+        id: 3,
+        top_service_main_id: 1,
+        name: 'Procurement',
+        short_description: 'Efficient Procurement Processes for Cost-Effective Resource Management',
+        description:
+          "\u003Cp\u003EProcurement plays a crucial role in keeping operations lean and resources well-managed. I support businesses in building procurement systems that ensure timely sourcing, cost savings, and better supplier relationships.\u003C/p\u003E\u003Col\u003E\u003Cli\u003EI'm good at:\u003C/li\u003E\u003Cli\u003EStrategic Sourcing &amp; Bidding\u003C/li\u003E\u003Cli\u003EVendor Relationship Management\u003C/li\u003E\u003Cli\u003ECost Optimization &amp; Forecasting\u003C/li\u003E\u003Cli\u003ERisk &amp; Contract Compliance\u003C/li\u003E\u003Cli\u003EInventory &amp; Supply Chain Planning\u003C/li\u003E\u003C/ol\u003E\u003Cp\u003EFrom supplier selection to end-to-end procurement transformation, I help businesses gain control, improve efficiency, and scale their operations with confidence.\u003C/p\u003E",
+        button_text: 'Learn More',
+        button_url: '#',
+        image: null,
+        order: 3,
+        is_active: true,
+        deleted_at: null,
+        created_at: '2025-09-27T06:39:17.000000Z',
+        updated_at: '2025-09-27T07:23:48.000000Z',
+        image_url: 'https://akfayaz.anzbizconsultants.com.au/storage'
+      },
+      {
+        id: 4,
+        top_service_main_id: 1,
+        name: 'Acquisition',
+        short_description: 'Smart Acquisition Strategies for Seamless Business Expansion',
+        description:
+          "\u003Cp\u003EGrowth through acquisition can accelerate your business—if done with the right structure. I support entrepreneurs and teams through every phase of the acquisition journey, from discovery to integration.\u003C/p\u003E\u003Col\u003E\u003Cli\u003EI'm good at:\u003C/li\u003E\u003Cli\u003ETarget Research &amp; Evaluation\u003C/li\u003E\u003Cli\u003EDeal Structuring &amp; Negotiation\u003C/li\u003E\u003Cli\u003EDue Diligence Frameworks\u003C/li\u003E\u003Cli\u003EIntegration &amp; Change Management\u003C/li\u003E\u003Cli\u003EStakeholder &amp; Investor Alignment\u003C/li\u003E\u003C/ol\u003E\u003Cp\u003EWhether you’re acquiring to expand capabilities or consolidate your market position, I’ll help you make informed decisions and execute deals that drive long-term value.\u003C/p\u003E",
+        button_text: 'Learn More',
+        button_url: '#',
+        image: null,
+        order: 4,
+        is_active: true,
+        deleted_at: null,
+        created_at: '2025-09-27T06:39:17.000000Z',
+        updated_at: '2025-09-27T07:23:57.000000Z',
+        image_url: 'https://akfayaz.anzbizconsultants.com.au/storage'
+      },
+      {
+        id: 5,
+        top_service_main_id: 1,
+        name: 'Consultancy',
+        short_description: 'Strategic Sales Solutions to Boost Revenue and Client Engagement',
+        description:
+          "\u003Cp\u003EGrowing a business comes with challenges—scaling teams, building systems, and navigating market shifts. I provide tailored consulting to help businesses gain clarity, improve efficiency, and unlock their next stage of growth.\u003C/p\u003E\u003Col\u003E\u003Cli\u003EI'm good at:\u003C/li\u003E\u003Cli\u003EBusiness Model Planning\u003C/li\u003E\u003Cli\u003ESystems &amp; Process Scaling\u003C/li\u003E\u003Cli\u003ETeam Development &amp; Culture\u003C/li\u003E\u003Cli\u003EPerformance Metrics &amp; Audits\u003C/li\u003E\u003Cli\u003EStrategic Execution Support\u003C/li\u003E\u003C/ol\u003E\u003Cp\u003EWith a hands-on, collaborative approach, I guide teams to identify gaps, streamline operations, and build the infrastructure needed to grow with purpose and resilience.\u003C/p\u003E",
+        button_text: 'Learn More',
+        button_url: '#',
+        image: null,
+        order: 5,
+        is_active: true,
+        deleted_at: null,
+        created_at: '2025-09-27T06:39:17.000000Z',
+        updated_at: '2025-09-27T07:24:10.000000Z',
+        image_url: 'https://akfayaz.anzbizconsultants.com.au/storage'
+      },
+      {
+        id: 6,
+        top_service_main_id: 1,
+        name: 'Web Design',
+        short_description: 'Strategic Sales Solutions to Boost Revenue and Client Engagement',
+        description:
+          "\u003Cp\u003EYour website is often the first impression—and it needs to perform. I design digital experiences that reflect your brand, engage users, and convert traffic into action. Function meets form in every build.\u003C/p\u003E\u003Col\u003E\u003Cli\u003EI'm good at:\u003C/li\u003E\u003Cli\u003EUX/UI Strategy &amp; Layout\u003C/li\u003E\u003Cli\u003EWordPress, Shopify, Webflow\u003C/li\u003E\u003Cli\u003EMobile-First Development\u003C/li\u003E\u003Cli\u003EConversion-Focused Pages\u003C/li\u003E\u003Cli\u003ESEO &amp; Performance Optimization\u003C/li\u003E\u003C/ol\u003E\u003Cp\u003EFrom corporate sites to eCommerce builds, I create designs that are clean, scalable, and results-driven—so your online presence works as hard as you do.\u003C/p\u003E\u003Cp\u003E\u003Cbr\u003E&nbsp;\u003C/p\u003E",
+        button_text: 'Learn More',
+        button_url: '#',
+        image: null,
+        order: 6,
+        is_active: true,
+        deleted_at: null,
+        created_at: '2025-09-27T06:39:17.000000Z',
+        updated_at: '2025-09-27T07:24:28.000000Z',
+        image_url: 'https://akfayaz.anzbizconsultants.com.au/storage'
+      }
+    ]
+  },
   success: true,
-  message: 'Top services is not active'
+  message: 'Top services retrieved successfully'
 };
 
 export const getHomePageStatsCareerHighlightsData = {
@@ -706,16 +839,25 @@ export const getHomePageStatsCareerHighlightsData = {
     button_text: null,
     button_link: null,
     is_active: 1,
-    created_at: '2025-09-24T05:33:50.000000Z',
-    updated_at: '2025-09-24T07:28:44.000000Z'
+    created_at: '2025-09-27T06:42:35.000000Z',
+    updated_at: '2025-09-27T06:42:35.000000Z'
   },
   message: 'Career highlights retrieved successfully'
 };
 
 export const getHomePageFavoriteQuoteData = {
   success: true,
-  data: null,
-  message: 'Favorite quote is not active'
+  data: {
+    id: 1,
+    quote:
+      '"The cost of being different is highest when you’re young—when the system forces you to fit in. But as you grow, the world starts clapping for the unique ones, learning from them, stealing from them, and aspiring to be them"',
+    author: 'Steven Bartlette',
+    book_name: 'The Diary Of A CEO',
+    is_active: 1,
+    created_at: '2025-09-27T06:26:19.000000Z',
+    updated_at: '2025-09-27T06:26:19.000000Z'
+  },
+  message: 'Favorite quote retrieved successfully'
 };
 
 export const getHomePageFeaturedMagazinesData = {
@@ -800,8 +942,8 @@ export const getHomePageTestimonialsData = {
     button_text: 'View All Testimonials',
     button_link: '/testimonials',
     is_active: 1,
-    created_at: '2025-09-24T05:05:52.000000Z',
-    updated_at: '2025-09-24T07:19:36.000000Z',
+    created_at: '2025-09-27T06:25:39.000000Z',
+    updated_at: '2025-09-27T06:25:39.000000Z',
     testimonials: [
       {
         id: 1,
@@ -809,14 +951,15 @@ export const getHomePageTestimonialsData = {
         name: 'Jessica Gordons',
         position: 'BUSINESS EXPANSION STRATEGY, USA, 2024.',
         company: null,
-        image: 'images/testimonials/woman-1.png',
+        image: 'images/testimonials/ZmlULgELjjwRMEK1g9ozl7w3pYYGPdJAm4sHWG4I.png',
         testimonial:
           "Fayaz's strategic insights transformed our sales approach, driving remarkable revenue growth. His has expertise in business development and market expansion!",
         order: 1,
         is_active: 1,
-        created_at: '2025-09-24T05:23:35.000000Z',
-        updated_at: '2025-09-24T07:19:45.000000Z',
-        image_url: 'https://akfayaz.anzbizconsultants.com.au/storage/images/testimonials/woman-1.png'
+        created_at: '2025-09-27T06:26:24.000000Z',
+        updated_at: '2025-09-27T06:58:54.000000Z',
+        image_url:
+          'https://akfayaz.anzbizconsultants.com.au/storage/images/testimonials/ZmlULgELjjwRMEK1g9ozl7w3pYYGPdJAm4sHWG4I.png'
       },
       {
         id: 2,
@@ -824,14 +967,31 @@ export const getHomePageTestimonialsData = {
         name: 'Douglas Fenders',
         position: 'SALES PROCESS OPTIMIZATION, USA, 2024.',
         company: null,
-        image: 'images/testimonials/man.png',
+        image: 'images/testimonials/qQanlVAocrTNJQmXzWyEnZ2F05nSu0hoTjQgfWPt.png',
         testimonial:
           'Working with Fayaz was a game-changer! He streamlined our sales process, improved client engagement, and helped us scale efficiently with data-driven strategies.',
         order: 2,
         is_active: 1,
-        created_at: '2025-09-24T05:23:35.000000Z',
-        updated_at: '2025-09-24T07:19:46.000000Z',
-        image_url: 'https://akfayaz.anzbizconsultants.com.au/storage/images/testimonials/man.png'
+        created_at: '2025-09-27T06:26:24.000000Z',
+        updated_at: '2025-09-27T06:59:07.000000Z',
+        image_url:
+          'https://akfayaz.anzbizconsultants.com.au/storage/images/testimonials/qQanlVAocrTNJQmXzWyEnZ2F05nSu0hoTjQgfWPt.png'
+      },
+      {
+        id: 3,
+        top_service_main_id: 1,
+        name: 'Sophia Reynolds',
+        position: 'TEAM LEADERSHIP TRAINING, UK, 2024.',
+        company: null,
+        image: 'images/testimonials/HB6zkq5zSLMcbjpCrGpnrovodxEIcGqOPe92DumR.png',
+        testimonial:
+          'Fayaz helped us build a high-performing sales team with expert leadership training. His guidance empowered our team and boosted productivity significantly.',
+        order: 3,
+        is_active: 1,
+        created_at: '2025-09-27T06:26:24.000000Z',
+        updated_at: '2025-09-27T06:59:25.000000Z',
+        image_url:
+          'https://akfayaz.anzbizconsultants.com.au/storage/images/testimonials/HB6zkq5zSLMcbjpCrGpnrovodxEIcGqOPe92DumR.png'
       },
       {
         id: 4,
@@ -839,14 +999,15 @@ export const getHomePageTestimonialsData = {
         name: 'Michael Stevens',
         position: 'NEGOTIATION & CLIENT MANAGEMENT, CANADA, 2024.',
         company: null,
-        image: 'images/testimonials/boy.png',
+        image: 'images/testimonials/Qn4B8CdzyZBt5sFeB8sXXwQzIRiwG3aopphzJHQO.png',
         testimonial:
           "Fayaz's negotiation skills and client management strategies gave us a competitive edge. His methods strengthened our relationships and increased our deal closure rate!",
         order: 4,
         is_active: 1,
-        created_at: '2025-09-24T05:23:35.000000Z',
-        updated_at: '2025-09-24T07:19:49.000000Z',
-        image_url: 'https://akfayaz.anzbizconsultants.com.au/storage/images/testimonials/boy.png'
+        created_at: '2025-09-27T06:26:24.000000Z',
+        updated_at: '2025-09-27T06:59:57.000000Z',
+        image_url:
+          'https://akfayaz.anzbizconsultants.com.au/storage/images/testimonials/Qn4B8CdzyZBt5sFeB8sXXwQzIRiwG3aopphzJHQO.png'
       }
     ]
   },
@@ -855,9 +1016,33 @@ export const getHomePageTestimonialsData = {
 };
 
 export const getHomePageContactData = {
-  data: null,
+  data: {
+    id: 1,
+    title: 'Hire Me for Your Project',
+    subtitle: 'Contact me in any convenient way to discuss the details.',
+    links: [
+      {
+        title: 'FIND ME',
+        icon: 'icons/linkedin.svg',
+        url: 'https://www.linkedin.com/in/ahsanulkfayaz'
+      },
+      {
+        title: 'Write To Me',
+        icon: 'icons/email.svg',
+        url: 'fayaz@akmassets.com.au'
+      },
+      {
+        title: 'Request a Meeting',
+        icon: 'icons/phone.svg',
+        url: 'tel:+923001234567'
+      }
+    ],
+    is_active: 1,
+    created_at: '2025-09-24T06:36:21.000000Z',
+    updated_at: '2025-09-27T06:22:31.000000Z'
+  },
   success: true,
-  message: 'Contact is not active'
+  message: 'Contact details retrieved successfully'
 };
 
 export const getHomePageServicesData = {
@@ -865,17 +1050,129 @@ export const getHomePageServicesData = {
   data: [
     {
       id: 1,
-      title: 'dadsf',
-      description: 'fasdf',
-      image: 'services/8T9xc7wXDxB4a8CczzTCUTRB2dSxjMJpNBacJdh8.png',
+      title: 'Consultancy',
+      description: 'I help businesses grow, streamline operations, and unlock their full potential.',
+      image: 'services/f40A1wQLGxBz5nSk0Ck7e5CbF6UuMvuZ0kbpKY0j.png',
       order: 1,
       is_active: 1,
       link: null,
       button_text: null,
-      created_at: '2025-09-24T07:24:06.000000Z',
-      updated_at: '2025-09-24T07:25:26.000000Z',
+      created_at: '2025-09-27T06:32:37.000000Z',
+      updated_at: '2025-09-27T06:32:37.000000Z',
       image_url:
-        'https://akfayaz.anzbizconsultants.com.au/storage/services/8T9xc7wXDxB4a8CczzTCUTRB2dSxjMJpNBacJdh8.png'
+        'https://akfayaz.anzbizconsultants.com.au/storage/services/f40A1wQLGxBz5nSk0Ck7e5CbF6UuMvuZ0kbpKY0j.png'
+    },
+    {
+      id: 2,
+      title: 'Sales',
+      description: 'I craft winning sales strategies that drive revenue and build lasting client relationships',
+      image: 'services/YCiiUJa8a05jxwACD3MptWFgFinh4ht4RXRLBnsS.png',
+      order: 2,
+      is_active: 1,
+      link: null,
+      button_text: null,
+      created_at: '2025-09-27T06:33:03.000000Z',
+      updated_at: '2025-09-27T06:33:03.000000Z',
+      image_url:
+        'https://akfayaz.anzbizconsultants.com.au/storage/services/YCiiUJa8a05jxwACD3MptWFgFinh4ht4RXRLBnsS.png'
+    },
+    {
+      id: 3,
+      title: 'Marketing',
+      description: 'I create innovative marketing solutions that amplify brand visibility and engagement.',
+      image: 'services/VMx0joeEg7GxgiEfhSC9TNNlFFXLwqX3VanwxM6T.png',
+      order: 3,
+      is_active: 1,
+      link: null,
+      button_text: null,
+      created_at: '2025-09-27T06:33:24.000000Z',
+      updated_at: '2025-09-27T06:33:24.000000Z',
+      image_url:
+        'https://akfayaz.anzbizconsultants.com.au/storage/services/VMx0joeEg7GxgiEfhSC9TNNlFFXLwqX3VanwxM6T.png'
+    },
+    {
+      id: 4,
+      title: 'Procurement',
+      description: 'I optimize procurement processes to ensure cost-effective and efficient resource management.',
+      image: 'services/DqFmwXznXjAfOo7MWWGedTGHCbV93kV8orMFB0n1.png',
+      order: 4,
+      is_active: 1,
+      link: null,
+      button_text: null,
+      created_at: '2025-09-27T06:33:59.000000Z',
+      updated_at: '2025-09-27T06:33:59.000000Z',
+      image_url:
+        'https://akfayaz.anzbizconsultants.com.au/storage/services/DqFmwXznXjAfOo7MWWGedTGHCbV93kV8orMFB0n1.png'
+    },
+    {
+      id: 5,
+      title: 'Life Coaching',
+      description: 'I empower individuals to overcome challenges, achieve goals, and unlock their best selves.',
+      image: 'services/JsWIuVYvh4BerxJ3meVNRNWcWngOekkbBF2x48D2.png',
+      order: 5,
+      is_active: 1,
+      link: null,
+      button_text: null,
+      created_at: '2025-09-27T06:34:42.000000Z',
+      updated_at: '2025-09-27T06:34:42.000000Z',
+      image_url:
+        'https://akfayaz.anzbizconsultants.com.au/storage/services/JsWIuVYvh4BerxJ3meVNRNWcWngOekkbBF2x48D2.png'
+    },
+    {
+      id: 7,
+      title: 'Startup Mentorship',
+      description: 'I guide startups from idea to execution, helping them scale and succeed.',
+      image: 'services/CTwO8aJ5kHNJ3HE0UZG68ZWE26nc17FhAQlTn4wZ.png',
+      order: 6,
+      is_active: 1,
+      link: null,
+      button_text: null,
+      created_at: '2025-09-27T06:36:32.000000Z',
+      updated_at: '2025-09-27T06:36:32.000000Z',
+      image_url:
+        'https://akfayaz.anzbizconsultants.com.au/storage/services/CTwO8aJ5kHNJ3HE0UZG68ZWE26nc17FhAQlTn4wZ.png'
+    },
+    {
+      id: 8,
+      title: 'Financial Consulting',
+      description: 'I provide expert financial strategies to drive growth, stability, and profitability.',
+      image: 'services/OimtUcXIWmGDu9XZyx6XFVJIiRKCBfTuUJwUV95Y.png',
+      order: 7,
+      is_active: 1,
+      link: null,
+      button_text: null,
+      created_at: '2025-09-27T06:36:56.000000Z',
+      updated_at: '2025-09-27T06:36:56.000000Z',
+      image_url:
+        'https://akfayaz.anzbizconsultants.com.au/storage/services/OimtUcXIWmGDu9XZyx6XFVJIiRKCBfTuUJwUV95Y.png'
+    },
+    {
+      id: 9,
+      title: 'Management Consulting',
+      description: 'I refine leadership, processes, and strategies to enhance business efficiency and success.',
+      image: 'services/kR2LrPQQe9fu64IMyeKl2Ddm6xN7Uk2LxnUzlwOm.png',
+      order: 8,
+      is_active: 1,
+      link: null,
+      button_text: null,
+      created_at: '2025-09-27T06:37:22.000000Z',
+      updated_at: '2025-09-27T06:37:22.000000Z',
+      image_url:
+        'https://akfayaz.anzbizconsultants.com.au/storage/services/kR2LrPQQe9fu64IMyeKl2Ddm6xN7Uk2LxnUzlwOm.png'
+    },
+    {
+      id: 10,
+      title: 'Web Designing',
+      description: 'I craft stunning, user-friendly websites that captivate audiences and elevate brands.',
+      image: 'services/dvZgOqorr6xmVwyg4eg6UelWZfg5zyEk6RMNIH4T.png',
+      order: 9,
+      is_active: 1,
+      link: null,
+      button_text: null,
+      created_at: '2025-09-27T06:37:44.000000Z',
+      updated_at: '2025-09-27T06:37:44.000000Z',
+      image_url:
+        'https://akfayaz.anzbizconsultants.com.au/storage/services/dvZgOqorr6xmVwyg4eg6UelWZfg5zyEk6RMNIH4T.png'
     }
   ]
 };

@@ -1,45 +1,10 @@
+import Image from 'next/image';
 import React from 'react';
 import { poppins } from 'styles/fonts';
 
-const projects = [
-  {
-    date: '14 / DEC,2023',
-    image: '/image/featured-projects/1.png',
-    title: '10 Questions With A Circular Tech Leader – Exclusive Interview With Ahsanul Karim Fayaz',
-    description:
-      'Driving innovation through circular technology, Ahsanul Karim Fayaz is redefining sustainability in the digital era.',
-    services: ['Pioneering Circular Tech Solutions', 'Bridging Innovation & Sustainability', 'Shaping a Sustainable Tech Future'],
-    link: 'https://theabj.com.au/2023/12/05/exclusive-interview-with-ahsanul-karim-fayaz-the-circular-tech-leaders-journey/#google_vignette'
-  },
-  {
-    date: '09 / JAN, 2023',
-    image: '/image/featured-projects/2.png',
-    title: '10 Young Entrepreneurs Making a Difference in 2023',
-    description:
-      'Founder of Budget Phones Australia at 22, now Head of Sales at Alchemy Global, driving global sustainability',
-    services: [
-      'Entrepreneur & Sustainability Advocate',
-      'Expert in High-Value Sales & Business Development',
-      'Passionate About Personal Growth & Innovation'
-    ],
-    link: 'https://auspreneur.com.au/the-10-young-entrepreneurs-making-a-difference-in-2023/'
-  },
-  {
-    date: '30 / JULY,2021',
-    image: '/image/featured-projects/3.png',
-    title: 'In the Spotlight: Ahsanul Karim Fayaz’s Journey from Startup Founder to a Global Sales Leader in the Circular Tech Industry',
-    description:
-      'From startup to global sales leader, Ahsanul Karim Fayaz is transforming tech industry with innovation and sustainability.',
-    services: [
-      'Strategic Growth & Market Expansion',
-      'Innovative Leadership in Circular Tech',
-      'Visionary Entrepreneurial Beginnings'
-    ],
-    link: 'https://techbullion.com/in-the-spotlight-ahsanul-karim-fayazs-journey-from-startup-founder-to-a-global-sales-leader-in-the-circular-tech-industry/'
-  }
-];
+const FeaturedProjects = ({ featuredProjectsData }: { featuredProjectsData: any }) => {
+  console.log("featuredProjectsData", featuredProjectsData)
 
-const FeaturedProjects = () => {
   return (
     <div
       id='featured-magazine'
@@ -50,27 +15,29 @@ const FeaturedProjects = () => {
           <p
             className={`font-[700] text-black ${poppins.className} pt-12 text-3xl sm:pt-16 sm:text-4xl md:pt-24 md:text-5xl lg:text-6xl`}
           >
-            Featured Magazines
+            {featuredProjectsData?.title}
           </p>
           <p className='mb-3 pt-6 sm:mb-4 sm:pt-8 md:mb-5 md:pt-10'>
-            Some of the magazines the I have been featured in are below.
+            {featuredProjectsData?.description}
           </p>
           <hr className='border border-solid border-gray-400/50' />
         </div>
         <div className='grid grid-cols-1 gap-6 sm:gap-8'>
-          {projects.map((project, index) => (
+          {featuredProjectsData?.featured_magazines.map((project: any, index: number) => (
             <div
               key={index}
-              className={`${
-                index == 1 ? 'lg:flex-row-reverse' : ''
-              } group flex flex-col overflow-hidden bg-white md:flex-row`}
+              className={`${index == 1 ? 'lg:flex-row-reverse' : ''
+                } group flex flex-col overflow-hidden bg-white md:flex-row`}
             >
               {/* Image Container */}
               <div className='relative h-[300px] w-full overflow-hidden sm:h-[350px] md:h-[430px] lg:w-1/2'>
-                <img
-                  src={project.image}
-                  alt={project.title}
+                <Image
+                  width={500}
+                  height={500}
+                  src={project.image_url}
+                  alt={project.name}
                   className='h-full w-full object-cover transition-transform duration-500 group-hover:scale-105'
+                  loading='lazy'
                 />
               </div>
 
@@ -80,31 +47,19 @@ const FeaturedProjects = () => {
                 <div className='mb-3 text-sm text-gray-600 sm:mb-4'>{project.date}</div>
 
                 {/* Title */}
-                <h3 className='mb-3 text-xl font-semibold sm:mb-4 sm:text-2xl'>{project.title}</h3>
+                <h3 className='mb-3 text-xl font-semibold sm:mb-4 sm:text-2xl'>{project.name}</h3>
 
                 {/* Description */}
-                <p className='mb-4 text-gray-400 sm:mb-6'>{project.description}</p>
+                <div
+                  className="prose max-w-none [&>h2]:pt-3 [&>h3]:pt-3 [&>h3]:pb-3 [&>h2]:text-2xl [&>h3]:text-xl [&>p]:mb-2 last:[&>p]:mb-0"
+                  dangerouslySetInnerHTML={{ __html: project.description }}
+                />
+                {/* <p className='mb-4 text-gray-400 sm:mb-6'>{project.description}</p> */}
 
                 {/* Link */}
 
-                {/* Services List */}
-                <ul className='space-y-2'>
-                  {project.services.map((service, serviceIndex) => (
-                    <li
-                      key={serviceIndex}
-                      className='flex cursor-pointer items-center gap-3 text-gray-700 transition-colors hover:text-gray-900'
-                    >
-                      <span>
-                        <svg className='h-3 w-3 text-[#d9e1c5]' fill='currentColor' viewBox='0 0 24 24'>
-                          <circle cx='12' cy='12' r='6' />
-                        </svg>
-                      </span>
-                      {service}
-                    </li>
-                  ))}
-                </ul>
                 <div className='pt-5'>
-                  <a href={project.link} target='_blank' className='font-work relative flex items-center gap-1 bg-transparent px-0 py-1.5 text-base font-[500] text-black ease-in after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-[70px]' rel='noopener noreferrer'>
+                  <a href={project.button_url} target='_blank' className='font-work relative flex items-center gap-1 bg-transparent px-0 py-1.5 text-base font-[500] text-black ease-in after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-[70px]' rel='noopener noreferrer'>
                     Read More
                   </a>
                 </div>

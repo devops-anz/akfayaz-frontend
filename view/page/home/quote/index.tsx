@@ -1,7 +1,9 @@
 import React from 'react';
 import { poppins } from 'styles/fonts';
 
-const Quote = () => {
+const Quote = ({ quoteData }: { quoteData: any }) => {
+  console.log("quoteData", quoteData);
+
   return (
     <div className='mx-4 mb-10 bg-black py-20 sm:mx-6 sm:py-32 md:mx-10 md:py-36 lg:py-44'>
       <div className='container-custom px-4 sm:px-6 md:px-0'>
@@ -12,13 +14,10 @@ const Quote = () => {
               style={{ lineHeight: '180%' }}
               className={`${poppins.className} px-3  md:px-0 text-center text-xl font-bold text-white sm:text-2xl md:text-5xl lg:text-4xl`}
             >
-              "The cost of being different is highest when you’re young—when the system forces you to fit in. But as you
-              grow, the world starts clapping for the unique ones, learning from them, stealing from them, and aspiring
-              to be them"
+              "{quoteData.quote}"
             </p>
-
-            <p className=' px-3 pt-5 text-center text-[16px] text-gray-400 sm:text-[26px]'>Steven Bartlette</p>
-            <p className=' px-3 text-center text-[16px] text-gray-400 sm:text-[20px]'>The Diary Of A CEO</p>
+            <p className=' px-3 pt-5 text-center text-[16px] text-gray-400 sm:text-[26px]'>{quoteData.author}</p>
+            <p className=' px-3 text-center text-[16px] text-gray-400 sm:text-[20px]'>{quoteData.book_name}</p>
           </div>
         </div>
       </div>
