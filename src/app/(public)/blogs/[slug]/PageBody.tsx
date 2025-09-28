@@ -86,7 +86,7 @@ type Blogs = {
 
 const PageBody = ({ blog, relatedBlogs }: { blog: BlogData, relatedBlogs: Blogs[] }) => {
 
-    console.log("blog", blog, relatedBlogs)
+    // console.log("blog", blog, relatedBlogs)
     const blogImageUrl = blog.image
         ? `${process.env.NEXT_PUBLIC_STORAGE_URL}/${blog.image}`
         : "/image/blogs/default.jpg";

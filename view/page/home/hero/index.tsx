@@ -2,7 +2,7 @@ import { poppins } from '../../../../styles/fonts'; // Import poppins
 
 const Hero = ({ heroData }: { heroData: any }) => {
 
-  console.log(heroData, heroData)
+  // console.log(heroData, heroData)
 
   return (
     <div

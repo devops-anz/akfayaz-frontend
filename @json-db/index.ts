@@ -51,44 +51,44 @@ export const services = [
   }
 ];
 
-export const navbarData = {
-  companyName: {
-    title: 'Ahsanul Karim Fayaz',
-    link: '/'
-  },
-  navbarList: [
-    {
-      name: 'About Me',
-      link: '/#about-me'
-    },
-    {
-      name: 'Services',
-      link: '/#services'
-    },
-    {
-      name: 'Featured Magazines',
-      link: '/#featured-magazine'
-    },
-    {
-      name: 'Testimonials',
-      link: '/#testimonials'
-      // subMenu: [
-      //   {
-      //     name: 'Responsive Web & UI design',
-      //     link: '/services/web-ui-design'
-      //   },
-      // ]
-    },
-    {
-      name: 'Contact',
-      link: '/#contact-me'
-    }
-    // {
-    //   name: 'Blogs',
-    //   link: '/blogs'
-    // }
-  ]
-};
+// export const navbarData = {
+//   companyName: {
+//     title: 'Ahsanul Karim Fayaz',
+//     link: '/'
+//   },
+//   navbarList: [
+//     {
+//       name: 'About Me',
+//       link: '/#about-me'
+//     },
+//     {
+//       name: 'Services',
+//       link: '/#services'
+//     },
+//     {
+//       name: 'Featured Magazines',
+//       link: '/#featured-magazine'
+//     },
+//     {
+//       name: 'Testimonials',
+//       link: '/#testimonials'
+//       // subMenu: [
+//       //   {
+//       //     name: 'Responsive Web & UI design',
+//       //     link: '/services/web-ui-design'
+//       //   },
+//       // ]
+//     },
+//     {
+//       name: 'Contact',
+//       link: '/#contact-me'
+//     }
+//     // {
+//     //   name: 'Blogs',
+//     //   link: '/blogs'
+//     // }
+//   ]
+// };
 
 // export const projectPageData = [
 //   {
@@ -1175,4 +1175,85 @@ export const getHomePageServicesData = {
         'https://akfayaz.anzbizconsultants.com.au/storage/services/dvZgOqorr6xmVwyg4eg6UelWZfg5zyEk6RMNIH4T.png'
     }
   ]
+};
+
+export const navbarData = {
+  data: {
+    id: 1,
+    company_name: 'Ahsanul Karim Fayaz',
+    logo: 'logos/koufZmqcQprh4GgLUrMjdvx6UZsRDL9YsE3iq3ca.webp',
+    description: 'Entrepreneur | Business Consultant | Life Coach',
+    menu_links: [
+      {
+        title: 'About Me',
+        url: '/#about'
+      },
+      {
+        title: 'Services',
+        url: '/#services'
+      },
+      {
+        title: 'Featured Magazines',
+        url: '/#featured-magazine'
+      },
+      {
+        title: 'Testimonials',
+        url: '/#testimonials'
+      },
+      {
+        title: 'Contact',
+        url: '/#contact-me'
+      }
+    ],
+    footer_links: [
+      {
+        title: 'About Me',
+        url: '/#about'
+      },
+      {
+        title: 'Services',
+        url: '/#services'
+      },
+      {
+        title: 'Featured Magazines',
+        url: '/#featured-magazine'
+      }
+    ],
+    portfolio_links: [
+      {
+        title: 'ANZ Business Consultants',
+        url: 'https://anzbizconsultants.com.au/',
+        icon: 'icons/SAUXTkMPxG9jMFByxiBCoLGXOdAqn9uTxw1aIuIM.webp'
+      },
+      {
+        title: 'ANZ Web Studios',
+        url: 'https://www.anzwebstudios.com.au/',
+        icon: 'icons/QkRiGlp5yiJt2ViB07RJ0sRGEdAo5HW5GweQIBJu.webp'
+      },
+      {
+        title: 'AKM Assets',
+        url: 'https://www.akmassets.com.au/',
+        icon: 'icons/2tiTTdDNPKjBVPuMPDZWbqAmcTZMYoks4nb1Lyb1.webp'
+      },
+      {
+        title: 'ANZ Clearance House',
+        url: 'https://www.anzclearancehouse.com.au/',
+        icon: 'icons/TJ7lbdgGtDoEV15YYtKoPCkTpQWzmfTYS0LvZ6D9.webp'
+      },
+      {
+        title: 'LinkedIn',
+        url: 'https://www.linkedin.com/in/ahsanulkfayaz',
+        icon: 'icons/OxMjppNu6lHLZhfnb0lMMqaC492CcYCPKKc3PrVh.webp'
+      }
+    ],
+    button_text: 'Request a Meeting',
+    button_link: 'https://cal.com/a.fayaz',
+    email_text: 'Write to me',
+    email: 'fayaz@akmassets.com',
+    created_at: '2025-09-27T06:26:30.000000Z',
+    updated_at: '2025-09-27T07:22:39.000000Z',
+    logo_url: 'https://akfayaz.anzbizconsultants.com.au/storage/logos/koufZmqcQprh4GgLUrMjdvx6UZsRDL9YsE3iq3ca.webp'
+  },
+  success: true,
+  message: 'Header retrieved successfully'
 };

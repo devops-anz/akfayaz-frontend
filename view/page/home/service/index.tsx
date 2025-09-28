@@ -6,7 +6,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 
 const Services = ({ serviceData }: { serviceData: any }) => {
-  console.log('serviceData', serviceData)
+  // console.log('serviceData', serviceData)
   // const [sliderIndex, setSliderIndex] = useState(0);
 
   const PrevButton = (props: any) => (

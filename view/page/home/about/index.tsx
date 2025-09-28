@@ -24,7 +24,7 @@ interface AboutData {
 
 
 const About = ({ aboutData }: { aboutData: AboutData }) => {
-  console.log("aboutData", aboutData)
+  // console.log("aboutData", aboutData)
   const [openCV, setOpenCV] = useState(false);
   const [openPortfolio, setOpenPortfolio] = useState(false);
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { poppins } from 'styles/fonts';
 
 const FeaturedProjects = ({ featuredProjectsData }: { featuredProjectsData: any }) => {
-  console.log("featuredProjectsData", featuredProjectsData)
+  // console.log("featuredProjectsData", featuredProjectsData)
 
   return (
     <div

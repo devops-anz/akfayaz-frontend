@@ -20,8 +20,9 @@ export async function fetchHomePageHeroData() {
       next: { revalidate: 15 } // after testing it's should be 3600 (1 hours)
       // cache: "no-store",
     });
+    console.log('API', `${process.env.CMS_SERVER_URL}/api/hero`);
 
-    console.log('Hero API Response:', res.status, res.statusText);
+    // console.log('Hero API Response:', res.status, res.statusText);
 
     if (!res.ok) {
       console.log('Hero API failed, using fallback data');
@@ -50,7 +51,9 @@ export async function fetchHomePageServicesData() {
       // cache: "no-store",
     });
 
-    console.log('Services API Response:', res.status, res.statusText);
+    console.log('API', `${process.env.CMS_SERVER_URL}/api/services`);
+    
+    // console.log('Services API Response:', res.status, res.statusText);
 
     if (!res.ok) {
       console.log('Services API failed, using fallback data');
@@ -79,7 +82,9 @@ export async function fetchHomePageAboutData() {
       // cache: "no-store",
     });
 
-    console.log('About API Response:', res.status, res.statusText);
+    console.log('API', `${process.env.CMS_SERVER_URL}/api/about`);
+
+    // console.log('About API Response:', res.status, res.statusText);
 
     if (!res.ok) {
       console.log('About API failed, using fallback data');
@@ -107,11 +112,12 @@ export async function fetchHomePageTopServicesData() {
       next: { revalidate: 15 } // after testing it's should be 3600 (1 hours)
       // cache: "no-store",
     });
-
-    console.log('Services API Response:', res.status, res.statusText);
+    console.log('API', `${process.env.CMS_SERVER_URL}/api/top-services`);
+    
+    // console.log('Top Services API Response:', res.status, res.statusText);
 
     if (!res.ok) {
-      console.log('Services API failed, using fallback data');
+      console.log('Top Services API failed, using fallback data');
 
       return getHomePageTopServicesData;
     }
@@ -120,7 +126,7 @@ export async function fetchHomePageTopServicesData() {
 
     return data;
   } catch (error) {
-    console.error('Error fetching services data:', error);
+    console.error('Error fetching top services data:', error);
 
     return getHomePageTopServicesData;
   }
@@ -137,10 +143,12 @@ export async function fetchHomePageStatsCareerHighlightsData() {
       // cache: "no-store",
     });
 
-    console.log('Stats Counter API Response:', res.status, res.statusText);
+    console.log('API', `${process.env.CMS_SERVER_URL}/api/career-highlights`);
+    
+    // console.log('Career Highlights API Response:', res.status, res.statusText);
 
     if (!res.ok) {
-      console.log('Stats Counter API failed, using fallback data');
+      console.log('Career Highlights API failed, using fallback data');
 
       return getHomePageStatsCareerHighlightsData;
     }
@@ -149,7 +157,7 @@ export async function fetchHomePageStatsCareerHighlightsData() {
 
     return data;
   } catch (error) {
-    console.error('Error fetching stats counter data:', error);
+    console.error('Error fetching career highlights data:', error);
 
     return getHomePageStatsCareerHighlightsData;
   }
@@ -166,7 +174,9 @@ export async function fetchHomePageFavoriteQuoteData() {
       // cache: "no-store",
     });
 
-    console.log('Why Choose Us API Response:', res.status, res.statusText);
+    console.log('API', `${process.env.CMS_SERVER_URL}/api/favorite-quote`);
+    
+    // console.log('Favorite Quote API Response:', res.status, res.statusText);
 
     if (!res.ok) {
       console.log('Favorite Quote API failed, using fallback data');
@@ -195,7 +205,9 @@ export async function fetchHomePageFeaturedMagazinesData() {
       // cache: "no-store",
     });
 
-    console.log('Featured Magazines API Response:', res.status, res.statusText);
+    console.log('API', `${process.env.CMS_SERVER_URL}/api/featured-magazines`);
+    
+    // console.log('Featured Magazines API Response:', res.status, res.statusText);
 
     if (!res.ok) {
       console.log('Featured Magazines API failed, using fallback data');
@@ -224,7 +236,9 @@ export async function fetchHomePageTestimonialsData() {
       // cache: "no-store",
     });
 
-    console.log('Testimonials API Response:', res.status, res.statusText);
+    console.log('API', `${process.env.CMS_SERVER_URL}/api/testimonials`);
+    
+    // console.log('Testimonials API Response:', res.status, res.statusText);
 
     if (!res.ok) {
       console.log('Testimonials API failed, using fallback data');
@@ -253,7 +267,9 @@ export async function fetchHomeContactData() {
       // cache: "no-store",
     });
 
-    console.log('Contact API Response:', res.status, res.statusText);
+    console.log('API', `${process.env.CMS_SERVER_URL}/api/contact`);
+    
+    // console.log('Contact API Response:', res.status, res.statusText);
 
     if (!res.ok) {
       console.log('Contact API failed, using fallback data');

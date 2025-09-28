@@ -18,8 +18,8 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ image, date, title, description, slug, category, }) => {
   const router = useRouter();
-  console.log('slug', slug)
-  console.log('image', image)
+  // console.log('slug', slug)
+  // console.log('image', image)
 
   return (
     <div className="bg-white  overflow-hidden shadow transition-shadow hover:shadow-lg flex flex-col">

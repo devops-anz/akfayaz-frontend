@@ -13,7 +13,9 @@ export const fetchBlogDetailData = async (slug: string, dataType: string) => {
       next: { revalidate: 15 } // after testing it should be 3600 (1 hour)
     });
 
-    console.log(`${dataType} API Response:`, res.status, res.statusText);
+    console.log('API', `${process.env.CMS_SERVER_URL}/api/blogs/${slug}`);
+
+    // console.log(`${dataType} API Response:`, res.status, res.statusText);
 
     if (!res.ok) {
       console.log(`${dataType} API failed, using fallback data`);

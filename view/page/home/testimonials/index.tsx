@@ -10,7 +10,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 const Testimonials = ({ testimonialsData }: { testimonialsData?: any }) => {
 
-  console.log("testimonialsData", testimonialsData)
+  // console.log("testimonialsData", testimonialsData)
 
   const PrevButton = (props: any) => (
     <button {...props} className='hidden md:block custom-prev-button'>

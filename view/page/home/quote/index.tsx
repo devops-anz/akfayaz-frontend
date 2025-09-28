@@ -2,7 +2,7 @@ import React from 'react';
 import { poppins } from 'styles/fonts';
 
 const Quote = ({ quoteData }: { quoteData: any }) => {
-  console.log("quoteData", quoteData);
+  // console.log("quoteData", quoteData);
 
   return (
     <div className='mx-4 mb-10 bg-black py-20 sm:mx-6 sm:py-32 md:mx-10 md:py-36 lg:py-44'>

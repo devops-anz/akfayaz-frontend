@@ -38,7 +38,7 @@ const TimelineItem = ({
 
 const Timeline = ({ timelineData }: { timelineData: any }) => {
   
-  console.log("timelineData", timelineData)
+  // console.log("timelineData", timelineData)
 
 
   return (

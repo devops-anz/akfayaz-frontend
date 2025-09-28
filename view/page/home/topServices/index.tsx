@@ -36,7 +36,7 @@ export interface HomePageTopServicesData {
 const defaultColorPalette = ['#bcd2d0', '#d2d0bc', '#5d576b', '#7c7c7c', '#dfb2b2', "#5d576b"];
 
 const TopServices = ({ topServicesData }: { topServicesData: HomePageTopServicesData }) => {
-  console.log("topServicesData", topServicesData)
+  // console.log("topServicesData", topServicesData)
   const [openTopServices, setOpenTopServices] = useState(false);
 
   const [selectedService, setSelectedService] = useState<any>(null);
