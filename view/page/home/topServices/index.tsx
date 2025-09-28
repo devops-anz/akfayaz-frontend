@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React, { useState } from 'react';
 import { poppins } from 'styles/fonts';
 import TopServicesModal from 'view/ui/shared-component/component/topservices';
@@ -67,14 +66,12 @@ const TopServices = ({ topServicesData }: { topServicesData: HomePageTopServices
 
               return (
                 <div key={index} style={{ backgroundColor }} className={`group sm:bg-transparent relative overflow-hidden`}>
-                  <Image
-                    src={item.image_url}
-                    alt={item.name}
-                    width={500}
-                    height={500}
-                    style={{ height: '280px', width: '100%' }}
-                    className='opacity-0 md:opacity-100 w-full object-cover object-center transition-transform duration-1000 ease-in-out group-hover:scale-105'
-                  />
+                  <p
+                    style={{ height: '280px', width: '100%', backgroundColor }}
+                    className='opacity-0 md:opacity-100 w-full flex items-center justify-center text-5xl font-bold text-white bg-gray-100 transition-transform duration-1000 ease-in-out group-hover:scale-105'
+                  >
+                    {item.name} 
+                  </p>
                   <div className='absolute inset-0 flex flex-col items-center justify-evenly bg-black/90 transition-all duration-700 ease-in-out md:bg-gray-500/0 md:group-hover:bg-black/85'>
                     <p className='text-3xl font-medium text-white transition-all duration-1000 delay-100 ease-in-out sm:text-3xl md:translate-y-10 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100'>
                       {item.name}
