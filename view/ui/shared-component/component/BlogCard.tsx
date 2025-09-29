@@ -18,8 +18,19 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ image, date, title, description, slug, category, }) => {
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
   // console.log('slug', slug)
   // console.log('image', image)
+
+  const handleReadMore = async () => {
+    setIsLoading(true);
+    try {
+      await router.push(`/blogs/${slug}`);
+    } catch (error) {
+      console.error('Navigation error:', error);
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="bg-white  overflow-hidden shadow transition-shadow hover:shadow-lg flex flex-col">
@@ -39,13 +50,22 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, date, title, description, sl
         </div>
         <h3 className={`mb-2 text-lg font-bold text-black ${poppins.className}`}>{title}</h3>
         <p className="mb-4 text-gray-400 text-sm flex-1">{description}</p>
-        <a
-          onClick={() => router.push(`/blogs/${slug}`)}
-          rel="noopener noreferrer"
-          className="cursor-pointer relative w-fit text-base font-medium text-black after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full"
+        <button
+          onClick={handleReadMore}
+          disabled={isLoading}
+          className={`cursor-pointer relative w-fit text-base font-medium text-black after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full flex items-center gap-2 ${
+            isLoading ? 'opacity-70 cursor-not-allowed' : ''
+          }`}
         >
-          Read More
-        </a>
+          {isLoading ? (
+            <>
+              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-black"></div>
+              Loading...
+            </>
+          ) : (
+            'Read More'
+          )}
+        </button>
       </div>
     </div>
   );

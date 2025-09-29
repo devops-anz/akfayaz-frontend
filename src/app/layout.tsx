@@ -2,20 +2,12 @@ import type { Metadata } from 'next';
 import { Inconsolata,   } from 'next/font/google';
 import '../../styles/globals.css';
 import GoogleAnalytics from './components/GoogleAnalytics';
-// import dynamic from "next/dynamic";
-
-// const  ThemeProviders = dynamic(() => import('./theme-providers'), { ssr: false })
-
-// const inter = Inter({ subsets: ["latin"] });
 
 const inconsolata = Inconsolata({
   subsets: ['latin'],
   style: ['normal'],
   weight: ['200', '300', '400', '500', '600', '700', '800', '900']
 });
-
-
-
 
 export const metadata: Metadata = {
   title: 'Ahsanul Karim Fayaz - Home',
