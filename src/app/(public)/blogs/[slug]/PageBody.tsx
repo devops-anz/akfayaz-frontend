@@ -122,7 +122,7 @@ const PageBody = ({ blog, relatedBlogs }: { blog: BlogData, relatedBlogs: Blogs[
                                 width={800}
                                 height={400}
                                 className="w-full h-64 sm:h-full object-cover"
-                                priority
+                                loading="lazy"
                             />
                         </div>
 

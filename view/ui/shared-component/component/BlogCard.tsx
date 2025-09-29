@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useState } from 'react';
 import { poppins } from 'styles/fonts';
 
 /**
@@ -42,7 +42,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, date, title, description, sl
         <a
           onClick={() => router.push(`/blogs/${slug}`)}
           rel="noopener noreferrer"
-          className=" relative w-fit text-base font-medium text-black after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full"
+          className="cursor-pointer relative w-fit text-base font-medium text-black after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full"
         >
           Read More
         </a>
@@ -51,4 +51,4 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, date, title, description, sl
   );
 };
 
-export default BlogCard; 
+export default BlogCard;
