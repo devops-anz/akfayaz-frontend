@@ -24,7 +24,7 @@ const MobileNavbar = ({ isMenuOpen, setIsMenuOpen, navbarData }: MobileNavbarPro
 
           <div className='z-50 bg-base-100 pt-10 relative m-1.5 mt-2 flex flex-col justify-items-start rounded-xl  p-6 text-lg font-normal leading-6'>
             <Image
-              src={'/image/logo/logo-2.png'}
+              src={navbarData.logoUrl}
               className='w-20 object-contain'
               alt='bus'
               width={2000}

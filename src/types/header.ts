@@ -93,5 +93,5 @@ export interface MappedFooterData {
   buttonLink?: string;
   emailText?: string;
   email?: string;
-  logoUrl?: string;
+  logoUrl: string;
 }

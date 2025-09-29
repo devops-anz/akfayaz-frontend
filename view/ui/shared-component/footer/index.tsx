@@ -18,6 +18,7 @@ const Footer = () => {
     description: staticNavbarData.data.description,
     FooterList: staticNavbarData.data.footer_links,
     portfolioLinks: staticNavbarData.data.portfolio_links,
+    logoUrl: staticNavbarData.data.logo_url,
   });
 
   useEffect(() => {
@@ -29,7 +30,8 @@ const Footer = () => {
             companyName: data.companyName,
             description: data.description,
             FooterList: data.FooterList,
-            portfolioLinks: footerData.portfolioLinks,
+            portfolioLinks: data.portfolioLinks,
+            logoUrl: data.logoUrl,
           });
         }
       } catch (error) {
@@ -51,7 +53,7 @@ const Footer = () => {
             <div className='mb-4 flex items-center md:mb-0'>
               <div className='mr-3 '>
                 <Image
-                  src={'/image/logo/logo-2.png'}
+                  src={footerData.logoUrl}
                   className='w-28'
                   alt='bus'
                   width={1000}

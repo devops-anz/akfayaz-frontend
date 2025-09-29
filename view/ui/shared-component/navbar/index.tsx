@@ -69,7 +69,7 @@ const Navbar = () => {
             <div className='mb-4 flex items-center md:mb-0'>
               <div className='mr-3 '>
                 <Image
-                  src={'/image/logo/logo-2.png'}
+                  src={navbarData.logoUrl}
                   className='w-28 -ml-1'
                   alt='bus'
                   width={1000}
