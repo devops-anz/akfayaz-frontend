@@ -1223,27 +1223,27 @@ export const navbarData = {
       {
         title: 'ANZ Business Consultants',
         url: 'https://anzbizconsultants.com.au/',
-        icon: 'icons/SAUXTkMPxG9jMFByxiBCoLGXOdAqn9uTxw1aIuIM.webp'
+        icon: 'https://akfayaz.anzbizconsultants.com.au/storage/icons/SAUXTkMPxG9jMFByxiBCoLGXOdAqn9uTxw1aIuIM.webp'
       },
       {
         title: 'ANZ Web Studios',
         url: 'https://www.anzwebstudios.com.au/',
-        icon: 'icons/QkRiGlp5yiJt2ViB07RJ0sRGEdAo5HW5GweQIBJu.webp'
+        icon: 'https://akfayaz.anzbizconsultants.com.au/storage/icons/QkRiGlp5yiJt2ViB07RJ0sRGEdAo5HW5GweQIBJu.webp'
       },
       {
         title: 'AKM Assets',
         url: 'https://www.akmassets.com.au/',
-        icon: 'icons/2tiTTdDNPKjBVPuMPDZWbqAmcTZMYoks4nb1Lyb1.webp'
+        icon: 'https://akfayaz.anzbizconsultants.com.au/storage/icons/2tiTTdDNPKjBVPuMPDZWbqAmcTZMYoks4nb1Lyb1.webp'
       },
       {
         title: 'ANZ Clearance House',
         url: 'https://www.anzclearancehouse.com.au/',
-        icon: 'icons/TJ7lbdgGtDoEV15YYtKoPCkTpQWzmfTYS0LvZ6D9.webp'
+        icon: 'https://akfayaz.anzbizconsultants.com.au/storage/icons/TJ7lbdgGtDoEV15YYtKoPCkTpQWzmfTYS0LvZ6D9.webp'
       },
       {
         title: 'LinkedIn',
         url: 'https://www.linkedin.com/in/ahsanulkfayaz',
-        icon: 'icons/OxMjppNu6lHLZhfnb0lMMqaC492CcYCPKKc3PrVh.webp'
+        icon: 'https://akfayaz.anzbizconsultants.com.au/storage/icons/OxMjppNu6lHLZhfnb0lMMqaC492CcYCPKKc3PrVh.webp'
       }
     ],
     button_text: 'Request a Meeting',
@@ -1251,7 +1251,7 @@ export const navbarData = {
     email_text: 'Write to me',
     email: 'fayaz@akmassets.com',
     created_at: '2025-09-27T06:26:30.000000Z',
-    updated_at: '2025-09-27T07:22:39.000000Z',
+    updated_at: '2025-09-28T01:14:58.000000Z',
     logo_url: 'https://akfayaz.anzbizconsultants.com.au/storage/logos/koufZmqcQprh4GgLUrMjdvx6UZsRDL9YsE3iq3ca.webp'
   },
   success: true,
