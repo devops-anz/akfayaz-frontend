@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import React from 'react';
 import { poppins } from 'styles/fonts';
 
 /**
@@ -14,21 +14,22 @@ interface BlogCardProps {
   slug: string;
   category: string;
   id: number;
+  isLoading?: boolean;
+  setIsLoading?: (isLoading: boolean) => void;
 }
 
-const BlogCard: React.FC<BlogCardProps> = ({ image, date, title, description, slug, category, }) => {
+const BlogCard: React.FC<BlogCardProps> = ({ isLoading, setIsLoading, image, date, title, description, slug, category, }) => {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
   // console.log('slug', slug)
   // console.log('image', image)
 
   const handleReadMore = async () => {
-    setIsLoading(true);
+    setIsLoading?.(true);
     try {
       await router.push(`/blogs/${slug}`);
     } catch (error) {
       console.error('Navigation error:', error);
-      setIsLoading(false);
+      setIsLoading?.(false);
     }
   };
 
@@ -53,9 +54,8 @@ const BlogCard: React.FC<BlogCardProps> = ({ image, date, title, description, sl
         <button
           onClick={handleReadMore}
           disabled={isLoading}
-          className={`cursor-pointer relative w-fit text-base font-medium text-black after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full flex items-center gap-2 ${
-            isLoading ? 'opacity-70 cursor-not-allowed' : ''
-          }`}
+          className={`cursor-pointer relative w-fit text-base font-medium text-black after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full flex items-center gap-2 ${isLoading ? 'opacity-70 cursor-not-allowed' : ''
+            }`}
         >
           {isLoading ? (
             <>
