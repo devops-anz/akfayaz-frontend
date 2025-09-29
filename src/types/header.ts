@@ -30,6 +30,7 @@ export interface HeaderData {
   logo_url: string;
   description: string;
   menu_links: MenuLink[];
+  footer_links: MenuLink[];
   portfolio_links: portfolioLink[];
   button_text: string;
   button_link: string;
@@ -74,6 +75,7 @@ export interface MappedHeaderData {
   description: string;
   navbarList: NavbarListItem[];
   portfolioLinks: portfolioLink[];
+  FooterList: NavbarListItem[];
   buttonText: string;
   buttonLink: string;
   emailText: string;

@@ -28,7 +28,7 @@ const Footer = () => {
           setFooterData({
             companyName: data.companyName,
             description: data.description,
-            FooterList: data.navbarList,
+            FooterList: data.FooterList,
             portfolioLinks: footerData.portfolioLinks,
           });
         }
@@ -90,7 +90,7 @@ const Footer = () => {
                   data-tooltip-content={social?.title}
                   data-tooltip-place="top"
                 >
-                  {/* <Image src={social.icon} alt='social' width={20} height={20} /> */}
+                  <Image src={social.icon} alt='social' width={20} height={20} />
                 </a>
               ))}
             </div>

@@ -17,6 +17,7 @@ const Navbar = () => {
     companyName: staticNavbarData.data.company_name,
     description: staticNavbarData.data.description,
     navbarList: staticNavbarData.data.menu_links,
+    FooterList:staticNavbarData.data.footer_links,
     buttonText: staticNavbarData.data.button_text,
     buttonLink: staticNavbarData.data.button_link,
     emailText: staticNavbarData.data.email_text,
@@ -166,7 +167,7 @@ const Navbar = () => {
                     data-tooltip-place="top"
                   >
 
-                    {/* <Image src={social.icon} alt='social' width={20} height={20} /> */}
+                    <Image src={social.icon} alt='social' width={20} height={20} />
                   </a>
                 ))}
               </div>

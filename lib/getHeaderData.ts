@@ -97,6 +97,7 @@ export function mapHeaderDataToNavbar(headerData: HeaderData): MappedHeaderData 
       url: link.url,
       icon: link.icon
     })),
+    FooterList:headerData.footer_links,
     buttonText: headerData.button_text,
     buttonLink: headerData.button_link,
     emailText: headerData.email_text,
@@ -129,6 +130,7 @@ export async function getNavbarData(): Promise<MappedHeaderData> {
         url: link.url,
         icon: link.icon
       })),
+      FooterList:staticNavbarData.data.footer_links,
       buttonText: staticNavbarData.data.button_text,
       buttonLink: staticNavbarData.data.button_link,
       emailText: staticNavbarData.data.email_text,
@@ -148,6 +150,7 @@ export async function getNavbarData(): Promise<MappedHeaderData> {
         url: link.url,
         icon: link.icon
       })),
+      FooterList:staticNavbarData.data.footer_links,
       buttonText: staticNavbarData.data.button_text,
       buttonLink: staticNavbarData.data.button_link,
       emailText: staticNavbarData.data.email_text,
