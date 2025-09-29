@@ -17,7 +17,7 @@ const Navbar = () => {
     companyName: staticNavbarData.data.company_name,
     description: staticNavbarData.data.description,
     navbarList: staticNavbarData.data.menu_links,
-    FooterList:staticNavbarData.data.footer_links,
+    FooterList: staticNavbarData.data.footer_links,
     buttonText: staticNavbarData.data.button_text,
     buttonLink: staticNavbarData.data.button_link,
     emailText: staticNavbarData.data.email_text,
@@ -58,6 +58,7 @@ const Navbar = () => {
   }, []);
 
 
+  console.log("logoUrl", navbarData.logoUrl)
 
   return (
     <div className={`fixed top-0 left-0 right-0 bg-white shadow-md z-[101] ${isScrolled ? 'shadow-md' : 'shadow-none'}`}>

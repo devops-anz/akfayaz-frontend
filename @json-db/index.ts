@@ -869,8 +869,8 @@ export const getHomePageFeaturedMagazinesData = {
     button_text: 'View All',
     button_link: '/magazines',
     is_active: 1,
-    created_at: '2025-09-24T05:22:56.000000Z',
-    updated_at: '2025-09-24T07:33:14.000000Z',
+    created_at: '2025-09-27T06:26:21.000000Z',
+    updated_at: '2025-09-27T06:26:21.000000Z',
     featured_magazines: [
       {
         id: 1,
@@ -883,13 +883,14 @@ export const getHomePageFeaturedMagazinesData = {
         button_text: 'Read More',
         button_url:
           'https://theabj.com.au/2023/12/05/exclusive-interview-with-ahsanul-karim-fayaz-the-circular-tech-leaders-journey/#google_vignette',
-        image: 'images/featured-magazines/1.png',
+        image: 'images/featured-magazines/x4Iyn6ki87n4hNUFEHZ19sEB6UlTwAeKuBpi9YgC.png',
         order: 1,
         is_active: true,
         deleted_at: null,
-        created_at: '2025-09-24T05:22:56.000000Z',
-        updated_at: '2025-09-24T05:22:56.000000Z',
-        image_url: 'https://akfayaz.anzbizconsultants.com.au/storage/images/featured-magazines/1.png'
+        created_at: '2025-09-27T06:26:21.000000Z',
+        updated_at: '2025-09-28T05:02:54.000000Z',
+        image_url:
+          'https://akfayaz.anzbizconsultants.com.au/storage/images/featured-magazines/x4Iyn6ki87n4hNUFEHZ19sEB6UlTwAeKuBpi9YgC.png'
       },
       {
         id: 2,
@@ -901,13 +902,14 @@ export const getHomePageFeaturedMagazinesData = {
         date: '2023-01-09',
         button_text: 'Read More',
         button_url: 'https://auspreneur.com.au/the-10-young-entrepreneurs-making-a-difference-in-2023/',
-        image: 'images/featured-magazines/2.png',
+        image: 'images/featured-magazines/yXKiFpuYGUROCcDkFjYDVxoNMLpXKcSdOypSoN7V.png',
         order: 2,
         is_active: true,
         deleted_at: null,
-        created_at: '2025-09-24T05:22:56.000000Z',
-        updated_at: '2025-09-24T07:35:31.000000Z',
-        image_url: 'https://akfayaz.anzbizconsultants.com.au/storage/images/featured-magazines/2.png'
+        created_at: '2025-09-27T06:26:21.000000Z',
+        updated_at: '2025-09-28T05:03:13.000000Z',
+        image_url:
+          'https://akfayaz.anzbizconsultants.com.au/storage/images/featured-magazines/yXKiFpuYGUROCcDkFjYDVxoNMLpXKcSdOypSoN7V.png'
       },
       {
         id: 3,
@@ -919,20 +921,20 @@ export const getHomePageFeaturedMagazinesData = {
         date: '2021-06-30',
         button_text: 'Read More',
         button_url: 'https://auspreneur.com.au/the-10-young-entrepreneurs-making-a-difference-in-2023/',
-        image: 'images/featured-magazines/3.png',
+        image: 'images/featured-magazines/PpFYSMuZA8sp20kRhRnckfWoABlMly5t9IKmJDXC.png',
         order: 3,
         is_active: true,
         deleted_at: null,
-        created_at: '2025-09-24T05:22:56.000000Z',
-        updated_at: '2025-09-24T07:35:32.000000Z',
-        image_url: 'https://akfayaz.anzbizconsultants.com.au/storage/images/featured-magazines/3.png'
+        created_at: '2025-09-27T06:26:21.000000Z',
+        updated_at: '2025-09-28T05:03:22.000000Z',
+        image_url:
+          'https://akfayaz.anzbizconsultants.com.au/storage/images/featured-magazines/PpFYSMuZA8sp20kRhRnckfWoABlMly5t9IKmJDXC.png'
       }
     ]
   },
   success: true,
   message: 'Featured magazines retrieved successfully'
 };
-
 export const getHomePageTestimonialsData = {
   data: {
     id: 1,

@@ -24,7 +24,7 @@ export async function fetchBlogsPageData(params: any): Promise<any> {
     const queryString = searchParams.toString();
     const url = `${process.env.CMS_SERVER_URL}/api/blogs${queryString ? `?${queryString}` : ''}`;
 
-    console.log('url:', url);
+    console.log('blogs url:', url);
 
     const res = await fetch(url, {
       method: 'GET',

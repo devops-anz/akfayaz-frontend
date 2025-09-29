@@ -158,16 +158,6 @@ export default async function BlogDetailPage({
 
   return (
     <div className="bg-neutral-100 pt-24">
-      {/* Header Section */}
-      {/* <div className="bg-neutral-200">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
-          <div className="text-center py-8 sm:py-12">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4">
-              Our Blogs
-            </h1>
-          </div>
-        </div>
-      </div> */}
 
       {/* Main Content */}
       <PageBody
