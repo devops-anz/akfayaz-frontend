@@ -107,16 +107,6 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
     });
   };
 
-  const handleTag = (tag: string) => {
-    setSelectedTag(tag);
-    setSelectedCategory("");
-    // For tags, we can use category parameter or add a separate tag parameter
-    updateURL({
-      category: '',
-      search: tag,
-      page: '1'
-    });
-  };
 
   const handleSort = (newSortOrder: string) => {
     setSortOrder(newSortOrder as 'newest' | 'oldest');
@@ -307,28 +297,6 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
                           );
                         }
                       )}
-
-                      <div className="">
-                        <p className="font-bold text-white text-base pt-4 pb-2">
-                          Tags:
-                        </p>
-                        <div className="flex flex-wrap items-center gap-2">
-                          {[
-                            ...Array.from(new Set(allBlogs.map((blog) => blog.tags).flat())),
-                          ].map((tag) => (
-                            <p
-                              onClick={() => handleTag(tag)}
-                              key={tag}
-                              className={`text-gray-300 text-xs hover:text-[#f7d26a] border border-gray-700 rounded-md px-2 py-1 cursor-pointer ${selectedTag === tag
-                                ? "bg-gray-500 text-amber-500 "
-                                : ""
-                                }`}
-                            >
-                              {tag}
-                            </p>
-                          ))}
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
