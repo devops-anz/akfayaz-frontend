@@ -58,7 +58,7 @@ export const blogPosts = [
     title: 'The Future of AI in Business in here',
     date: '2024-01-15',
     author: 'John Smith',
-    category: 'Technology',
+    category: 'Technology11',
     image: '/image/blogs/image-1.jpeg',
     content: `# The Future of AI in Business
 
@@ -156,7 +156,7 @@ Organizations that successfully integrate AI will gain significant competitive a
     title: 'Web Development Trends in 2024',
     date: '2024-01-20',
     author: 'Sarah Johnson',
-    category: 'Development',
+    category: 'Technology11',
     image: '/image/blogs/image-1.jpeg',
     content:
       "The web development landscape continues to evolve with new frameworks, tools, and methodologies. This year, we're seeing a strong focus on performance optimization, serverless architecture, and enhanced user experiences through progressive web apps.",
@@ -184,7 +184,7 @@ Organizations that successfully integrate AI will gain significant competitive a
     title: 'Essential Cybersecurity Best Practices',
     date: '2024-01-25',
     author: 'Michael Chen',
-    category: 'Security',
+    category: 'Technology11',
     image: '/image/blogs/image-1.jpeg',
     content:
       'With increasing cyber threats, organizations must prioritize security. This guide covers essential practices including multi-factor authentication, regular security audits, and employee training programs.',
@@ -212,7 +212,7 @@ Organizations that successfully integrate AI will gain significant competitive a
     title: 'Modern Cloud Computing Solutions',
     date: '2024-02-01',
     author: 'Emma Davis',
-    category: 'Technology',
+    category: 'Technology11',
     image: '/image/blogs/image-1.jpeg',
     content:
       "Cloud computing continues to transform business infrastructure. Learn about the latest solutions in IaaS, PaaS, and SaaS, and how they can benefit your organization's scalability and efficiency.",
@@ -240,7 +240,7 @@ Organizations that successfully integrate AI will gain significant competitive a
     title: 'Complete Guide to Mobile App Development',
     date: '2024-02-05',
     author: 'Alex Turner',
-    category: 'Development',
+    category: 'Technology11',
     image: '/image/blogs/image-1.jpeg',
     content:
       'From concept to deployment, this guide covers everything you need to know about mobile app development. Learn about cross-platform development, testing strategies, and app store optimization.',
@@ -268,7 +268,7 @@ Organizations that successfully integrate AI will gain significant competitive a
     title: 'Effective Digital Marketing Strategies',
     date: '2024-02-10',
     author: 'Lisa Wong',
-    category: 'Marketing',
+    category: 'Technology11',
     image: '/image/blogs/image-1.jpeg',
     content:
       'Discover effective digital marketing strategies that drive results. From SEO to social media marketing, learn how to create comprehensive campaigns that engage your target audience.',
@@ -296,7 +296,7 @@ Organizations that successfully integrate AI will gain significant competitive a
     title: 'Data Analytics for Business Insights',
     date: '2024-02-15',
     author: 'David Miller',
-    category: 'Analytics',
+    category: 'Technology11',
     image: '/image/blogs/image-1.jpeg',
     content:
       'Learn how to leverage data analytics to drive business decisions. This article covers key analytics tools, visualization techniques, and how to extract meaningful insights from your data.',
@@ -324,7 +324,7 @@ Organizations that successfully integrate AI will gain significant competitive a
     title: 'UI/UX Design Principles',
     date: '2024-02-20',
     author: 'Rachel Green',
-    category: 'Design',
+    category: 'Technology11',
     image: '/image/blogs/image-1.jpeg',
     content:
       'Explore fundamental principles of UI/UX design. Learn about user research, wireframing, prototyping, and creating intuitive user interfaces that deliver exceptional user experiences.',
@@ -352,7 +352,7 @@ Organizations that successfully integrate AI will gain significant competitive a
     title: 'Blockchain Technology Explained',
     date: '2024-02-25',
     author: 'James Wilson',
-    category: 'Technology',
+    category: 'Technology11',
     image: '/image/blogs/image-1.jpeg',
     content:
       'Demystifying blockchain technology and its applications beyond cryptocurrency. Learn about smart contracts, decentralized applications, and the future of blockchain in various industries.',
@@ -380,7 +380,7 @@ Organizations that successfully integrate AI will gain significant competitive a
     title: 'Modern Software Testing Methods',
     date: '2024-03-01',
     author: 'Patricia Lee',
-    category: 'Development',
+    category: 'Technology11',
     image: '/image/blogs/image-1.jpeg',
     content:
       'Explore modern approaches to software testing including automated testing, continuous integration, and test-driven development. Learn best practices for ensuring software quality.',
@@ -408,7 +408,7 @@ Organizations that successfully integrate AI will gain significant competitive a
     title: 'Essential Project Management Tips',
     date: '2024-03-05',
     author: 'Robert Brown',
-    category: 'Management',
+    category: 'Technology11',
     image: '/image/blogs/image-1.jpeg',
     content:
       'Master the art of project management with these essential tips. Learn about agile methodologies, team collaboration, and tools that can help streamline your project workflow.',
@@ -436,7 +436,7 @@ Organizations that successfully integrate AI will gain significant competitive a
     title: 'Emerging Technology Trends',
     date: '2024-03-10',
     author: 'Michelle Park',
-    category: 'Technology',
+    category: 'Technology11',
     image: '/image/blogs/image-1.jpeg',
     content:
       'Stay ahead of the curve with these emerging technology trends. From quantum computing to augmented reality, discover the technologies that will shape our future.',

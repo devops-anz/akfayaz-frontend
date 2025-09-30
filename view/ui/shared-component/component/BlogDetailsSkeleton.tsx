@@ -5,7 +5,7 @@ import React from 'react';
  */
 const BlogDetailsSkeleton: React.FC = () => {
   return (
-    <div className='mt-16 sm:pt-30 mx-4 bg-slate-100 pt-5 sm:mx-6 md:mx-10 md:pt-32 pb-10 animate-pulse'>
+    <div className='mt-16 sm:pt-30 mx-4 bg-slate-100 pt-5 sm:mx-6 md:mx-10 md:pt-20 pb-10 animate-pulse'>
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         {/* Title Skeleton */}
         <div className="mb-4 space-y-3">
