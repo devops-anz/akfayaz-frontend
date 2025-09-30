@@ -151,9 +151,15 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
   };
 
   const handlePageChange = (page: number) => {
+    setIsLoadingBlogCard(true);
     updateURL({
       page: page.toString()
     });
+    
+    // Simulate loading time for better UX
+    setTimeout(() => {
+      setIsLoadingBlogCard(false);
+    }, 800);
   };
 
   const handleReset = () => {
