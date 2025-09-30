@@ -1,4 +1,4 @@
-import { getBlogsPageData } from '../@json-db/blog';
+import { blogCategoriesData, getBlogsPageData } from '../@json-db/blog';
 
 export async function fetchBlogsPageData(params: any): Promise<any> {
   try {
@@ -70,6 +70,49 @@ export async function fetchBlogsPageData(params: any): Promise<any> {
         from: 1,
         to: getBlogsPageData.data.data.length
       }
+    };
+  }
+}
+
+export async function fetchCategoriesPageData(): Promise<any> {
+  try {
+    const url = `${process.env.CMS_SERVER_URL}/api/blog-categories`;
+
+    console.log('categories url:', url);
+
+    const res = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      next: { revalidate: 15 } // after testing it's should be 3600 (1 hours)
+      // cache: "no-store",
+    });
+
+    console.log('categories API Response:', res.status, res.statusText);
+    console.log('categories API URL:', url);
+
+    if (!res.ok) {
+      console.log(`categories API failed, using fallback data`);
+
+      return {
+        success: true,
+        data: blogCategoriesData.categories
+      };
+    }
+
+    const data = await res.json();
+
+    return {
+      success: true,
+      data: data.categories
+    };
+  } catch (error) {
+    console.error(`Error fetching data:`, error);
+
+    return {
+      success: true,
+      data: blogCategoriesData.categories
     };
   }
 }

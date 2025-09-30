@@ -1,9 +1,9 @@
 import PageBody from "./PageBody"
-import { fetchBlogsPageData } from "../../../../lib/getBlogsPage"
+import { fetchBlogsPageData, fetchCategoriesPageData } from "../../../../lib/getBlogsPage"
 
 export const metadata = {
     title: 'Ahsanul Karim Fayaz - Blogs',
-    description: "Eager to help you with Sales, Marketing, Procurement, & Acquisition",
+    description: "Eager to help you with Sales, Marketing, Procurement, & Acquisition",
     keywords: ['Ahsanul Karim Fayaz', 'Sales', 'Marketing', 'Procurement', 'Acquisition'],
     authors: [{ name: 'Ahsanul Karim Fayaz', url: 'https://akfayaz.com.au' }],
     robots: {
@@ -29,14 +29,20 @@ async function getPageBlogsData(searchParams: any) {
 
     return blogsData;
 }
+async function getPageBlogsCategoriesData() {
+    const blogsCategoriesData = await fetchCategoriesPageData();
+
+    return blogsCategoriesData;
+}
 
 export default async function BlogsPage({ searchParams }: BlogsPageProps) {
     const resolvedSearchParams = await searchParams;
     const blogsData = await getPageBlogsData(resolvedSearchParams);
+    const categoriesData = await getPageBlogsCategoriesData();
 
     return (
         <main >
-            <PageBody blogsData={blogsData} searchParams={resolvedSearchParams} />
+            <PageBody categoriesData={categoriesData} blogsData={blogsData} searchParams={resolvedSearchParams} />
         </main>
     )
 }

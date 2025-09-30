@@ -123,3 +123,68 @@ export const blogSingleData = {
   message: 'Blog retrieved successfully',
   status: 200
 };
+
+export const blogCategoriesData = {
+  categories: [
+    {
+      id: 1,
+      name: 'Technology',
+      slug: 'technology',
+      description: 'This is the Technology category',
+      deleted_at: null,
+      created_at: '2025-09-27T06:25:39.000000Z',
+      updated_at: '2025-09-27T06:25:39.000000Z',
+      blogs_count: 4
+    },
+    {
+      id: 4,
+      name: 'Health & Wellness',
+      slug: 'health-wellness',
+      description: 'This is the Health & Wellness category',
+      deleted_at: null,
+      created_at: '2025-09-27T06:25:39.000000Z',
+      updated_at: '2025-09-27T06:25:39.000000Z',
+      blogs_count: 0
+    },
+    {
+      id: 5,
+      name: 'Business',
+      slug: 'business',
+      description: 'This is the Business category',
+      deleted_at: null,
+      created_at: '2025-09-27T06:25:39.000000Z',
+      updated_at: '2025-09-27T06:25:39.000000Z',
+      blogs_count: 5
+    },
+    {
+      id: 6,
+      name: 'Lifestyle',
+      slug: 'lifestyle',
+      description: 'This is the Lifestyle category',
+      deleted_at: null,
+      created_at: '2025-09-27T06:25:39.000000Z',
+      updated_at: '2025-09-27T06:25:39.000000Z',
+      blogs_count: 0
+    },
+    {
+      id: 9,
+      name: 'Science',
+      slug: 'science',
+      description: 'This is the Science category',
+      deleted_at: null,
+      created_at: '2025-09-27T06:25:39.000000Z',
+      updated_at: '2025-09-27T06:25:39.000000Z',
+      blogs_count: 1
+    },
+    {
+      id: 10,
+      name: 'Education',
+      slug: 'education',
+      description: 'This is the Education category',
+      deleted_at: null,
+      created_at: '2025-09-27T06:25:39.000000Z',
+      updated_at: '2025-09-27T06:25:39.000000Z',
+      blogs_count: 0
+    }
+  ]
+};

@@ -25,29 +25,53 @@ interface PageBodyProps {
   contactData: any;
 }
 
-const PageBody = ({ 
-  heroData, 
-  serviceData, 
-  aboutData, 
-  topServicesData, 
-  timelineData, 
-  quoteData, 
-  featuredProjectsData, 
-  testimonialsData, 
-  contactData 
+const PageBody = ({
+  heroData,
+  serviceData,
+  aboutData,
+  topServicesData,
+  timelineData,
+  quoteData,
+  featuredProjectsData,
+  testimonialsData,
+  contactData
 }: PageBodyProps) => {
 
   return (
     <Fragment>
-      <Hero heroData={heroData?.data} />
+      {
+        heroData?.data?.is_active &&
+        <Hero heroData={heroData?.data} />
+      }
       <Services serviceData={serviceData?.data} />
-      <About aboutData={aboutData?.data} />
-      <TopServices topServicesData={topServicesData?.data} />
-      <Timeline timelineData={timelineData?.data} />
-      <Quote quoteData={quoteData?.data} />
-      <FeaturedProjects featuredProjectsData={featuredProjectsData?.data} />
-      <Testimonials testimonialsData={testimonialsData?.data} />
-      <Contact contactData={contactData?.data} />
+      {
+        aboutData?.data?.is_active &&
+        <About aboutData={aboutData?.data} />
+      }
+      {
+        topServicesData?.data?.is_active &&
+        <TopServices topServicesData={topServicesData?.data} />
+      }
+      {
+        timelineData?.data?.is_active &&
+        <Timeline timelineData={timelineData?.data} />
+      }
+      {
+        quoteData?.data?.is_active &&
+        <Quote quoteData={quoteData?.data} />
+      }
+      {
+        featuredProjectsData?.data?.is_active &&
+        <FeaturedProjects featuredProjectsData={featuredProjectsData?.data} />
+      }
+      {
+        testimonialsData?.data?.is_active &&
+        <Testimonials testimonialsData={testimonialsData?.data} />
+      }
+      {
+        contactData?.data?.is_active &&
+        <Contact contactData={contactData?.data} />
+      }
       <ScrollTop />
     </Fragment>
   );

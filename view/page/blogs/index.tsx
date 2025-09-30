@@ -7,20 +7,22 @@ import BlogCard from "view/ui/shared-component/component/BlogCard";
 import { useRouter, useSearchParams } from "next/navigation";
 import { BlogSearchParams, GetBlogsResponse, MappedBlogData } from "@/types/blogs";
 import BlogDetailsSkeleton from "view/ui/shared-component/component/BlogDetailsSkeleton";
+import { CategoriesResponse } from "@/app/(public)/blogs/PageBody";
 
 interface BlogsPageProps {
   blogsData?: GetBlogsResponse;
   searchParams?: BlogSearchParams;
+  categoriesData: CategoriesResponse
 }
 
 
-const BlogsPage = ({ blogsData, searchParams }: BlogsPageProps) => {
+const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) => {
   const router = useRouter();
   const urlSearchParams = useSearchParams();
   const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log("blogs blogsData", blogsData)
+  console.log("blogs blogsData", blogsData, categoriesData)
 
   // Extract and map API data with fallback to static data
   const apiBlogs = blogsData?.data?.data || [];
