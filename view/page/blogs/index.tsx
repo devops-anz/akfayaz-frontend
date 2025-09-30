@@ -60,6 +60,22 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
   const [filteredBlogs, setFilteredBlogs] = useState(allBlogs);
   const [noBlogsFound, setNoBlogsFound] = useState(false);
 
+  // Sync local state with URL parameters when they change
+  useEffect(() => {
+    const currentSearch = urlSearchParams.get('search') || '';
+    const currentCategory = urlSearchParams.get('category') || '';
+    const currentSort = urlSearchParams.get('sort') || 'newest';
+    
+    setSearch(currentSearch);
+    setSelectedCategory(currentCategory);
+    setSortOrder(currentSort as 'newest' | 'oldest');
+    
+    // Clear tag selection when category is selected from URL
+    if (currentCategory) {
+      setSelectedTag('');
+    }
+  }, [urlSearchParams]);
+
   // Function to update URL parameters
   const updateURL = (newParams: Partial<BlogSearchParams>) => {
     const params = new URLSearchParams(urlSearchParams.toString());
@@ -87,6 +103,12 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
     // Clear previous timeout if it exists
     if (searchTimeoutRef.current) {
       clearTimeout(searchTimeoutRef.current);
+      setIsLoadingBlogCard(false); // Clear loading if user is still typing
+    }
+
+    // Show loading state when user starts typing
+    if (searchValue.trim() !== '') {
+      setIsLoadingBlogCard(true);
     }
 
     // Debounce search to avoid too many API calls
@@ -96,10 +118,16 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
         category: '',
         page: '1'
       });
+      
+      // Add additional delay for loading state
+      setTimeout(() => {
+        setIsLoadingBlogCard(false);
+      }, 500);
     }, 600);
   };
 
   const handleCategory = (category: string) => {
+    setIsLoadingBlogCard(true);
     setSelectedCategory(category);
     setSelectedTag("");
     updateURL({
@@ -107,6 +135,11 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
       search: '',
       page: '1'
     });
+    
+    // Simulate loading time for better UX
+    setTimeout(() => {
+      setIsLoadingBlogCard(false);
+    }, 800);
   };
 
 
@@ -124,10 +157,16 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
   };
 
   const handleReset = () => {
+    setIsLoadingBlogCard(true);
     setSearch("");
     setSelectedCategory("");
     setSelectedTag("");
     router.push('/blogs');
+    
+    // Simulate loading time for better UX
+    setTimeout(() => {
+      setIsLoadingBlogCard(false);
+    }, 800);
   };
 
   // Use API data for display, fallback to filtered static data
@@ -256,6 +295,7 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
               <input
                 type="text"
                 placeholder="Search Blogs..."
+                value={search}
                 className="w-full mt-3.5 sm:w-[237px] px-3 py-1.5 bg-gray-900 text-white placeholder:text-gray-300 rounded-sm border border-gray-700 focus:outline-none focus:border-[#f7d26a]"
                 onChange={handleSearch}
               />
