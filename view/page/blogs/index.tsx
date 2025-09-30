@@ -121,7 +121,7 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
     }, 600);
   };
 
-  const handleCategory = (category: string) => {
+  const handleCategory = (category: Number) => {
     setIsLoadingBlogCard(true);
     setSelectedCategory(category);
     setSelectedTag("");
