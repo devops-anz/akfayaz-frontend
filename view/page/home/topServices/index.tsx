@@ -32,7 +32,7 @@ export interface HomePageTopServicesData {
   top_services: TopService[];
 }
 
-const defaultColorPalette = ['#bcd2d0', '#d2d0bc', '#5d576b', '#7c7c7c', '#dfb2b2', "#5d576b"];
+const defaultColorPalette = ['#4b4b4b', '#404855', '#52584e', '#4b4044', '#2a2a2a', "#9a9c8f"];
 
 const TopServices = ({ topServicesData }: { topServicesData: HomePageTopServicesData }) => {
   // console.log("topServicesData", topServicesData)

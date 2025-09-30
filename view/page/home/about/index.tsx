@@ -103,7 +103,7 @@ const About = ({ aboutData }: { aboutData: AboutData }) => {
       </div>
 
       <DownloadCVModal open={openCV} setOpen={setOpenCV} />
-      <PortfolioModal open={openPortfolio} setOpen={setOpenPortfolio} />
+      <PortfolioModal button_1_detailed_text={aboutData?.button_1_detailed_text} open={openPortfolio} setOpen={setOpenPortfolio} />
     </div>
   );
 };

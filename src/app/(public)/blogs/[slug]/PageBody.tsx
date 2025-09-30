@@ -41,6 +41,7 @@ interface BlogData {
     is_featured: number;
     created_at: string;
     updated_at: string;
+    image_url: string;
 }
 
 
@@ -86,13 +87,9 @@ type Blogs = {
 
 const PageBody = ({ blog, relatedBlogs }: { blog: BlogData, relatedBlogs: Blogs[] }) => {
 
-    // console.log("blog", blog, relatedBlogs)
-    const blogImageUrl = blog.image
-        ? `${process.env.NEXT_PUBLIC_STORAGE_URL}/${blog.image}`
-        : "/image/blogs/default.jpg";
 
     return (
-        <div className='mt-16 sm:pt-30 mx-4 bg-slate-100 pt-5 sm:mx-6 md:mx-10 md:pt-32 pb-10'>
+        <div className='mt-16 sm:pt-30 mx-4 bg-slate-100 pt-5 sm:mx-6 md:mx-10 md:pt-20 pb-10'>
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
                 {/* Breadcrumb */}
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4">
@@ -117,7 +114,7 @@ const PageBody = ({ blog, relatedBlogs }: { blog: BlogData, relatedBlogs: Blogs[
                         {/* Featured Image */}
                         <div className="rounded-lg overflow-hidden">
                             <Image
-                                src={blogImageUrl}
+                                src={blog.image_url}
                                 alt={blog.title}
                                 width={800}
                                 height={400}

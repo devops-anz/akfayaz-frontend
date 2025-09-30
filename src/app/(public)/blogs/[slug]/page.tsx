@@ -8,17 +8,17 @@ type Blogs = {
   id: number;
   slug: string;
   title: string;
-  date: string; // YYYY-MM-DD
+  date: string;
   user_id: number;
   blog_category_id: number;
   image: string;
-  content: string; // HTML string
+  content: string;
   tags: string[];
-  status: "published" | "draft" | "archived"; // can extend if needed
+  status: "published" | "draft" | "archived";
   meta_title: string;
   meta_description: string;
   meta_keywords: string[];
-  is_featured: number; // 0 | 1, could also be boolean
+  is_featured: number;
   created_at: string;
   updated_at: string;
   deleted_at: string | null;
@@ -70,6 +70,7 @@ interface BlogData {
   is_featured: number;
   created_at: string;
   updated_at: string;
+  image_url: string;
 }
 
 interface BlogDetailResponse {
@@ -114,7 +115,8 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: blog.title,
       description: blog.meta_description || blog.content?.substring(0, 160),
-      images: blog.image ? [`${process.env.NEXT_PUBLIC_STORAGE_URL}/${blog.image}`] : [],
+      images: [blog.image_url],
+
     },
   };
 }

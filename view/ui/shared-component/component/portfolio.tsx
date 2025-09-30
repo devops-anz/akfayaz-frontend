@@ -5,7 +5,7 @@ import { RxCross2 } from 'react-icons/rx';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 
-export default function PortfolioModal({ open, setOpen }: { open: boolean; setOpen: (open: boolean) => void }) {
+export default function PortfolioModal({ button_1_detailed_text, open, setOpen }: { button_1_detailed_text: string, open: boolean; setOpen: (open: boolean) => void }) {
   const cancelButtonRef = useRef(null);
 
   return (
@@ -54,27 +54,10 @@ export default function PortfolioModal({ open, setOpen }: { open: boolean; setOp
                 <div className='flex flex-col gap-4'>
                   <p className='text-center text-2xl font-bold text-black'>Portfolio</p>
 
-                  <div className='space-y-8'>
-                    With over a decade of experience driving business growth and empowering individuals, I am a dynamic
-                    leader, consultant, and mentor. As the Head of Sales at a leading multinational corporation, I have
-                    consistently delivered outstanding results by leading high-performing teams, implementing innovative
-                    strategies, and building strong client relationships across diverse markets. <p />{' '}
-                    <p>
-                      {' '}
-                      Beyond the corporate world, I am an accomplished business consultant, specializing in scaling
-                      startups, optimizing operations, and driving sustainable growth for businesses of all sizes.
-                      Recognized as an award-winning entrepreneur, I have firsthand experience navigating the challenges
-                      and triumphs of building successful ventures.{' '}
-                    </p>
-                    <p>
-                      {' '}
-                      As a certified life coach, I am passionate about helping individuals unlock their potential and
-                      achieve personal and professional fulfillment. Whether guiding a business to its next milestone or
-                      coaching someone through a life transition, I bring a unique blend of strategic insight, empathy,
-                      and actionable advice. Driven by a commitment to excellence and a belief in the power of
-                      collaboration, I am dedicated to making a lasting impact on businesses and lives alike.
-                    </p>
-                  </div>
+                  <div
+                    className="prose max-w-none [&>h2]:pt-3 [&>h3]:pt-3 [&>h3]:pb-3 [&>h2]:text-2xl [&>h3]:text-xl [&>p]:mb-2 last:[&>p]:mb-0"
+                    dangerouslySetInnerHTML={{ __html: button_1_detailed_text }}
+                  />
                 </div>
               </div>
             </div>

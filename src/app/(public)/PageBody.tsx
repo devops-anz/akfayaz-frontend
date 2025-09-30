@@ -47,8 +47,6 @@ const PageBody = ({
       <Quote quoteData={quoteData?.data} />
       <FeaturedProjects featuredProjectsData={featuredProjectsData?.data} />
       <Testimonials testimonialsData={testimonialsData?.data} />
-      {/* <RecentWorks />  */}
-      {/* <Blog /> */}
       <Contact contactData={contactData?.data} />
       <ScrollTop />
     </Fragment>
