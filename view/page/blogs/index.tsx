@@ -142,7 +142,7 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
     };
   }, []);
 
-    console.log("mappedApiBlogs apiBlogs", mappedApiBlogs, apiBlogs, apiBlogs, currentBlogs)
+    // console.log("mappedApiBlogs apiBlogs", mappedApiBlogs, apiBlogs, apiBlogs, currentBlogs)
 
   return (
     <div className="px-4 sm:px-6 md:px-10 pt-20 sm:pt-24 md:pt-32 min-h-screen w-full">
