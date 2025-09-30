@@ -1,70 +1,189 @@
- "use client";
-import React, { useEffect, useState } from "react";
+"use client";
+import React, { useEffect, useState, useRef } from "react";
 import { blogPosts } from "../../../@json-db";
 import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 import BlogCard from "view/ui/shared-component/component/BlogCard";
+import { useRouter, useSearchParams } from "next/navigation";
+import { BlogSearchParams, GetBlogsResponse, MappedBlogData } from "@/types/blogs";
+import BlogDetailsSkeleton from "view/ui/shared-component/component/BlogDetailsSkeleton";
+import { CategoriesResponse } from "@/app/(public)/blogs/PageBody";
 
-const BlogsPage = () => {
-  const [search, setSearch] = useState("");
-  const [filteredBlogs, setFilteredBlogs] = useState(blogPosts);
+interface BlogsPageProps {
+  blogsData?: GetBlogsResponse;
+  searchParams?: BlogSearchParams;
+  categoriesData: CategoriesResponse
+}
+
+
+const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) => {
+  const router = useRouter();
+  const urlSearchParams = useSearchParams();
+  const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  console.log("blogs blogsData", blogsData, categoriesData)
+
+  // Extract and map API data with fallback to static data
+  const apiBlogs = blogsData?.data?.data || [];
+  const mappedApiBlogs: MappedBlogData[] = apiBlogs.map((blog) => ({
+    id: blog.id,
+    slug: blog.slug,
+    title: blog.title,
+    date: blog.date,
+    author: blog.user?.name || "AKM Assets",
+    category: blog.blog_category?.name || "General",
+    tags: blog.tags || [],
+    image: blog.image_url ? blog.image_url : "/image/blogs/default.jpg"
+  }));
+
+  // Use API data if available, otherwise fallback to static data
+  const allBlogs = mappedApiBlogs.length > 0 ? mappedApiBlogs : blogPosts;
+
+  // Initialize state from URL parameters
+  const [search, setSearch] = useState(searchParams?.search || "");
   const [selectedTag, setSelectedTag] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState(searchParams?.category || "");
   const [isOpen, setIsOpen] = useState(false);
-  const [sortOrder, setSortOrder] = useState("newest");
-  const [currentPage, setCurrentPage] = useState(1);
-  const [noBlogsFound, setNoBlogsFound] = useState(false);
-  const blogsPerPage = 9;
+  const [sortOrder, setSortOrder] = useState(searchParams?.sort || "newest");
 
-  const handleSearch = (e: any) => {
-    setNoBlogsFound(false);
-    setSearch(e.target.value);
-    setSelectedTag("");
-    setSelectedCategory("");
-    setCurrentPage(1);
+  // Pagination data from API
+  const currentPage = blogsData?.data?.current_page || 1;
+  const totalPages = blogsData?.data?.last_page || 1;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const perPage = blogsData?.data?.per_page || 9;
+  const totalBlogs = blogsData?.data?.total || allBlogs.length;
+
+  // For client-side filtering when using static data
+  const [filteredBlogs, setFilteredBlogs] = useState(allBlogs);
+  const [noBlogsFound, setNoBlogsFound] = useState(false);
+
+  // Function to update URL parameters
+  const updateURL = (newParams: Partial<BlogSearchParams>) => {
+    const params = new URLSearchParams(urlSearchParams.toString());
+
+    Object.entries(newParams).forEach(([key, value]) => {
+      if (value && value !== '') {
+        params.set(key, value.toString());
+      } else {
+        params.delete(key);
+      }
+    });
+
+    // Always reset to page 1 when changing filters
+    if (newParams.search !== undefined || newParams.category !== undefined || newParams.sort !== undefined) {
+      params.set('page', '1');
+    }
+
+    router.push(`/blogs?${params.toString()}`);
   };
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      const filteredBlogs = blogPosts.filter((blog) =>
-        blog.title.toLowerCase().includes(search.toLowerCase())
-      );
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const searchValue = e.target.value;
+    setSearch(searchValue);
 
-      if(filteredBlogs.length === 0){
-        setNoBlogsFound(true);
-      } else {
-        setFilteredBlogs(filteredBlogs);
-      }
+    // Clear previous timeout if it exists
+    if (searchTimeoutRef.current) {
+      clearTimeout(searchTimeoutRef.current);
+    }
+
+    // Debounce search to avoid too many API calls
+    searchTimeoutRef.current = setTimeout(() => {
+      updateURL({
+        search: searchValue,
+        category: '',
+        page: '1'
+      });
     }, 600);
-
-    return () => clearTimeout(timeout);
-  }, [search]);
+  };
 
   const handleCategory = (category: string) => {
     setSelectedCategory(category);
     setSelectedTag("");
-    setCurrentPage(1);
-    const filteredBlogs = blogPosts.filter(
-      (blog) => blog.category === category
-    );
-    setFilteredBlogs(filteredBlogs);
+    updateURL({
+      category: category,
+      search: '',
+      page: '1'
+    });
   };
 
   const handleTag = (tag: string) => {
     setSelectedTag(tag);
     setSelectedCategory("");
-    setCurrentPage(1);
-    const filteredBlogs = blogPosts.filter((blog) => blog.tags.includes(tag));
-    setFilteredBlogs(filteredBlogs);
+    // For tags, we can use category parameter or add a separate tag parameter
+    updateURL({
+      category: '',
+      search: tag,
+      page: '1'
+    });
   };
 
-  const indexOfLastBlog = currentPage * blogsPerPage;
-  const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
-  const currentBlogs = filteredBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
+  const handleSort = (newSortOrder: string) => {
+    setSortOrder(newSortOrder as 'newest' | 'oldest');
+    updateURL({
+      sort: newSortOrder as 'newest' | 'oldest'
+    });
+  };
+
+  const handlePageChange = (page: number) => {
+    updateURL({
+      page: page.toString()
+    });
+  };
+
+  const handleReset = () => {
+    setSearch("");
+    setSelectedCategory("");
+    setSelectedTag("");
+    router.push('/blogs');
+  };
+
+  // Use API data for display, fallback to filtered static data
+  const currentBlogs = mappedApiBlogs.length > 0 ? mappedApiBlogs : filteredBlogs;
+
+  // Client-side filtering for static data fallback
+  useEffect(() => {
+    if (mappedApiBlogs.length === 0) {
+      let filtered = allBlogs;
+
+      if (search) {
+        filtered = filtered.filter((blog: any) =>
+          blog.title.toLowerCase().includes(search.toLowerCase())
+        );
+      }
+
+      if (selectedCategory) {
+        filtered = filtered.filter((blog: any) => blog.category === selectedCategory);
+      }
+
+      if (selectedTag) {
+        filtered = filtered.filter((blog: any) => blog.tags.includes(selectedTag));
+      }
+
+      // Sort
+      if (sortOrder === "newest") {
+        filtered = filtered.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+      } else {
+        filtered = filtered.sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime());
+      }
+
+      setFilteredBlogs(filtered);
+      setNoBlogsFound(filtered.length === 0);
+    }
+  }, [search, selectedCategory, selectedTag, sortOrder, allBlogs, mappedApiBlogs.length]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (searchTimeoutRef.current) {
+        clearTimeout(searchTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="px-4 sm:px-6 md:px-10 pt-20 sm:pt-24 md:pt-32 min-h-screen w-full">
-      <div className="bg-gray-100">
+      {isLoading ? <BlogDetailsSkeleton /> : (<div className="bg-gray-100">
         <div className="container-custom mx-auto">
           <div className="mb-4 sm:mb-5 md:mb-5 px-4 sm:px-0">
             <p className="font-[700] text-black pt-8 sm:pt-12 md:pt-16 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
@@ -86,7 +205,7 @@ const BlogsPage = () => {
                 Blogs
               </Link>
             </div>
-            
+
             <div className="w-full sm:w-auto space-y-3 sm:space-y-0">
               <div className="relative inline-block text-left w-full sm:w-auto md:mr-4 mr-0">
                 <button
@@ -120,11 +239,7 @@ const BlogsPage = () => {
                         role="menuitem"
                         tabIndex={-1}
                         onClick={() => {
-                          const sortedBlogs = [...filteredBlogs].sort(
-                            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-                          );
-                          setFilteredBlogs(sortedBlogs);
-                          setSortOrder("newest");
+                          handleSort("newest");
                           setIsOpen(false);
                         }}
                       >
@@ -135,11 +250,7 @@ const BlogsPage = () => {
                         role="menuitem"
                         tabIndex={-1}
                         onClick={() => {
-                          const sortedBlogs = [...filteredBlogs].sort(
-                            (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
-                          );
-                          setFilteredBlogs(sortedBlogs);
-                          setSortOrder("oldest");
+                          handleSort("oldest");
                           setIsOpen(false);
                         }}
                       >
@@ -167,24 +278,19 @@ const BlogsPage = () => {
                     <div className="flex items-center justify-between mb-4">
                       <p className="text-base text-white font-extrabold">Categories</p>
                       <p
-                        onClick={() => {
-                          setFilteredBlogs(blogPosts);
-                          setSelectedCategory("");
-                          setSelectedTag("");
-                          setCurrentPage(1);
-                        }}
+                        onClick={handleReset}
                         className="bg-white text-black px-1.5 pb-0.5 rounded-sm cursor-pointer"
                       >
                         Reset
                       </p>
                     </div>
                     <div className="space-y-3">
-                      {Array.from(new Set(blogPosts.map((blog) => blog.category))).map(
+                      {Array.from(new Set(allBlogs.map((blog) => blog.category))).map(
                         (category) => {
-                          const count = blogPosts.filter(
-                            (blog) => blog.category === category
+                          const count = allBlogs.filter(
+                            (blog: any) => blog.category === category
                           ).length;
-                          
+
                           return (
                             <div
                               onClick={() => handleCategory(category)}
@@ -201,20 +307,22 @@ const BlogsPage = () => {
                           );
                         }
                       )}
+
                       <div className="">
                         <p className="font-bold text-white text-base pt-4 pb-2">
                           Tags:
                         </p>
                         <div className="flex flex-wrap items-center gap-2">
-                          {Array.from(new Set(blogPosts.map((blog) => blog.tags).flat())).map((tag) => (
+                          {[
+                            ...Array.from(new Set(allBlogs.map((blog) => blog.tags).flat())),
+                          ].map((tag) => (
                             <p
                               onClick={() => handleTag(tag)}
                               key={tag}
-                              className={`text-xs border border-gray-700 rounded-sm px-2 py-1 cursor-pointer ${
-                                selectedTag === tag
-                                  ? "bg-white text-black"
-                                  : "text-white hover:bg-white hover:text-black"
-                              }`}
+                              className={`text-gray-300 text-xs hover:text-[#f7d26a] border border-gray-700 rounded-md px-2 py-1 cursor-pointer ${selectedTag === tag
+                                ? "bg-gray-500 text-amber-500 "
+                                : ""
+                                }`}
                             >
                               {tag}
                             </p>
@@ -226,7 +334,6 @@ const BlogsPage = () => {
                 </div>
               </div>
             </div>
-
             <div className="w-full lg:w-4/5 lg:order-1">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-3 md:gap-5">
                 {noBlogsFound ? (
@@ -234,8 +341,10 @@ const BlogsPage = () => {
                     <p className="text-xl sm:text-2xl font-bold">No blogs found</p>
                   </div>
                 ) : (
-                  currentBlogs.map((blog) => (
+                  currentBlogs.map((blog: any) => (
                     <BlogCard
+                      isLoading={isLoading}
+                      setIsLoading={setIsLoading}
                       key={blog.id}
                       image={blog.image}
                       title={blog.title}
@@ -251,39 +360,45 @@ const BlogsPage = () => {
             </div>
           </div>
 
-          <div className="flex justify-center pb-10 px-4 sm:px-0">
-            <div className="flex items-center gap-2 flex-wrap justify-center">
-              <button
-                onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
-                disabled={currentPage === 1}
-                className="px-3 py-1 text-sm border hover:tracking-[3px] transition-all duration-300 border-gray-700 rounded-md disabled:opacity-50 disabled:cursor-not-allowed text-black"
-              >
-                Previous
-              </button>
-              {Array.from({ length: Math.ceil(filteredBlogs.length / blogsPerPage) }, (_, i) => i + 1).map((pageNum) => (
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="flex justify-center pb-10">
+              <div className="flex items-center gap-2">
                 <button
-                  key={pageNum}
-                  onClick={() => setCurrentPage(pageNum)}
-                  className={`px-3 py-1 text-sm border border-gray-700 rounded-md ${
-                    currentPage === pageNum 
+                  onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
+                  disabled={currentPage === 1}
+                  className="px-3 py-1 text-sm border hover:tracking-[3px] transition-all duration-300 border-gray-700 rounded-md disabled:opacity-50 disabled:cursor-not-allowed text-black"
+                >
+                  Previous
+                </button>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                  <button
+                    key={pageNum}
+                    onClick={() => handlePageChange(pageNum)}
+                    className={`px-3 py-1 text-sm border border-gray-700 rounded-md ${currentPage === pageNum
                       ? "bg-gray-900 text-white"
                       : "text-black"
-                  }`}
+                      }`}
+                  >
+                    {pageNum}
+                  </button>
+                ))}
+                <button
+                  onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
+                  disabled={currentPage === totalPages}
+                  className="px-3 py-1 text-sm border border-gray-700 rounded-md disabled:opacity-50 disabled:cursor-not-allowed hover:tracking-[3px] transition-all duration-300 hover:bg-white text-black"
                 >
-                  {pageNum}
+                  Next
                 </button>
-              ))}
-              <button
-                onClick={() => setCurrentPage(Math.min(Math.ceil(filteredBlogs.length / blogsPerPage), currentPage + 1))}
-                disabled={currentPage === Math.ceil(filteredBlogs.length / blogsPerPage)}
-                className="px-3 py-1 text-sm border border-gray-700 rounded-md disabled:opacity-50 disabled:cursor-not-allowed hover:tracking-[3px] transition-all duration-300 hover:bg-white text-black"
-              >
-                Next
-              </button>
+              </div>
+              <div className="ml-4 text-sm text-gray-600">
+                Showing {blogsData?.data?.from || 1} to {blogsData?.data?.to || currentBlogs.length} of {totalBlogs} results
+              </div>
             </div>
-          </div>
+          )}
+
         </div>
-      </div>
+      </div>)}
     </div>
   );
 };

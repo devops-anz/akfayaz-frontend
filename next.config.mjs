@@ -8,6 +8,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'placehold.it',
       },
+      {
+        protocol: 'https',
+        hostname: 'akfayaz.anzbizconsultants.com.au',
+      },
     ],
   },
 };

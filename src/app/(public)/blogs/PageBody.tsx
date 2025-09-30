@@ -1,13 +1,35 @@
+import { BlogSearchParams, GetBlogsResponse } from '@/types/blogs';
 import React from 'react'
 import BlogsPage from 'view/page/blogs'
 
-const PageBody = () => {
+export interface Category {
+  id: number;
+  name: string;
+  slug: string;
+  description: string;
+  deleted_at: string | null;
+  created_at: string;
+  updated_at: string;
+  blogs_count: number;
+}
+
+export interface CategoriesResponse {
+  data: Category[];
+}
+
+interface PageBodyProps {
+  blogsData: GetBlogsResponse;
+  searchParams: BlogSearchParams;
+  categoriesData: CategoriesResponse;
+}
+
+const PageBody = ({ categoriesData, blogsData, searchParams }: PageBodyProps) => {
   return (
     <div>
-      
-        <div className='mx-auto'>
-            <BlogsPage />
-        </div>
+
+      <div className='mx-auto'>
+        <BlogsPage categoriesData={categoriesData} blogsData={blogsData} searchParams={searchParams} />
+      </div>
     </div>
   )
 }

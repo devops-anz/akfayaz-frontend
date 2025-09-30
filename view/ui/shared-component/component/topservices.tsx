@@ -61,37 +61,16 @@ export default function TopServicesModal({
               <div className='p-4 sm:p-6'>
                 <div className='flex flex-col gap-3 sm:gap-4'>
                   <p className='text-center text-lg font-bold text-black sm:text-xl md:text-3xl lg:text-4xl'>
-                    {selectedService.title}
+                    {selectedService?.name}
                   </p>
 
                   <div className='space-y-4 sm:space-y-8'>
-                    <p className='text-sm sm:text-base'>{selectedService.data.paragraph1}</p>
 
-                    <div className='grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 sm:gap-4'>
-                      {selectedService.data.points.map((point: string, index: number) => (
-                        <div key={point} className='flex items-center space-x-2'>
-                          {index === 0 ? (
-                            <svg className='h-2 w-2 text-gray-500' fill='currentColor' viewBox='0 0 24 24'>
-                              <circle cx='12' cy='12' r='6' />
-                            </svg>
-                          ) : (
-                            <svg
-                              className='h-4 w-4 text-gray-500 sm:h-5 sm:w-5'
-                              fill='none'
-                              stroke='currentColor'
-                              viewBox='0 0 24 24'
-                            >
-                              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M5 13l4 4L19 7' />
-                            </svg>
-                          )}
-                          <span className={`text-xs text-gray-700 sm:text-sm md:text-base ${index === 0 ? 'font-bold' : ''}`}>
-                            {point}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <p className='text-sm sm:text-base'>{selectedService.data.paragraph2}</p>
+                    <div
+                      className="prose max-w-none [&>h2]:pt-3 [&>h3]:pt-3 [&>h3]:pb-3 [&>h2]:text-2xl [&>h3]:text-xl [&>p]:mb-2 last:[&>p]:mb-0"
+                      dangerouslySetInnerHTML={{ __html: selectedService?.description }}
+                    />
+                    
                   </div>
                 </div>
               </div>

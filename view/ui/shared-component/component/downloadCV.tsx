@@ -48,7 +48,7 @@ export default function DownloadCVModal({ open, setOpen }: { open: boolean; setO
       setIsLoading(true);
       startTransition(() => {
         sendMessage(formData).then((res: any) => {
-          console.log(res);
+          // console.log(res);
           if (res.status) {
             setFormData(initializeValue);
             setIsLoading(false);
@@ -62,7 +62,7 @@ export default function DownloadCVModal({ open, setOpen }: { open: boolean; setO
         });
       });
     } catch (error) {
-      console.log('some things wrong', error);
+      // console.log('some things wrong', error);
       setResponse({ status: false, data: 'some things wrong' });
       setIsLoading(false);
     }
