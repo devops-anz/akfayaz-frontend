@@ -4,6 +4,7 @@ import BlogsPage from 'view/page/blogs'
 
 export interface Category {
   id: number;
+  name: string;
   slug: string;
   description: string;
   deleted_at: string | null;

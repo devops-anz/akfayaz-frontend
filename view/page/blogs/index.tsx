@@ -7,7 +7,8 @@ import BlogCard from "view/ui/shared-component/component/BlogCard";
 import { useRouter, useSearchParams } from "next/navigation";
 import { BlogSearchParams, GetBlogsResponse, MappedBlogData } from "@/types/blogs";
 import BlogDetailsSkeleton from "view/ui/shared-component/component/BlogDetailsSkeleton";
-import { CategoriesResponse } from "@/app/(public)/blogs/PageBody";
+import { CategoriesResponse, Category } from "@/app/(public)/blogs/PageBody";
+import { BlogGridSkeleton } from "view/ui/shared-component/component/BlogCardSkeleton";
 
 interface BlogsPageProps {
   blogsData?: GetBlogsResponse;
@@ -21,6 +22,7 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
   const urlSearchParams = useSearchParams();
   const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingBlogCard, setIsLoadingBlogCard] = useState(false);
 
   console.log("blogs blogsData", blogsData, categoriesData)
 
@@ -275,57 +277,55 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
                       </p>
                     </div>
                     <div className="space-y-3">
-                      {Array.from(new Set(allBlogs.map((blog) => blog.category))).map(
-                        (category) => {
-                          const count = allBlogs.filter(
-                            (blog: any) => blog.category === category
-                          ).length;
-
-                          return (
-                            <div
-                              onClick={() => handleCategory(category)}
-                              key={category}
-                              className={`flex items-center gap-2 cursor-pointer px-1 pb-0.5 rounded-sm
-                                ${selectedCategory === category
-                                  ? "bg-white text-black"
-                                  : "text-white hover:bg-white hover:text-black"
-                                }`}
-                            >
-                              <span>{category}</span>
-                              <span className="text-sm">({count})</span>
-                            </div>
-                          );
-                        }
-                      )}
+                      {
+                        categoriesData.data.map((category: Category) => (
+                          <div
+                            onClick={() => handleCategory(category.name)}
+                            key={category.id}
+                            className={`flex items-center gap-2 cursor-pointer px-1 pb-0.5 rounded-sm
+                                ${selectedCategory === category.name
+                                ? "bg-white text-black"
+                                : "text-white hover:bg-white hover:text-black"
+                              }`}
+                          >
+                            <span>{category.name}</span>
+                            <span className="text-sm">({category.blogs_count})</span>
+                          </div>
+                        ))
+                      }
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-4/5 lg:order-1">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-3 md:gap-5">
-                {noBlogsFound ? (
-                  <div className="col-span-full text-center">
-                    <p className="text-xl sm:text-2xl font-bold">No blogs found</p>
-                  </div>
-                ) : (
-                  currentBlogs.map((blog: any) => (
-                    <BlogCard
-                      isLoading={isLoading}
-                      setIsLoading={setIsLoading}
-                      key={blog.id}
-                      image={blog.image}
-                      title={blog.title}
-                      date={blog.date}
-                      category={blog.category}
-                      slug={blog.slug}
-                      id={blog.id}
-                      description={typeof blog.content === 'string' ? blog.content.slice(0, 120) + (blog.content.length > 120 ? '...' : '') : ''}
-                    />
-                  ))
-                )}
+            {isLoadingBlogCard ? (
+              <BlogGridSkeleton count={6} />
+            ) : (
+              <div className="w-full lg:w-4/5 lg:order-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-3 md:gap-5">
+                  {noBlogsFound ? (
+                    <div className="col-span-full text-center">
+                      <p className="text-xl sm:text-2xl font-bold">No blogs found</p>
+                    </div>
+                  ) : (
+                    currentBlogs.map((blog: any) => (
+                      <BlogCard
+                        isLoading={isLoading}
+                        setIsLoading={setIsLoading}
+                        key={blog.id}
+                        image={blog.image}
+                        title={blog.title}
+                        date={blog.date}
+                        category={blog.category}
+                        slug={blog.slug}
+                        id={blog.id}
+                        description={typeof blog.content === 'string' ? blog.content.slice(0, 120) + (blog.content.length > 120 ? '...' : '') : ''}
+                      />
+                    ))
+                  )}
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Pagination */}
