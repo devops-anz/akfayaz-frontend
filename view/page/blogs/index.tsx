@@ -307,7 +307,7 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
                         {
                           categoriesData.data.map((category: Category) => (
                             <div
-                              onClick={() => handleCategory(category.slug)}
+                              onClick={() => handleCategory(category.id)}
                               key={category.id}
                               className={`flex items-center gap-2 cursor-pointer px-1 pb-0.5 rounded-sm
                                 ${selectedCategory === category.name
