@@ -63,7 +63,6 @@ const config: Config = {
     }
   },
   plugins: [
-    require('@tailwindcss/typography'),
     function ({ addUtilities }: { addUtilities: any }) {
       const newUtilities = {
         '.no-scrollbar::-webkit-scrollbar': {

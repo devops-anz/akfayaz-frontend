@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-import { blogPosts } from "../../../@json-db";
 import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 import BlogCard from "view/ui/shared-component/component/BlogCard";
@@ -16,7 +15,6 @@ interface BlogsPageProps {
   categoriesData: CategoriesResponse
 }
 
-
 const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) => {
   const router = useRouter();
   const urlSearchParams = useSearchParams();
@@ -24,9 +22,7 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingBlogCard, setIsLoadingBlogCard] = useState(false);
 
-  console.log("blogs blogsData", blogsData, categoriesData)
-
-  // Extract and map API data with fallback to static data
+  // Extract and map API data
   const apiBlogs = blogsData?.data?.data || [];
   const mappedApiBlogs: MappedBlogData[] = apiBlogs.map((blog) => ({
     id: blog.id,
@@ -39,12 +35,8 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
     image: blog.image_url ? blog.image_url : "/image/blogs/default.jpg"
   }));
 
-  // Use API data if available, otherwise fallback to static data
-  const allBlogs = mappedApiBlogs.length > 0 ? mappedApiBlogs : blogPosts;
-
   // Initialize state from URL parameters
   const [search, setSearch] = useState(searchParams?.search || "");
-  const [selectedTag, setSelectedTag] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(searchParams?.category || "");
   const [isOpen, setIsOpen] = useState(false);
   const [sortOrder, setSortOrder] = useState(searchParams?.sort || "newest");
@@ -52,13 +44,7 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
   // Pagination data from API
   const currentPage = blogsData?.data?.current_page || 1;
   const totalPages = blogsData?.data?.last_page || 1;
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const perPage = blogsData?.data?.per_page || 9;
-  const totalBlogs = blogsData?.data?.total || allBlogs.length;
-
-  // For client-side filtering when using static data
-  const [filteredBlogs, setFilteredBlogs] = useState(allBlogs);
-  const [noBlogsFound, setNoBlogsFound] = useState(false);
+  const totalBlogs = blogsData?.data?.total || 0;
 
   // Sync local state with URL parameters when they change
   useEffect(() => {
@@ -69,11 +55,6 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
     setSearch(currentSearch);
     setSelectedCategory(currentCategory);
     setSortOrder(currentSort as 'newest' | 'oldest');
-
-    // Clear tag selection when category is selected from URL
-    if (currentCategory) {
-      setSelectedTag('');
-    }
   }, [urlSearchParams]);
 
   // Turn off loading state when API data changes (API call completes)
@@ -124,14 +105,12 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
   const handleCategory = (category: number) => {
     setIsLoadingBlogCard(true);
     setSelectedCategory(category.toString());
-    setSelectedTag("");
     updateURL({
       category: category.toString(),
       search: '',
       page: '1'
     });
   };
-
 
   const handleSort = (newSortOrder: string) => {
     setSortOrder(newSortOrder as 'newest' | 'oldest');
@@ -151,43 +130,8 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
     setIsLoadingBlogCard(true);
     setSearch("");
     setSelectedCategory("");
-    setSelectedTag("");
     router.push('/blogs');
   };
-
-  // Use API data for display, fallback to filtered static data
-  const currentBlogs = mappedApiBlogs.length > 0 ? mappedApiBlogs : filteredBlogs;
-
-  // Client-side filtering for static data fallback
-  useEffect(() => {
-    if (mappedApiBlogs.length === 0) {
-      let filtered = allBlogs;
-
-      if (search) {
-        filtered = filtered.filter((blog: any) =>
-          blog.title.toLowerCase().includes(search.toLowerCase())
-        );
-      }
-
-      if (selectedCategory) {
-        filtered = filtered.filter((blog: any) => blog.category === selectedCategory);
-      }
-
-      if (selectedTag) {
-        filtered = filtered.filter((blog: any) => blog.tags.includes(selectedTag));
-      }
-
-      // Sort
-      if (sortOrder === "newest") {
-        filtered = filtered.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
-      } else {
-        filtered = filtered.sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime());
-      }
-
-      setFilteredBlogs(filtered);
-      setNoBlogsFound(filtered.length === 0);
-    }
-  }, [search, selectedCategory, selectedTag, sortOrder, allBlogs, mappedApiBlogs.length]);
 
   // Cleanup timeout on unmount
   useEffect(() => {
@@ -197,6 +141,8 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
       }
     };
   }, []);
+
+    // console.log("mappedApiBlogs apiBlogs", mappedApiBlogs, apiBlogs, apiBlogs, currentBlogs)
 
   return (
     <div className="px-4 sm:px-6 md:px-10 pt-20 sm:pt-24 md:pt-32 min-h-screen w-full">
@@ -310,7 +256,7 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
                               onClick={() => handleCategory(category.id)}
                               key={category.id}
                               className={`flex items-center gap-2 cursor-pointer px-1 pb-0.5 rounded-sm
-                                ${selectedCategory === category.name
+                                ${selectedCategory === category.id.toString()
                                   ? "bg-white text-black"
                                   : "text-white hover:bg-white hover:text-black"
                                 }`}
@@ -330,12 +276,12 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
               ) : (
                 <div className="w-full lg:w-4/5 lg:order-1">
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-3 md:gap-5">
-                    {noBlogsFound ? (
+                    {mappedApiBlogs.length === 0 ? (
                       <div className="col-span-full text-center">
                         <p className="text-xl sm:text-2xl font-bold">No blogs found</p>
                       </div>
                     ) : (
-                      currentBlogs.map((blog: any) => (
+                      mappedApiBlogs.map((blog: any) => (
                         <BlogCard
                           isLoading={isLoading}
                           setIsLoading={setIsLoading}
@@ -387,7 +333,7 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
                   </button>
                 </div>
                 <div className="ml-4 text-sm text-gray-600">
-                  Showing {blogsData?.data?.from || 1} to {blogsData?.data?.to || currentBlogs.length} of {totalBlogs} results
+                  Showing {blogsData?.data?.from || 1} to {blogsData?.data?.to || mappedApiBlogs.length} of {totalBlogs} results
                 </div>
               </div>
             )}
