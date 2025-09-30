@@ -121,12 +121,12 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
     }, 600);
   };
 
-  const handleCategory = (category: Number) => {
+  const handleCategory = (category: number) => {
     setIsLoadingBlogCard(true);
-    setSelectedCategory(category);
+    setSelectedCategory(category.toString());
     setSelectedTag("");
     updateURL({
-      category: category,
+      category: category.toString(),
       search: '',
       page: '1'
     });
