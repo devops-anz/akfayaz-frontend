@@ -4,9 +4,9 @@ import { blogPosts } from "../../../@json-db";
 import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 import BlogCard from "view/ui/shared-component/component/BlogCard";
-import { BlogGridSkeleton } from "view/ui/shared-component/component/BlogCardSkeleton";
 import { useRouter, useSearchParams } from "next/navigation";
 import { BlogSearchParams, GetBlogsResponse, MappedBlogData } from "@/types/blogs";
+import BlogDetailsSkeleton from "view/ui/shared-component/component/BlogDetailsSkeleton";
 
 interface BlogsPageProps {
   blogsData?: GetBlogsResponse;
@@ -181,7 +181,7 @@ const BlogsPage = ({ blogsData, searchParams }: BlogsPageProps) => {
 
   return (
     <div className="px-4 sm:px-6 md:px-10 pt-20 sm:pt-24 md:pt-32 min-h-screen w-full">
-      <div className="bg-gray-100">
+      {isLoading ? <BlogDetailsSkeleton /> : (<div className="bg-gray-100">
         <div className="container-custom mx-auto">
           <div className="mb-4 sm:mb-5 md:mb-5 px-4 sm:px-0">
             <p className="font-[700] text-black pt-8 sm:pt-12 md:pt-16 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
@@ -332,34 +332,30 @@ const BlogsPage = ({ blogsData, searchParams }: BlogsPageProps) => {
                 </div>
               </div>
             </div>
-            {isLoading ? (
-              <BlogGridSkeleton count={6} />
-            ) : (
-              <div className="w-full lg:w-4/5 lg:order-1">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-3 md:gap-5">
-                  {noBlogsFound ? (
-                    <div className="col-span-full text-center">
-                      <p className="text-xl sm:text-2xl font-bold">No blogs found</p>
-                    </div>
-                  ) : (
-                    currentBlogs.map((blog: any) => (
-                      <BlogCard
-                        isLoading={isLoading}
-                        setIsLoading={setIsLoading}
-                        key={blog.id}
-                        image={blog.image}
-                        title={blog.title}
-                        date={blog.date}
-                        category={blog.category}
-                        slug={blog.slug}
-                        id={blog.id}
-                        description={typeof blog.content === 'string' ? blog.content.slice(0, 120) + (blog.content.length > 120 ? '...' : '') : ''}
-                      />
-                    ))
-                  )}
-                </div>
+            <div className="w-full lg:w-4/5 lg:order-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-3 md:gap-5">
+                {noBlogsFound ? (
+                  <div className="col-span-full text-center">
+                    <p className="text-xl sm:text-2xl font-bold">No blogs found</p>
+                  </div>
+                ) : (
+                  currentBlogs.map((blog: any) => (
+                    <BlogCard
+                      isLoading={isLoading}
+                      setIsLoading={setIsLoading}
+                      key={blog.id}
+                      image={blog.image}
+                      title={blog.title}
+                      date={blog.date}
+                      category={blog.category}
+                      slug={blog.slug}
+                      id={blog.id}
+                      description={typeof blog.content === 'string' ? blog.content.slice(0, 120) + (blog.content.length > 120 ? '...' : '') : ''}
+                    />
+                  ))
+                )}
               </div>
-            )}
+            </div>
           </div>
 
           {/* Pagination */}
@@ -400,7 +396,7 @@ const BlogsPage = ({ blogsData, searchParams }: BlogsPageProps) => {
           )}
 
         </div>
-      </div>
+      </div>)}
     </div>
   );
 };
