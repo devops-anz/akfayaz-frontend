@@ -85,8 +85,8 @@ export async function fetchCategoriesPageData(): Promise<any> {
       headers: {
         'Content-Type': 'application/json'
       },
-      // next: { revalidate: 15 } // after testing it's should be 3600 (1 hours)
-      cache: "no-store",
+      next: { revalidate: 3600 } // after testing it's should be 3600 (1 hours)
+      // cache: "no-store", // always fresh
     });
 
     console.log('categories API Response:', res.status, res.statusText);
