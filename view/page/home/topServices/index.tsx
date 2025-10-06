@@ -48,18 +48,18 @@ const TopServices = ({ topServicesData }: { topServicesData: HomePageTopServices
   return (
     <>
       <div id='services'>
-        <div className='container-custom pt-10 sm:pt-28 md:pt-20'>
-          <div className='mb-10 px-4 sm:mb-16 sm:px-6 md:px-0 md:mb-20'>
-            <p className={`font-[700] text-black ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
+        <div className='container-custom pt-10 sm:pt-28 md:pt-20 lg:pt-24 xl:pt-20'>
+          <div className='mb-10 px-4 sm:mb-16 sm:px-6 md:mb-20 md:px-10 lg:px-8 lg:mb-24 xl:px-0 xl:mb-20'>
+            <p className={`font-[700] text-black ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl`}>
               {topServicesData?.title}
             </p>
-            <p className='mb-3 pt-6 sm:mb-4 sm:pt-8 md:mb-5 md:pt-10'>
+            <p className='mb-3 pt-6 sm:mb-4 sm:pt-8 md:mb-5 md:pt-10 lg:mb-6 lg:pt-12 xl:mb-7 xl:pt-14'>
               {topServicesData?.subtitle}
             </p>
             <hr className='border border-solid border-gray-200' />
           </div>
 
-          <div className='mb-10 grid grid-cols-1 gap-4 px-4 sm:mb-16 sm:grid-cols-2 sm:gap-6 sm:px-6 md:px-0 md:mb-20 md:grid-cols-3 md:gap-8'>
+          <div className='mb-10 grid grid-cols-1 gap-4 px-4 sm:mb-16 sm:grid-cols-2 sm:gap-6 sm:px-6 md:mb-20  md:grid-cols-2 lg:grid-cols-3 md:gap- md:px-10 lg:px-8 lg:gap-10 lg:mb-24 xl:px-0 xl:gap-5 xl:mb-20'>
             {topServicesData.top_services.map((item: any, index: number) => {
               // Use color from API if available, otherwise use defaultColorPalette cyclically
               const backgroundColor = item?.color || defaultColorPalette[index % defaultColorPalette.length];

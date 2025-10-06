@@ -6,7 +6,7 @@ const Hero = ({ heroData }: { heroData: any }) => {
 
   return (
     <div
-      className={`mx-3 h-[25vh] mt-20 bg-cover bg-center sm:mx-6 sm:mt-12 sm:h-[70vh] md:mx-10 md:mt-40 md:h-[85vh] bg-[url('/image/hero/cover.webp')] bg-no-repeat `}
+      className={`mx-3 h-[25vh] mt-20 bg-cover bg-center sm:mx-6 sm:mt-12 sm:h-[70vh] md:mx-10 md:mt-40 md:h-[75vh] lg:h-[60vh] xl:h-[90vh] sm:lg:px-10 bg-[url('/image/hero/cover.webp')] bg-no-repeat `}
     >
       <div className='flex h-full  flex-col justify-center'>
         <div className='container-custom px-4 sm:px-6 md:px-8 lg:px-0'>
@@ -15,7 +15,7 @@ const Hero = ({ heroData }: { heroData: any }) => {
           >
             {heroData?.title}
           </p>
-          <p className='mt-4 text-sm font-[600] text-black sm:mt-6 sm:text-xl md:mt-10 md:text-3xl max-w-[600px]'>
+          <p className='mt-4 text-sm font-[600] text-black sm:mt-6 sm:text-xl md:mt-10  md:text-3xl max-w-[200px] md:max-w-[400px] lg:max-w-[600px]'>
             {heroData?.description}
           </p>
           <a href='#contact-me'>

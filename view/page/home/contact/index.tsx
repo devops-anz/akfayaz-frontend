@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { poppins } from 'styles/fonts';
-
 
 // dummy comment
 
 const Contact = ({ contactData }: { contactData: any }) => {
+  const [copied, setCopied] = useState<string | null>(null);
+
+  const handleCopy = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(text);
+      setTimeout(() => setCopied(null), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
   return (
-    <div id='contact-me' className='bg-[#d9e1c5] px-5 py-20 md:mx-10 md:px-0'>
-      <div className='container-custom mx-auto px-4 md:px-0'>
+    <div id='contact-me' className='bg-[#d9e1c5] mt-20 px-5 py-20 md:mx-10 md:px-0'>
+      <div className='container-custom mx-auto px-4 md:px-5 lg:px-10 xl:px-0'>
         {/* Header */}
         <div className='mb-16'>
           <h2 className={`${poppins.className} mb-4 text-4xl font-bold md:text-6xl`}>{contactData.title}</h2>
@@ -15,7 +26,7 @@ const Contact = ({ contactData }: { contactData: any }) => {
           <hr className='mt-6 border border-solid border-gray-500/50' />
         </div>
         {/* Contact Methods */}
-        <div className='grid  grid-cols-1 gap-4 md:grid-cols-3'>
+        <div className='grid  grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3'>
           {contactData.links.map((method: any, index: number) => {
             // Function to get the proper href based on the method type
             const getHref = () => {
@@ -44,12 +55,20 @@ const Contact = ({ contactData }: { contactData: any }) => {
               return method.url;
             };
 
+            const isWriteToMe = method.title === 'Write To Me' || method.title === 'WRITE TO ME';
+
             return (
               <a
                 href={getHref()}
                 target='_blank'
                 key={index}
-                className='flex flex-col rounded-md border-2 border-solid border-gray-500/50 py-6 px-6 transition-all duration-300 ease-in-out'
+                className='flex  flex-col rounded-md border-2 border-solid border-gray-500/50 py-6 px-6 transition-all duration-300 ease-in-out'
+                onClick={(e) => {
+                  if (isWriteToMe) {
+                    e.preventDefault();
+                    handleCopy(method.url);
+                  }
+                }}
               >
                 {/* Icon Circle */}
                 <div className='mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white'>
@@ -93,11 +112,14 @@ const Contact = ({ contactData }: { contactData: any }) => {
 
                 {/* Value */}
                 <div
-                  className={`text-2xl font-[700] text-gray-900 ${method.title === 'FIND ME' || method.title === 'WRITE TO ME' || method.title === 'Write To Me' ? 'text-[17px] sm:text-[22px]' : ''}
+                  className={`text-2xl text-wrap  font-[700] text-gray-900 ${method.title === 'FIND ME' || method.title === 'WRITE TO ME' || method.title === 'Write To Me' ? 'text-[17px] sm:text-[22px]' : ''}
                 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full
                 `}
                 >
                   {getDisplayText()}
+                  {isWriteToMe && copied === method.url && (
+                    <span className='ml-2 mb-2 text-xs bg-black text-white px-1 py-0.5 rounded-md'> ✓ Copied!</span>
+                  )}
                 </div>
               </a>
             );

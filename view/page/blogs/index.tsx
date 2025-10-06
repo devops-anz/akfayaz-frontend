@@ -149,7 +149,7 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
       {isLoading ? <BlogDetailsSkeleton /> : (
         <div className="bg-gray-100">
           <div className="container-custom mx-auto">
-            <div className="mb-4 sm:mb-5 md:mb-5 px-4 sm:px-0">
+            <div className="mb-4 sm:mb-5 md:mb-5 px-4 sm:px-0 md:px-2">
               <p className="font-[700] text-black pt-8 sm:pt-12 md:pt-16 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                 Latest Blog Posts
               </p>
@@ -159,7 +159,7 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
               <hr className="border border-solid border-gray-400/50" />
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 py-4 px-4 sm:px-0">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 py-4 px-4 sm:px-3">
               <div className="flex items-center gap-2">
                 <Link href="/" className="text-black hover:text-[#30665f] cursor-pointer">
                   Home
@@ -235,7 +235,7 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
               </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-3 pb-10 px-4 sm:px-0">
+            <div className="flex flex-col lg:flex-row gap-3 pb-10 px-4 sm:px-3">
               <div className="w-full lg:w-1/5 lg:order-2 mb-6 lg:mb-0">
                 <div className="bg-gray-900 rounded-sm p-4 sticky top-24">
                   <div className="flex flex-col gap-4">
@@ -303,8 +303,8 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
 
             {/* Pagination */}
             {totalPages > 1 && (
-              <div className="flex justify-center pb-10">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-col md:flex-row gap-2 justify-center items-center pb-10">
+                <div className="flex  justify-center items-center gap-2">
                   <button
                     onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
                     disabled={currentPage === 1}

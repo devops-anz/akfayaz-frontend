@@ -61,7 +61,7 @@ const Navbar = () => {
   console.log("logoUrl", navbarData.logoUrl)
 
   return (
-    <div className={`fixed top-0 left-0 right-0 bg-white shadow-md z-[101] ${isScrolled ? 'shadow-md' : 'shadow-none'}`}>
+    <div className={` fixed top-0 left-0 right-0 bg-white shadow-md z-[99] ${isScrolled ? 'shadow-md' : 'shadow-none'}`}>
       <div
         className={`w-full px-0 py-0 duration-700 ease-in-out md:px-8  ${isScrolled ? 'md:py-1.5' : 'md:py-4'}`}
       >

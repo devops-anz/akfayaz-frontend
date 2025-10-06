@@ -5,7 +5,15 @@ import { RxCross2 } from 'react-icons/rx';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 
-export default function PortfolioModal({ button_1_detailed_text, open, setOpen }: { button_1_detailed_text: string, open: boolean; setOpen: (open: boolean) => void }) {
+export default function PortfolioModal({
+  button_1_detailed_text,
+  open,
+  setOpen
+}: {
+  button_1_detailed_text: string;
+  open: boolean;
+  setOpen: (open: boolean) => void;
+}) {
   const cancelButtonRef = useRef(null);
 
   return (
@@ -16,7 +24,7 @@ export default function PortfolioModal({ button_1_detailed_text, open, setOpen }
         initialFocus={cancelButtonRef}
         onClose={setOpen}
       >
-        <div className='flex min-h-screen  items-center justify-center px-4'>
+        <div className='flex min-h-screen items-center justify-center px-4'>
           <Transition.Child
             as={Fragment}
             enter='ease-out duration-300'
@@ -38,11 +46,12 @@ export default function PortfolioModal({ button_1_detailed_text, open, setOpen }
             leaveFrom='opacity-100 translate-y-0 sm:scale-100'
             leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
           >
-            <div className='relative w-full max-w-4xl transform  rounded-lg bg-white   transition-all'>
-              <div className='fixed -right-10 -top-14 z-[101]'>
+            <div className='relative w-full max-w-4xl transform rounded-lg bg-white transition-all max-h-[500px] overflow-y-auto'>
+              <div className='sticky top-0 z-20 flex justify-between items-center bg-white px-6 pt-4 pb-2'>
+                <p className='flex-1 text-center text-2xl font-bold text-black'>Portfolio</p>
                 <button
                   type='button'
-                  className='rounded-full bg-white p-2  hover:bg-gray-100'
+                  className='rounded-full bg-white p-2 hover:bg-gray-100'
                   onClick={() => setOpen(false)}
                   ref={cancelButtonRef}
                 >
@@ -50,15 +59,11 @@ export default function PortfolioModal({ button_1_detailed_text, open, setOpen }
                 </button>
               </div>
 
-              <div className='p-6'>
-                <div className='flex flex-col gap-4'>
-                  <p className='text-center text-2xl font-bold text-black'>Portfolio</p>
-
-                  <div
-                    className="prose max-w-none [&>h2]:pt-3 [&>h3]:pt-3 [&>h3]:pb-3 [&>h2]:text-2xl [&>h3]:text-xl [&>p]:mb-2 last:[&>p]:mb-0"
-                    dangerouslySetInnerHTML={{ __html: button_1_detailed_text }}
-                  />
-                </div>
+              <div className='px-6 pb-6'>
+                <div
+                  className="prose max-w-none [&>h2]:pt-3 [&>h3]:pt-3 [&>h3]:pb-3 [&>h2]:text-2xl [&>h3]:text-xl [&>p]:mb-2 last:[&>p]:mb-0"
+                  dangerouslySetInnerHTML={{ __html: button_1_detailed_text }}
+                />
               </div>
             </div>
           </Transition.Child>
