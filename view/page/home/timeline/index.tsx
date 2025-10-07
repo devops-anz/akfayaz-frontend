@@ -43,8 +43,8 @@ const Timeline = ({ timelineData }: { timelineData: any }) => {
 
   return (
     <div className='container-custom mx-auto '>
-      <div className='mb-10  md:pt-10 px-4 sm:mb-16 sm:px-6 md:px-0 md:mb-12'>
-        <p className={`font-[700] text-black ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
+      <div className='mb-10  md:pt-10 px-4 sm:mb-16 sm:px-6 md:px-10 lg:px-10 xl:px-0 lg:mb-14 lg:pt-12 xl:mb-16 xl:pt-14'>
+        <p className={`font-[700] text-black ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-7xl`}>
           {timelineData?.title}
         </p>
         <p className='mb-3 pt-6 sm:mb-4 sm:pt-8 md:mb-5 md:pt-10'>
@@ -53,7 +53,7 @@ const Timeline = ({ timelineData }: { timelineData: any }) => {
         <hr className='border border-solid border-gray-200' />
       </div>
 
-      <div className='pl-4 md:px-0'>
+      <div className='pl-4 md:px-10 lg:px-10 xl:px-0'>
         {timelineData.career_highlights.map((item: any, index: number) => (
           <TimelineItem
             key={index}

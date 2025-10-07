@@ -89,7 +89,7 @@ const PageBody = ({ blog, relatedBlogs }: { blog: BlogData, relatedBlogs: Blogs[
 
 
     return (
-        <div className='mt-16 sm:pt-30 mx-4 bg-slate-100 pt-5 sm:mx-6 md:mx-10 md:pt-20 pb-10'>
+        <div className='-mt-4 pt-5 md:mt-4 sm:pt-30 mx-4 bg-slate-100 pt- sm:mx-6 md:mx-10 md:pt-20 pb-10'>
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
                 {/* Breadcrumb */}
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4">
@@ -104,7 +104,7 @@ const PageBody = ({ blog, relatedBlogs }: { blog: BlogData, relatedBlogs: Blogs[
                         Blogs
                     </Link>
                     <IoIosArrowForward className="text-black" />
-                    <span className="text-[#30665f]">{blog.title}</span>
+                    <span className="text-[#30665f] truncate max-w-[120px] sm:max-w-none">{blog.title}</span>
                 </div>
 
                 {/* Blog Content Grid */}

@@ -32,7 +32,7 @@ const About = ({ aboutData }: { aboutData: AboutData }) => {
 
 
   return (
-    <div id='about-me' className='container-custom  bg-white px-4 py-8 sm:py-12 md:pt-16 sm:px-6 lg:px-0'>
+    <div id='about-me' className='container-custom  bg-white px-4 py-8 mt-10 sm:py-12 md:pt-16 sm:px-6 lg:px-8 xl:px-0'>
       <div className='mx-auto grid grid-cols-1 items-center gap-6 sm:gap-8 md:grid-cols-2'>
         {/* Image Section */}
         <div className='relative h-[350px] sm:h-[400px] md:h-full'>

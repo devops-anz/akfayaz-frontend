@@ -106,10 +106,10 @@ export default function DownloadCVModal({ open, setOpen }: { open: boolean; setO
             leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
           >
             <div className='relative w-full max-w-4xl transform  rounded-lg bg-white   transition-all'>
-              <div className='fixed -right-10 -top-14 z-[101]'>
+              <div className='absolute right-4 top-4 z-[101]'>
                 <button
                   type='button'
-                  className='rounded-full bg-white p-2  hover:bg-gray-100'
+                  className='rounded-full bg-white p-2 hover:bg-gray-100'
                   onClick={() => setOpen(false)}
                   ref={cancelButtonRef}
                 >
@@ -133,7 +133,7 @@ export default function DownloadCVModal({ open, setOpen }: { open: boolean; setO
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
-                          className="mt-1 block p-3 w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                          className="mt-1 block p-3 w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                           placeholder="Enter your name"
                           required
                         />
@@ -149,7 +149,7 @@ export default function DownloadCVModal({ open, setOpen }: { open: boolean; setO
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className="mt-1 block p-3 w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                          className="mt-1 block p-3 w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                           placeholder="you@example.com"
                           required
                         />
@@ -165,7 +165,7 @@ export default function DownloadCVModal({ open, setOpen }: { open: boolean; setO
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="mt-1 block p-3 w-full border  rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                          className="mt-1 block p-3 w-full border-2  rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                           placeholder="Enter your phone number"
                         />
                       </div>
