@@ -38,6 +38,8 @@ export interface HeaderData {
   email: string;
   created_at: string;
   updated_at: string;
+  footer_right_text: string;
+  footer_left_text: string;
 }
 
 export interface HeaderApiResponse {
@@ -81,6 +83,8 @@ export interface MappedHeaderData {
   emailText: string;
   email: string;
   logoUrl: string;
+  footer_right_text: string;
+  footer_left_text: string;
 }
 
 export interface MappedFooterData {
@@ -94,4 +98,6 @@ export interface MappedFooterData {
   emailText?: string;
   email?: string;
   logoUrl: string;
+  footer_right_text: string;
+  footer_left_text: string;
 }

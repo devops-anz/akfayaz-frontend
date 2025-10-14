@@ -24,6 +24,8 @@ const Navbar = () => {
     email: staticNavbarData.data.email,
     logoUrl: staticNavbarData.data.logo_url,
     portfolioLinks: staticNavbarData.data.portfolio_links,
+    footer_right_text: staticNavbarData.data.footer_right_text,
+    footer_left_text: staticNavbarData.data.footer_left_text,
   });
   useEffect(() => {
     const handleScroll = () => {

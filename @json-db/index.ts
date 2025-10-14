@@ -1110,7 +1110,9 @@ export const navbarData = {
     email: 'fayaz@akmassets.com',
     created_at: '2025-09-27T06:26:30.000000Z',
     updated_at: '2025-09-28T01:14:58.000000Z',
-    logo_url: 'https://akfayaz.anzbizconsultants.com.au/storage/logos/koufZmqcQprh4GgLUrMjdvx6UZsRDL9YsE3iq3ca.webp'
+    logo_url: 'https://akfayaz.anzbizconsultants.com.au/storage/logos/koufZmqcQprh4GgLUrMjdvx6UZsRDL9YsE3iq3ca.webp',
+    footer_right_text: 'All rights Reserved ||',
+    footer_left_text: 'Designed and Developed by ANZ Web Studios'
   },
   success: true,
   message: 'Header retrieved successfully'

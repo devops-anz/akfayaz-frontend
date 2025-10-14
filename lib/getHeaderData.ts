@@ -102,7 +102,9 @@ export function mapHeaderDataToNavbar(headerData: HeaderData): MappedHeaderData 
     buttonLink: headerData.button_link,
     emailText: headerData.email_text,
     email: headerData.email,
-    logoUrl: headerData.logo_url
+    logoUrl: headerData.logo_url,
+    footer_right_text: headerData.footer_right_text,
+    footer_left_text: headerData.footer_left_text,
   };
 }
 
@@ -135,7 +137,9 @@ export async function getNavbarData(): Promise<MappedHeaderData> {
       buttonLink: staticNavbarData.data.button_link,
       emailText: staticNavbarData.data.email_text,
       email: staticNavbarData.data.email,
-      logoUrl: staticNavbarData.data.logo_url
+      logoUrl: staticNavbarData.data.logo_url,
+      footer_right_text: staticNavbarData.data.footer_right_text,
+      footer_left_text: staticNavbarData.data.footer_left_text,
     };
   } catch (error) {
     console.error('Error getting navbar data:', error);
@@ -155,7 +159,9 @@ export async function getNavbarData(): Promise<MappedHeaderData> {
       buttonLink: staticNavbarData.data.button_link,
       emailText: staticNavbarData.data.email_text,
       email: staticNavbarData.data.email,
-      logoUrl: staticNavbarData.data.logo_url
+      logoUrl: staticNavbarData.data.logo_url,
+      footer_right_text: staticNavbarData.data.footer_right_text,
+      footer_left_text: staticNavbarData.data.footer_left_text,
     };
   }
 }

@@ -15,6 +15,8 @@ const Footer = () => {
     FooterList: staticNavbarData.data.footer_links,
     portfolioLinks: staticNavbarData.data.portfolio_links,
     logoUrl: staticNavbarData.data.logo_url,
+    footer_right_text: staticNavbarData.data.footer_right_text,
+    footer_left_text: staticNavbarData.data.footer_left_text,
   });
 
   useEffect(() => {
@@ -28,6 +30,8 @@ const Footer = () => {
             FooterList: data.FooterList,
             portfolioLinks: data.portfolioLinks,
             logoUrl: data.logoUrl,
+            footer_right_text: data.footer_right_text,
+            footer_left_text: data.footer_left_text,
           });
         }
       } catch (error) {
@@ -98,17 +102,17 @@ const Footer = () => {
         <div className='flex flex-col items-center justify-between pt-10 pb-5 md:flex-row'>
           <div className={`${poppins.className} text-sm font-medium text-gray-600 `}>
             {' '}
-            Developed by ©
-            <span className='text-black hover:text-amber-600'>
+            {footerData?.footer_left_text}
+            {/* <span className='text-black hover:text-amber-600'>
               {' '}
               <a href='https://anzwebstudios.com.au' target='_blank' rel='noopener noreferrer'>
                 {' '}
                 ANZ WEB STUDIOS{' '}
               </a>
-            </span>
+            </span> */}
           </div>
           <div className={`${poppins.className} text-sm font-medium text-gray-600`}>
-            All rights Reserved || {new Date().getFullYear()}
+            {footerData?.footer_right_text}   {new Date().getFullYear()}
           </div>
         </div>
       </div>
