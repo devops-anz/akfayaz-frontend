@@ -6,7 +6,7 @@ import FeaturedProjects from 'view/page/home/featuredProjects';
 import Hero from 'view/page/home/hero';
 import Quote from 'view/page/home/quote';
 // import RecentWorks from 'view/page/home/recentWorks';
-import Services from 'view/page/home/service';
+// import Services from 'view/page/home/service';
 import Testimonials from 'view/page/home/testimonials';
 import Timeline from 'view/page/home/timeline';
 import TopServices from 'view/page/home/topServices';
@@ -27,7 +27,7 @@ interface PageBodyProps {
 
 const PageBody = ({
   heroData,
-  serviceData,
+  // serviceData,
   aboutData,
   topServicesData,
   timelineData,
@@ -43,10 +43,10 @@ const PageBody = ({
         heroData?.data?.is_active &&
         <Hero heroData={heroData?.data} />
       }
-      {
+      {/* {
         false &&
         <Services serviceData={serviceData?.data?.services} />
-      }
+      } */}
       {
         aboutData?.data?.is_active &&
         <About aboutData={aboutData?.data} />
