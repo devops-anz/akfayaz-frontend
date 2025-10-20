@@ -4,6 +4,7 @@ import { getBlogsPageData } from "../../../../../@json-db/blog";
 import { notFound } from "next/navigation";
 import PageBody from "./PageBody";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type Blogs = {
   id: number;
   slug: string;
@@ -23,7 +24,7 @@ type Blogs = {
   updated_at: string;
   deleted_at: string | null;
   image_url: string;
-  blog_category: {
+  blog_category?: {
     id: number;
     name: string;
     slug: string;
@@ -32,7 +33,7 @@ type Blogs = {
     created_at: string;
     updated_at: string;
   };
-  user: {
+  user?: {
     id: number;
     name: string;
     email: string;
@@ -123,7 +124,7 @@ export async function generateMetadata({
 
 // Generate static params for static generation
 export async function generateStaticParams() {
-  const blogs = getBlogsPageData.data.data;
+  const blogs = getBlogsPageData.data.blogs || [];
 
   return blogs.map((blog) => ({
     slug: blog.slug,
@@ -145,14 +146,17 @@ export default async function BlogDetailPage({
 
   const blog = blogResponse.data;
 
+
+
   // Get related blogs based on category and tags
-  const allBlogs = getBlogsPageData.data.data;
+  const allBlogs = getBlogsPageData.data.blogs || [];
+
+
   const relatedBlogs = allBlogs
     .filter(
       (post) =>
         post.slug !== slug &&
-        (post.blog_category?.name === blog.blog_category?.name ||
-          post.tags.some((tag) => blog.tags.includes(tag)))
+        (post.tags.some((tag) => blog.tags.includes(tag)))
     )
     .slice(0, 3);
 
@@ -164,7 +168,7 @@ export default async function BlogDetailPage({
       {/* Main Content */}
       <PageBody
         blog={blog as BlogData}
-        relatedBlogs={relatedBlogs as Blogs[]}
+        relatedBlogs={relatedBlogs as any}
       />
     </div>
   );

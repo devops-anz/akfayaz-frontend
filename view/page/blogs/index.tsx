@@ -23,7 +23,7 @@ const BlogsPage = ({ categoriesData, blogsData, searchParams }: BlogsPageProps) 
   const [isLoadingBlogCard, setIsLoadingBlogCard] = useState(false);
 
   // Extract and map API data
-  const apiBlogs = blogsData?.data?.data || [];
+  const apiBlogs = blogsData?.data?.blogs || [];
   const mappedApiBlogs: MappedBlogData[] = apiBlogs.map((blog) => ({
     id: blog.id,
     slug: blog.slug,

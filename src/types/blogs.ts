@@ -50,7 +50,7 @@ export interface PaginationLink {
 
 export interface BlogsPagination {
   current_page: number;
-  data: Blog[];
+  blogs: Blog[];
   first_page_url: string;
   from: number;
   last_page: number;

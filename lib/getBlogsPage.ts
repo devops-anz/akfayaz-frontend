@@ -43,13 +43,13 @@ export async function fetchBlogsPageData(params: any): Promise<any> {
 
       return {
         data: {
-          data: getBlogsPageData.data.data,
+          data: getBlogsPageData.data,
           current_page: 1,
           last_page: 1,
           per_page: params?.per_page || 9,
-          total: getBlogsPageData.data.data.length,
+          total: getBlogsPageData.data.blogs.length,
           from: 1,
-          to: getBlogsPageData.data.data.length
+          to: getBlogsPageData.data.blogs.length
         }
       };
     }
@@ -62,13 +62,13 @@ export async function fetchBlogsPageData(params: any): Promise<any> {
 
     return {
       data: {
-        data: getBlogsPageData.data.data,
+        data: getBlogsPageData.data,
         current_page: 1,
         last_page: 1,
         per_page: params?.per_page || 9,
-        total: getBlogsPageData.data.data.length,
+        total: getBlogsPageData.data.blogs.length,
         from: 1,
-        to: getBlogsPageData.data.data.length
+        to: getBlogsPageData.data.blogs.length
       }
     };
   }
