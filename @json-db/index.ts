@@ -464,21 +464,25 @@ export const getHomePageHeroData = {
   data: {
     id: 1,
     title: "Hello, I'm Fayaz!",
-    description: 'Eager to help you with Sales, Marketing, Procurement & Acquisition -.',
-    button_text: 'Contact Me',
-    button_url: '/#contact-me',
-    pre_title: 'INVESTMENT & BUSINESS SOLUTIONS',
+    title_color: "#000000",
+    description: "Eager to help you with Sales, Marketing, Procurement & Acquisition -.",
+    description_color: "#666666",
+    button_text: "Contact Me",
+    button_bg_color: "#ffffff",
+    button_text_color: "#ffffff",
+    button_url: "/#contact-me",
+    pre_title: "INVESTMENT & BUSINESS SOLUTIONS",
     features: null,
     background_image: null,
-    hero_image: 'hero/hero.jpg',
+    hero_image: "hero/images/eg8cdIfe70Sph9xODsQcy857SzIjQjxjGnVP2H4d.webp",
     is_active: true,
-    created_at: '2025-09-24T05:34:56.000000Z',
-    updated_at: '2025-09-24T07:23:36.000000Z',
-    hero_image_url: 'https://akfayaz.anzbizconsultants.com.au/storage/hero/hero.jpg'
+    created_at: "2025-09-27T06:29:13.000000Z",
+    updated_at: "2025-10-18T05:17:14.000000Z",
+    hero_image_url: "https://akfayaz.anzbizconsultants.com.au/storage/hero/images/eg8cdIfe70Sph9xODsQcy857SzIjQjxjGnVP2H4d.webp"
   },
   success: true,
-  message: 'Hero retrieved successfully'
-};
+  message: "Hero retrieved successfully"
+}
 
 export const getHomePageAboutData = {
   success: true,
@@ -904,136 +908,92 @@ export const getHomePageContactData = {
 };
 
 export const getHomePageServicesData = {
-  status: 200,
-  data: [
-    {
-      id: 1,
-      title: 'Consultancy',
-      description: 'I help businesses grow, streamline operations, and unlock their full potential.',
-      image: 'services/f40A1wQLGxBz5nSk0Ck7e5CbF6UuMvuZ0kbpKY0j.png',
-      order: 1,
-      is_active: 1,
-      link: null,
-      button_text: null,
-      created_at: '2025-09-27T06:32:37.000000Z',
-      updated_at: '2025-09-27T06:32:37.000000Z',
-      image_url:
-        'https://akfayaz.anzbizconsultants.com.au/storage/services/f40A1wQLGxBz5nSk0Ck7e5CbF6UuMvuZ0kbpKY0j.png'
-    },
-    {
-      id: 2,
-      title: 'Sales',
-      description: 'I craft winning sales strategies that drive revenue and build lasting client relationships',
-      image: 'services/YCiiUJa8a05jxwACD3MptWFgFinh4ht4RXRLBnsS.png',
-      order: 2,
-      is_active: 1,
-      link: null,
-      button_text: null,
-      created_at: '2025-09-27T06:33:03.000000Z',
-      updated_at: '2025-09-27T06:33:03.000000Z',
-      image_url:
-        'https://akfayaz.anzbizconsultants.com.au/storage/services/YCiiUJa8a05jxwACD3MptWFgFinh4ht4RXRLBnsS.png'
-    },
-    {
-      id: 3,
-      title: 'Marketing',
-      description: 'I create innovative marketing solutions that amplify brand visibility and engagement.',
-      image: 'services/VMx0joeEg7GxgiEfhSC9TNNlFFXLwqX3VanwxM6T.png',
-      order: 3,
-      is_active: 1,
-      link: null,
-      button_text: null,
-      created_at: '2025-09-27T06:33:24.000000Z',
-      updated_at: '2025-09-27T06:33:24.000000Z',
-      image_url:
-        'https://akfayaz.anzbizconsultants.com.au/storage/services/VMx0joeEg7GxgiEfhSC9TNNlFFXLwqX3VanwxM6T.png'
-    },
-    {
-      id: 4,
-      title: 'Procurement',
-      description: 'I optimize procurement processes to ensure cost-effective and efficient resource management.',
-      image: 'services/DqFmwXznXjAfOo7MWWGedTGHCbV93kV8orMFB0n1.png',
-      order: 4,
-      is_active: 1,
-      link: null,
-      button_text: null,
-      created_at: '2025-09-27T06:33:59.000000Z',
-      updated_at: '2025-09-27T06:33:59.000000Z',
-      image_url:
-        'https://akfayaz.anzbizconsultants.com.au/storage/services/DqFmwXznXjAfOo7MWWGedTGHCbV93kV8orMFB0n1.png'
-    },
-    {
-      id: 5,
-      title: 'Life Coaching',
-      description: 'I empower individuals to overcome challenges, achieve goals, and unlock their best selves.',
-      image: 'services/JsWIuVYvh4BerxJ3meVNRNWcWngOekkbBF2x48D2.png',
-      order: 5,
-      is_active: 1,
-      link: null,
-      button_text: null,
-      created_at: '2025-09-27T06:34:42.000000Z',
-      updated_at: '2025-09-27T06:34:42.000000Z',
-      image_url:
-        'https://akfayaz.anzbizconsultants.com.au/storage/services/JsWIuVYvh4BerxJ3meVNRNWcWngOekkbBF2x48D2.png'
-    },
-    {
-      id: 7,
-      title: 'Startup Mentorship',
-      description: 'I guide startups from idea to execution, helping them scale and succeed.',
-      image: 'services/CTwO8aJ5kHNJ3HE0UZG68ZWE26nc17FhAQlTn4wZ.png',
-      order: 6,
-      is_active: 1,
-      link: null,
-      button_text: null,
-      created_at: '2025-09-27T06:36:32.000000Z',
-      updated_at: '2025-09-27T06:36:32.000000Z',
-      image_url:
-        'https://akfayaz.anzbizconsultants.com.au/storage/services/CTwO8aJ5kHNJ3HE0UZG68ZWE26nc17FhAQlTn4wZ.png'
-    },
-    {
-      id: 8,
-      title: 'Financial Consulting',
-      description: 'I provide expert financial strategies to drive growth, stability, and profitability.',
-      image: 'services/OimtUcXIWmGDu9XZyx6XFVJIiRKCBfTuUJwUV95Y.png',
-      order: 7,
-      is_active: 1,
-      link: null,
-      button_text: null,
-      created_at: '2025-09-27T06:36:56.000000Z',
-      updated_at: '2025-09-27T06:36:56.000000Z',
-      image_url:
-        'https://akfayaz.anzbizconsultants.com.au/storage/services/OimtUcXIWmGDu9XZyx6XFVJIiRKCBfTuUJwUV95Y.png'
-    },
-    {
-      id: 9,
-      title: 'Management Consulting',
-      description: 'I refine leadership, processes, and strategies to enhance business efficiency and success.',
-      image: 'services/kR2LrPQQe9fu64IMyeKl2Ddm6xN7Uk2LxnUzlwOm.png',
-      order: 8,
-      is_active: 1,
-      link: null,
-      button_text: null,
-      created_at: '2025-09-27T06:37:22.000000Z',
-      updated_at: '2025-09-27T06:37:22.000000Z',
-      image_url:
-        'https://akfayaz.anzbizconsultants.com.au/storage/services/kR2LrPQQe9fu64IMyeKl2Ddm6xN7Uk2LxnUzlwOm.png'
-    },
-    {
-      id: 10,
-      title: 'Web Designing',
-      description: 'I craft stunning, user-friendly websites that captivate audiences and elevate brands.',
-      image: 'services/dvZgOqorr6xmVwyg4eg6UelWZfg5zyEk6RMNIH4T.png',
-      order: 9,
-      is_active: 1,
-      link: null,
-      button_text: null,
-      created_at: '2025-09-27T06:37:44.000000Z',
-      updated_at: '2025-09-27T06:37:44.000000Z',
-      image_url:
-        'https://akfayaz.anzbizconsultants.com.au/storage/services/dvZgOqorr6xmVwyg4eg6UelWZfg5zyEk6RMNIH4T.png'
-    }
-  ]
-};
+  data: {
+    id: 1,
+    name: "Business Growth & Sales Strategy",
+    short_description: "Driving revenue through innovative sales strategies and business development.",
+    description: "We specialize in scaling businesses, optimizing sales processes, and implementing data-driven strategies to enhance revenue and market presence. Our expertise spans across team leadership, client management, and negotiation to deliver sustainable business success.",
+    button_text: "Explore Services",
+    button_url: null,
+    is_active: true,
+    created_at: "2025-10-20T09:15:05.000000Z",
+    updated_at: "2025-10-20T10:45:21.000000Z",
+    services: [
+      {
+        id: 1,
+        service_main_id: 1,
+        title: "Consultancy",
+        description: "I help businesses grow, streamline operations, and unlock their full potential.",
+        image: "services/f40A1wQLGxBz5nSk0Ck7e5CbF6UuMvuZ0kbpKY0j.png",
+        order: 1,
+        is_active: true,
+        link: null,
+        button_text: null,
+        created_at: "2025-09-27T06:32:37.000000Z",
+        updated_at: "2025-09-27T06:32:37.000000Z",
+        image_url: "https://akfayaz.anzbizconsultants.com.au/storage/services/f40A1wQLGxBz5nSk0Ck7e5CbF6UuMvuZ0kbpKY0j.png"
+      },
+      {
+        id: 2,
+        service_main_id: 1,
+        title: "Sales",
+        description: "I craft winning sales strategies that drive revenue and build lasting client relationships",
+        image: "services/YCiiUJa8a05jxwACD3MptWFgFinh4ht4RXRLBnsS.png",
+        order: 2,
+        is_active: true,
+        link: null,
+        button_text: null,
+        created_at: "2025-09-27T06:33:03.000000Z",
+        updated_at: "2025-09-27T06:33:03.000000Z",
+        image_url: "https://akfayaz.anzbizconsultants.com.au/storage/services/YCiiUJa8a05jxwACD3MptWFgFinh4ht4RXRLBnsS.png"
+      },
+      {
+        id: 3,
+        service_main_id: 1,
+        title: "Marketing",
+        description: "I create innovative marketing solutions that amplify brand visibility and engagement.",
+        image: "services/VMx0joeEg7GxgiEfhSC9TNNlFFXLwqX3VanwxM6T.png",
+        order: 3,
+        is_active: true,
+        link: null,
+        button_text: null,
+        created_at: "2025-09-27T06:33:24.000000Z",
+        updated_at: "2025-09-27T06:33:24.000000Z",
+        image_url: "https://akfayaz.anzbizconsultants.com.au/storage/services/VMx0joeEg7GxgiEfhSC9TNNlFFXLwqX3VanwxM6T.png"
+      },
+      {
+        id: 4,
+        service_main_id: 1,
+        title: "Procurement",
+        description: "I optimize procurement processes to ensure cost-effective and efficient resource management.",
+        image: "services/DqFmwXznXjAfOo7MWWGedTGHCbV93kV8orMFB0n1.png",
+        order: 4,
+        is_active: true,
+        link: null,
+        button_text: null,
+        created_at: "2025-09-27T06:33:59.000000Z",
+        updated_at: "2025-09-27T06:33:59.000000Z",
+        image_url: "https://akfayaz.anzbizconsultants.com.au/storage/services/DqFmwXznXjAfOo7MWWGedTGHCbV93kV8orMFB0n1.png"
+      },
+      {
+        id: 5,
+        service_main_id: 1,
+        title: "Life Coaching",
+        description: "I empower individuals to overcome challenges, achieve goals, and unlock their best selves.",
+        image: "services/JsWIuVYvh4BerxJ3meVNRNWcWngOekkbBF2x48D2.png",
+        order: 5,
+        is_active: true,
+        link: null,
+        button_text: null,
+        created_at: "2025-09-27T06:34:42.000000Z",
+        updated_at: "2025-09-27T06:34:42.000000Z",
+        image_url: "https://akfayaz.anzbizconsultants.com.au/storage/services/JsWIuVYvh4BerxJ3meVNRNWcWngOekkbBF2x48D2.png"
+      },
+    ]
+  },
+  "success": true,
+  "message": "Services main retrieved successfully"
+}
 
 export const navbarData = {
   data: {

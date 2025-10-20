@@ -43,7 +43,10 @@ const PageBody = ({
         heroData?.data?.is_active &&
         <Hero heroData={heroData?.data} />
       }
-      <Services serviceData={serviceData?.data} />
+      {
+        serviceData?.data?.is_active &&
+        <Services serviceData={serviceData?.data?.services} />
+      }
       {
         aboutData?.data?.is_active &&
         <About aboutData={aboutData?.data} />
