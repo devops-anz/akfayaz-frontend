@@ -44,7 +44,7 @@ const PageBody = ({
         <Hero heroData={heroData?.data} />
       }
       {
-        serviceData?.data?.is_active &&
+        false &&
         <Services serviceData={serviceData?.data?.services} />
       }
       {
