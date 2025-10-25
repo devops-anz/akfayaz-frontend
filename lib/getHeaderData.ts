@@ -97,7 +97,7 @@ export function mapHeaderDataToNavbar(headerData: HeaderData): MappedHeaderData 
       url: link.url,
       icon: link.icon
     })),
-    FooterList:headerData.footer_links,
+    FooterList: headerData.footer_links,
     buttonText: headerData.button_text,
     buttonLink: headerData.button_link,
     emailText: headerData.email_text,
@@ -105,6 +105,16 @@ export function mapHeaderDataToNavbar(headerData: HeaderData): MappedHeaderData 
     logoUrl: headerData.logo_url,
     footer_right_text: headerData.footer_right_text,
     footer_left_text: headerData.footer_left_text,
+    footer_right_text_color: headerData.footer_right_text_color,
+    footer_left_text_color: headerData.footer_left_text_color,
+    email_address_color: headerData.email_address_color,
+    email_text_color: headerData.email_text_color,
+    button_bg_color: headerData.button_bg_color,
+    button_text_color: headerData.button_text_color,
+    footer_menu_links_color: headerData.footer_menu_links_color,
+    header_menu_links_color: headerData.header_menu_links_color,
+    description_color: headerData.description_color,
+    company_name_color: headerData.company_name_color
   };
 }
 
@@ -132,7 +142,7 @@ export async function getNavbarData(): Promise<MappedHeaderData> {
         url: link.url,
         icon: link.icon
       })),
-      FooterList:staticNavbarData.data.footer_links,
+      FooterList: staticNavbarData.data.footer_links,
       buttonText: staticNavbarData.data.button_text,
       buttonLink: staticNavbarData.data.button_link,
       emailText: staticNavbarData.data.email_text,
@@ -140,6 +150,16 @@ export async function getNavbarData(): Promise<MappedHeaderData> {
       logoUrl: staticNavbarData.data.logo_url,
       footer_right_text: staticNavbarData.data.footer_right_text,
       footer_left_text: staticNavbarData.data.footer_left_text,
+      footer_right_text_color: staticNavbarData.data.footer_right_text_color,
+      footer_left_text_color: staticNavbarData.data.footer_left_text_color,
+      email_address_color: staticNavbarData.data.email_address_color,
+      email_text_color: staticNavbarData.data.email_text_color,
+      button_bg_color: staticNavbarData.data.button_bg_color,
+      button_text_color: staticNavbarData.data.button_text_color,
+      footer_menu_links_color: staticNavbarData.data.footer_menu_links_color,
+      header_menu_links_color: staticNavbarData.data.header_menu_links_color,
+      description_color: staticNavbarData.data.description_color,
+      company_name_color: staticNavbarData.data.company_name_color
     };
   } catch (error) {
     console.error('Error getting navbar data:', error);
@@ -154,7 +174,7 @@ export async function getNavbarData(): Promise<MappedHeaderData> {
         url: link.url,
         icon: link.icon
       })),
-      FooterList:staticNavbarData.data.footer_links,
+      FooterList: staticNavbarData.data.footer_links,
       buttonText: staticNavbarData.data.button_text,
       buttonLink: staticNavbarData.data.button_link,
       emailText: staticNavbarData.data.email_text,
@@ -162,6 +182,16 @@ export async function getNavbarData(): Promise<MappedHeaderData> {
       logoUrl: staticNavbarData.data.logo_url,
       footer_right_text: staticNavbarData.data.footer_right_text,
       footer_left_text: staticNavbarData.data.footer_left_text,
+      footer_right_text_color: staticNavbarData.data.footer_right_text_color,
+      footer_left_text_color: staticNavbarData.data.footer_left_text_color,
+      email_address_color: staticNavbarData.data.email_address_color,
+      email_text_color: staticNavbarData.data.email_text_color,
+      button_bg_color: staticNavbarData.data.button_bg_color,
+      button_text_color: staticNavbarData.data.button_text_color,
+      footer_menu_links_color: staticNavbarData.data.footer_menu_links_color,
+      header_menu_links_color: staticNavbarData.data.header_menu_links_color,
+      description_color: staticNavbarData.data.description_color,
+      company_name_color: staticNavbarData.data.company_name_color
     };
   }
 }

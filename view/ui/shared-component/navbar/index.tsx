@@ -26,6 +26,16 @@ const Navbar = () => {
     portfolioLinks: staticNavbarData.data.portfolio_links,
     footer_right_text: staticNavbarData.data.footer_right_text,
     footer_left_text: staticNavbarData.data.footer_left_text,
+    footer_right_text_color: staticNavbarData.data.footer_right_text_color,
+    footer_left_text_color: staticNavbarData.data.footer_left_text_color,
+    email_address_color: staticNavbarData.data.email_address_color,
+    email_text_color: staticNavbarData.data.email_text_color,
+    button_bg_color: staticNavbarData.data.button_bg_color,
+    button_text_color: staticNavbarData.data.button_text_color,
+    footer_menu_links_color: staticNavbarData.data.footer_menu_links_color,
+    header_menu_links_color: staticNavbarData.data.header_menu_links_color,
+    description_color: staticNavbarData.data.description_color,
+    company_name_color: staticNavbarData.data.company_name_color
   });
   useEffect(() => {
     const handleScroll = () => {
@@ -83,16 +93,16 @@ const Navbar = () => {
                 />
               </div>
               <div>
-                <h1 className={`${poppins.className} text-2xl font-bold`}>{navbarData.companyName}</h1>
-                <p className='text-sm text-gray-600'>{navbarData.description}</p>
+                <h1 className={`${poppins.className} text-2xl font-bold text-[${navbarData.company_name_color}]`}>{navbarData.companyName}</h1>
+                <p className={`text-sm text-[${navbarData.description_color}]`}>{navbarData.description}</p>
               </div>
             </div>
 
             <div className='flex flex-row gap-10'>
               <div>
-                <p className='text-sm text-gray-600/50'>{navbarData.emailText}</p>
+                <p className={`text-sm text-[${navbarData.email_text_color}]`}>{navbarData.emailText}</p>
                 <p
-                  className='text-md text-gray-700 cursor-pointer hover:text-gray-900 transition-colors'
+                  className={`text-md text-[${navbarData.email_address_color}] cursor-pointer hover:text-gray-900 transition-colors`}
                   onClick={() => {
                     navigator.clipboard.writeText(navbarData.email);
                     const target = event?.target as HTMLElement;
@@ -107,29 +117,21 @@ const Navbar = () => {
                   {navbarData.email}
                 </p>
               </div>
-              <a href={navbarData.buttonLink} target='_blank' rel='noopener noreferrer' className='bg-black text-white rounded-md hover:shadow-lg  transition-all duration-300'>
+              <a href={navbarData.buttonLink} target='_blank' rel='noopener noreferrer'
+                className={`bg-[${navbarData.button_bg_color}] text-[${navbarData.button_text_color}] rounded-md hover:shadow-lg  transition-all duration-300`}>
                 <div className='p-4 flex items-center justify-center'>
                   {navbarData.buttonText}
                 </div>
               </a>
             </div>
           </div>
-          <hr className={` container-custom  hidden md:block w-full border-gray-300  ${isScrolled ? 'md:mt-2' : 'md:mt-6 md:mb-2'}`} />
-          <div className=' custom-nav  mx-auto flex max-w-[1200px] flex-row justify-between gap-20 px-0 py-2 md:justify-between md:px-0 md:py-0 '>
-            {/* <Link
-            href={navbarData?.companyName?.link}
-            aria-label='Company'
-            title={navbarData?.companyName?.title}
-            className='inline-flex items-center'
-          >
-            <Image src={'/logo/logo-small.png'} className='w-12 pl-4' alt='bus' width={1000} height={1000} priority /> 
-            <p className='text-white pl-4 font-bold text-[25px] '>ADAM</p>
-          </Link> */}
+          <hr className={`container-custom hidden md:block w-full border-gray-300 ${isScrolled ? 'md:mt-2' : 'md:mt-6 md:mb-2'}`} />
+          <div className='custom-nav mx-auto flex max-w-[1200px] flex-row justify-between gap-20 px-0 py-2 md:justify-between md:px-0 md:py-0 '>
             <ul className='hidden items-center space-x-8 md:flex'>
               {navbarData.navbarList.map((item, index: number) => (
                 <li key={index} className={'group relative block'}>
                   {item.subMenu ? (
-                    <span className='font-work flex items-center gap-1 px-0 py-3 text-base font-[500] text-black transition  hover:duration-300'>
+                    <span className={`font-work flex items-center gap-1 px-0 py-3 text-base font-[500] text-[${navbarData.header_menu_links_color}] transition  hover:duration-300`}>
                       {item.title}
                       {item.subMenu && (
                         <svg

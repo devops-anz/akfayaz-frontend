@@ -45,7 +45,7 @@ const PageBody = ({
       }
       {
         serviceData?.data?.is_active &&
-        <Services serviceData={serviceData?.data?.services} />
+        <Services serviceData={serviceData?.data?.services} service_item_description_color={serviceData?.data?.service_item_description_color} service_item_color={serviceData?.data?.service_item_color} />
       }
       {
         aboutData?.data?.is_active &&

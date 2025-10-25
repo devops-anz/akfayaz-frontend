@@ -17,6 +17,11 @@ const Footer = () => {
     logoUrl: staticNavbarData.data.logo_url,
     footer_right_text: staticNavbarData.data.footer_right_text,
     footer_left_text: staticNavbarData.data.footer_left_text,
+    footer_right_text_color: staticNavbarData.data.footer_right_text_color,
+    footer_left_text_color: staticNavbarData.data.footer_left_text_color,
+    footer_menu_links_color: staticNavbarData.data.footer_menu_links_color,
+    description_color: staticNavbarData.data.description_color,
+    company_name_color: staticNavbarData.data.company_name_color
   });
 
   useEffect(() => {
@@ -32,6 +37,11 @@ const Footer = () => {
             logoUrl: data.logoUrl,
             footer_right_text: data.footer_right_text,
             footer_left_text: data.footer_left_text,
+            footer_right_text_color: data.footer_right_text_color,
+            footer_left_text_color: data.footer_left_text_color,
+            footer_menu_links_color: data.footer_menu_links_color,
+            description_color: data.description_color,
+            company_name_color: data.company_name_color
           });
         }
       } catch (error) {
@@ -61,8 +71,8 @@ const Footer = () => {
                 />
               </div>
               <div onClick={() => router.push('/')} className='cursor-pointer'>
-                <h1 className={`${poppins.className} text-xl font-bold`}>{footerData.companyName}</h1>
-                <p className='text-sm  text-gray-600'>{footerData.description}</p>
+                <h1 className={`${poppins.className} text-xl font-bold text-[${footerData.company_name_color}]`}>{footerData.companyName}</h1>
+                <p className={`text-sm text-[${footerData.description_color}]`}>{footerData.description}</p>
               </div>
             </div>
 
@@ -70,7 +80,7 @@ const Footer = () => {
             <div className='flex flex-col items-center space-y-4 md:flex-row md:space-x-6 lg:space-x-8 xl:space-x-10 md:space-y-0'>
               {footerData.FooterList.map((link, index) => (
                 <a key={index} href={link.url}
-                  className='cursor-pointer font-work relative flex items-center gap-1 bg-transparent px-0 py-1.5 text-sm font-[500] text-black ease-in after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full'
+                  className={`cursor-pointer font-work relative flex items-center gap-1 bg-transparent px-0 py-1.5 text-sm font-[500] text-[${footerData.footer_menu_links_color}] ease-in after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full`}
                 >
                   {link.title}
                 </a>
@@ -100,18 +110,11 @@ const Footer = () => {
         </div>
 
         <div className='flex flex-col items-center justify-between pt-10 pb-5 md:flex-row'>
-          <div className={`${poppins.className} text-sm font-medium text-gray-600 `}>
+          <div className={`${poppins.className} text-sm font-medium text-[${footerData.footer_left_text_color}]`}>
             {' '}
             {footerData?.footer_left_text}
-            {/* <span className='text-black hover:text-amber-600'>
-              {' '}
-              <a href='https://anzwebstudios.com.au' target='_blank' rel='noopener noreferrer'>
-                {' '}
-                ANZ WEB STUDIOS{' '}
-              </a>
-            </span> */}
           </div>
-          <div className={`${poppins.className} text-sm font-medium text-gray-600`}>
+          <div className={`${poppins.className} text-sm font-medium text-[${footerData.footer_right_text_color}]`}>
             {footerData?.footer_right_text}   {new Date().getFullYear()}
           </div>
         </div>
