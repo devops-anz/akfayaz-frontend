@@ -70,7 +70,7 @@ const Navbar = () => {
   }, []);
 
 
-  console.log("logoUrl", navbarData.logoUrl)
+  console.log("logoUrl", navbarData)
 
   return (
     <div className={` fixed top-0 left-0 right-0 bg-white shadow-md z-[99] ${isScrolled ? 'shadow-md' : 'shadow-none'}`}>
@@ -93,16 +93,32 @@ const Navbar = () => {
                 />
               </div>
               <div>
-                <h1 className={`${poppins.className} text-2xl font-bold text-[${navbarData.company_name_color}]`}>{navbarData.companyName}</h1>
-                <p className={`text-sm text-[${navbarData.description_color}]`}>{navbarData.description}</p>
+                <h1 
+                  className={`${poppins.className} text-2xl font-bold`}
+                  style={{ color: navbarData.company_name_color }}
+                >
+                  {navbarData.companyName}
+                </h1>
+                <p 
+                  className="text-sm"
+                  style={{ color: navbarData.description_color }}
+                >
+                  {navbarData.description}
+                </p>
               </div>
             </div>
 
             <div className='flex flex-row gap-10'>
               <div>
-                <p className={`text-sm text-[${navbarData.email_text_color}]`}>{navbarData.emailText}</p>
+                <p 
+                  className="text-sm"
+                  style={{ color: navbarData.email_text_color }}
+                >
+                  {navbarData.emailText}
+                </p>
                 <p
-                  className={`text-md text-[${navbarData.email_address_color}] cursor-pointer hover:text-gray-900 transition-colors`}
+                  className="text-md cursor-pointer hover:text-gray-900 transition-colors"
+                  style={{ color: navbarData.email_address_color }}
                   onClick={() => {
                     navigator.clipboard.writeText(navbarData.email);
                     const target = event?.target as HTMLElement;
@@ -117,9 +133,14 @@ const Navbar = () => {
                   {navbarData.email}
                 </p>
               </div>
-              <a href={navbarData.buttonLink} target='_blank' rel='noopener noreferrer'
-                className={`bg-[${navbarData.button_bg_color}] text-[${navbarData.button_text_color}] rounded-md hover:shadow-lg  transition-all duration-300`}>
-                <div className='p-4 flex items-center justify-center'>
+              <a href={navbarData.buttonLink} target='_blank' rel='noopener noreferrer'>
+                <div 
+                  className="p-4 flex items-center justify-center rounded-md hover:shadow-lg transition-all duration-300"
+                  style={{
+                    backgroundColor: navbarData.button_bg_color,
+                    color: navbarData.button_text_color
+                  }}
+                >
                   {navbarData.buttonText}
                 </div>
               </a>
@@ -131,7 +152,10 @@ const Navbar = () => {
               {navbarData.navbarList.map((item, index: number) => (
                 <li key={index} className={'group relative block'}>
                   {item.subMenu ? (
-                    <span className={`font-work flex items-center gap-1 px-0 py-3 text-base font-[500] text-[${navbarData.header_menu_links_color}] transition  hover:duration-300`}>
+                    <span 
+                      className="font-work flex items-center gap-1 px-0 py-3 text-base font-[500] transition hover:duration-300"
+                      style={{ color: navbarData.header_menu_links_color }}
+                    >
                       {item.title}
                       {item.subMenu && (
                         <svg
