@@ -40,7 +40,12 @@ const MobileNavbar = ({ isMenuOpen, setIsMenuOpen, navbarData }: MobileNavbarPro
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className='flex items-center gap-2'>
-                  <div className='text-white pt-1 font-bold text-[18px]'>{navbarData.companyName}</div>
+                  <div 
+                    className='pt-1 font-bold text-[18px]'
+                    style={{ color: navbarData.company_name_color }}
+                  >
+                    {navbarData.companyName}
+                  </div>
                 </span>
               </Link>
               <button
@@ -108,7 +113,8 @@ const MobileNavbar = ({ isMenuOpen, setIsMenuOpen, navbarData }: MobileNavbarPro
                       href={lt.url}
                       aria-label={lt.title}
                       title={lt.title}
-                      className={`hover:text-[#0074D9]'} font-medium tracking-normal text-white transition-colors duration-200`}
+                      className="font-medium tracking-normal transition-colors duration-200 hover:opacity-80"
+                      style={{ color: navbarData.header_menu_links_color }}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {lt.title}
@@ -118,9 +124,15 @@ const MobileNavbar = ({ isMenuOpen, setIsMenuOpen, navbarData }: MobileNavbarPro
               ))}
             </ul>
             <div className='bg-white mt-5'>
-              <a href={navbarData.buttonLink} target='_blank' rel='noopener noreferrer' className='bg-black text-white rounded-md hover:shadow-lg  transition-all duration-300'>
-                <div className='p-3 flex items-center justify-center'>
-                  <p className='text-center text-white'>{navbarData.buttonText}</p>
+              <a href={navbarData.buttonLink} target='_blank' rel='noopener noreferrer' className='rounded-md hover:shadow-lg transition-all duration-300'>
+                <div 
+                  className='p-3 flex items-center justify-center'
+                  style={{
+                    backgroundColor: navbarData.button_bg_color,
+                    color: navbarData.button_text_color
+                  }}
+                >
+                  <p className='text-center'>{navbarData.buttonText}</p>
                 </div>
               </a>
             </div>

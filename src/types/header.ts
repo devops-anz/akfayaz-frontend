@@ -40,6 +40,16 @@ export interface HeaderData {
   updated_at: string;
   footer_right_text: string;
   footer_left_text: string;
+  footer_right_text_color: string;
+  footer_left_text_color: string;
+  email_address_color: string;
+  email_text_color: string;
+  button_bg_color: string;
+  button_text_color: string;
+  footer_menu_links_color: string;
+  header_menu_links_color: string;
+  description_color: string;
+  company_name_color: string;
 }
 
 export interface HeaderApiResponse {
@@ -85,6 +95,16 @@ export interface MappedHeaderData {
   logoUrl: string;
   footer_right_text: string;
   footer_left_text: string;
+  footer_right_text_color: string;
+  footer_left_text_color: string;
+  email_address_color: string;
+  email_text_color: string;
+  button_bg_color: string;
+  button_text_color: string;
+  footer_menu_links_color: string;
+  header_menu_links_color: string;
+  description_color: string;
+  company_name_color: string;
 }
 
 export interface MappedFooterData {
@@ -100,4 +120,9 @@ export interface MappedFooterData {
   logoUrl: string;
   footer_right_text: string;
   footer_left_text: string;
+  footer_right_text_color: string;
+  footer_left_text_color: string;
+  footer_menu_links_color: string;
+  description_color: string;
+  company_name_color: string;
 }

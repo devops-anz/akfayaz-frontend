@@ -1,32 +1,21 @@
 'use client';
 import { useEffect, useState } from 'react';
 import MobileNavbar from './mobile-navbar';
-import { navbarData as staticNavbarData } from '../../../../@json-db/index';
 import { poppins } from 'styles/fonts';
 import Image from 'next/image';
 
 import { useRouter } from "next/navigation";
 import { MappedHeaderData } from '@/types/header';
-import { getNavbarData } from 'lib/getHeaderData';
 
-const Navbar = () => {
+interface NavbarProps {
+  navbarData: MappedHeaderData;
+}
+
+const Navbar = ({ navbarData }: NavbarProps) => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  const [navbarData, setNavbarData] = useState<MappedHeaderData>({
-    companyName: staticNavbarData.data.company_name,
-    description: staticNavbarData.data.description,
-    navbarList: staticNavbarData.data.menu_links,
-    FooterList: staticNavbarData.data.footer_links,
-    buttonText: staticNavbarData.data.button_text,
-    buttonLink: staticNavbarData.data.button_link,
-    emailText: staticNavbarData.data.email_text,
-    email: staticNavbarData.data.email,
-    logoUrl: staticNavbarData.data.logo_url,
-    portfolioLinks: staticNavbarData.data.portfolio_links,
-    footer_right_text: staticNavbarData.data.footer_right_text,
-    footer_left_text: staticNavbarData.data.footer_left_text,
-  });
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -42,25 +31,6 @@ const Navbar = () => {
       router.push(link);
     }, 200);
   }
-
-  useEffect(() => {
-    const loadNavbarData = async () => {
-      try {
-        const data = await getNavbarData();
-        if (data) {
-          setNavbarData(data);
-        }
-      } catch (error) {
-        console.error("Failed to load navbar data:", error);
-        // Keep using static data as fallback
-      }
-    };
-
-    loadNavbarData();
-  }, []);
-
-
-  console.log("logoUrl", navbarData.logoUrl)
 
   return (
     <div className={` fixed top-0 left-0 right-0 bg-white shadow-md z-[99] ${isScrolled ? 'shadow-md' : 'shadow-none'}`}>
@@ -83,16 +53,32 @@ const Navbar = () => {
                 />
               </div>
               <div>
-                <h1 className={`${poppins.className} text-2xl font-bold`}>{navbarData.companyName}</h1>
-                <p className='text-sm text-gray-600'>{navbarData.description}</p>
+                <h1 
+                  className={`${poppins.className} text-2xl font-bold`}
+                  style={{ color: navbarData.company_name_color }}
+                >
+                  {navbarData.companyName}
+                </h1>
+                <p 
+                  className="text-sm"
+                  style={{ color: navbarData.description_color }}
+                >
+                  {navbarData.description}
+                </p>
               </div>
             </div>
 
             <div className='flex flex-row gap-10'>
               <div>
-                <p className='text-sm text-gray-600/50'>{navbarData.emailText}</p>
+                <p 
+                  className="text-sm"
+                  style={{ color: navbarData.email_text_color }}
+                >
+                  {navbarData.emailText}
+                </p>
                 <p
-                  className='text-md text-gray-700 cursor-pointer hover:text-gray-900 transition-colors'
+                  className="text-md cursor-pointer hover:text-gray-900 transition-colors"
+                  style={{ color: navbarData.email_address_color }}
                   onClick={() => {
                     navigator.clipboard.writeText(navbarData.email);
                     const target = event?.target as HTMLElement;
@@ -107,29 +93,29 @@ const Navbar = () => {
                   {navbarData.email}
                 </p>
               </div>
-              <a href={navbarData.buttonLink} target='_blank' rel='noopener noreferrer' className='bg-black text-white rounded-md hover:shadow-lg  transition-all duration-300'>
-                <div className='p-4 flex items-center justify-center'>
+              <a href={navbarData.buttonLink} target='_blank' rel='noopener noreferrer'>
+                <div 
+                  className="p-4 flex items-center justify-center rounded-md hover:shadow-lg transition-all duration-300"
+                  style={{
+                    backgroundColor: navbarData.button_bg_color,
+                    color: navbarData.button_text_color
+                  }}
+                >
                   {navbarData.buttonText}
                 </div>
               </a>
             </div>
           </div>
-          <hr className={` container-custom  hidden md:block w-full border-gray-300  ${isScrolled ? 'md:mt-2' : 'md:mt-6 md:mb-2'}`} />
-          <div className=' custom-nav  mx-auto flex max-w-[1200px] flex-row justify-between gap-20 px-0 py-2 md:justify-between md:px-0 md:py-0 '>
-            {/* <Link
-            href={navbarData?.companyName?.link}
-            aria-label='Company'
-            title={navbarData?.companyName?.title}
-            className='inline-flex items-center'
-          >
-            <Image src={'/logo/logo-small.png'} className='w-12 pl-4' alt='bus' width={1000} height={1000} priority /> 
-            <p className='text-white pl-4 font-bold text-[25px] '>ADAM</p>
-          </Link> */}
+          <hr className={`container-custom hidden md:block w-full border-gray-300 ${isScrolled ? 'md:mt-2' : 'md:mt-6 md:mb-2'}`} />
+          <div className='custom-nav mx-auto flex max-w-[1200px] flex-row justify-between gap-20 px-0 py-2 md:justify-between md:px-0 md:py-0 '>
             <ul className='hidden items-center space-x-8 md:flex'>
               {navbarData.navbarList.map((item, index: number) => (
                 <li key={index} className={'group relative block'}>
                   {item.subMenu ? (
-                    <span className='font-work flex items-center gap-1 px-0 py-3 text-base font-[500] text-black transition  hover:duration-300'>
+                    <span 
+                      className="font-work flex items-center gap-1 px-0 py-3 text-base font-[500] transition hover:duration-300"
+                      style={{ color: navbarData.header_menu_links_color }}
+                    >
                       {item.title}
                       {item.subMenu && (
                         <svg

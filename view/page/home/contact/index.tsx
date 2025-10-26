@@ -21,8 +21,8 @@ const Contact = ({ contactData }: { contactData: any }) => {
       <div className='container-custom mx-auto px-4 md:px-5 lg:px-10 xl:px-0'>
         {/* Header */}
         <div className='mb-16'>
-          <h2 className={`${poppins.className} mb-4 text-4xl font-bold md:text-6xl`}>{contactData.title}</h2>
-          <p className='text-gray-600'>{contactData.subtitle}</p>
+          <h2 className={`${poppins.className} mb-4 text-4xl font-bold md:text-6xl`} style={{ color: contactData?.text_color }}>{contactData.title}</h2>
+          <p style={{ color: contactData?.subtitle_color }}>{contactData.subtitle}</p>
           <hr className='mt-6 border border-solid border-gray-500/50' />
         </div>
         {/* Contact Methods */}
@@ -108,13 +108,14 @@ const Contact = ({ contactData }: { contactData: any }) => {
                 </div>
 
                 {/* Title */}
-                <h3 className='mb-3 text-sm font-medium text-gray-500'>{method.title}</h3>
+                <h3 className={`mb-3 text-sm font-medium`} style={{ color: contactData?.contact_text_color }}>{method.title}</h3>
 
                 {/* Value */}
                 <div
-                  className={`text-2xl text-wrap  font-[700] text-gray-900 ${method.title === 'FIND ME' || method.title === 'WRITE TO ME' || method.title === 'Write To Me' ? 'text-[17px] sm:text-[22px]' : ''}
+                  className={`text-2xl text-wrap  font-[700] ${method.title === 'FIND ME' || method.title === 'WRITE TO ME' || method.title === 'Write To Me' ? 'text-[17px] sm:text-[22px]' : ''}
                 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-500 hover:after:w-full
                 `}
+                  style={{ color: contactData?.contact_link_color }}
                 >
                   {getDisplayText()}
                   {isWriteToMe && copied === method.url && (

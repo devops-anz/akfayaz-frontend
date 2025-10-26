@@ -6,10 +6,12 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 
 export default function PortfolioModal({
+  button_1_detailed_text_color,
   button_1_detailed_text,
   open,
   setOpen
 }: {
+  button_1_detailed_text_color: string,
   button_1_detailed_text: string;
   open: boolean;
   setOpen: (open: boolean) => void;
@@ -62,6 +64,7 @@ export default function PortfolioModal({
               <div className='px-6 pb-6'>
                 <div
                   className="prose max-w-none [&>h2]:pt-3 [&>h3]:pt-3 [&>h3]:pb-3 [&>h2]:text-2xl [&>h3]:text-xl [&>p]:mb-2 last:[&>p]:mb-0"
+                  style={{ color: button_1_detailed_text_color }}
                   dangerouslySetInnerHTML={{ __html: button_1_detailed_text }}
                 />
               </div>
