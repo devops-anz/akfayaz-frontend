@@ -1,42 +1,21 @@
 'use client';
 import { useEffect, useState } from 'react';
 import MobileNavbar from './mobile-navbar';
-import { navbarData as staticNavbarData } from '../../../../@json-db/index';
 import { poppins } from 'styles/fonts';
 import Image from 'next/image';
 
 import { useRouter } from "next/navigation";
 import { MappedHeaderData } from '@/types/header';
-import { getNavbarData } from 'lib/getHeaderData';
 
-const Navbar = () => {
+interface NavbarProps {
+  navbarData: MappedHeaderData;
+}
+
+const Navbar = ({ navbarData }: NavbarProps) => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  const [navbarData, setNavbarData] = useState<MappedHeaderData>({
-    companyName: staticNavbarData.data.company_name,
-    description: staticNavbarData.data.description,
-    navbarList: staticNavbarData.data.menu_links,
-    FooterList: staticNavbarData.data.footer_links,
-    buttonText: staticNavbarData.data.button_text,
-    buttonLink: staticNavbarData.data.button_link,
-    emailText: staticNavbarData.data.email_text,
-    email: staticNavbarData.data.email,
-    logoUrl: staticNavbarData.data.logo_url,
-    portfolioLinks: staticNavbarData.data.portfolio_links,
-    footer_right_text: staticNavbarData.data.footer_right_text,
-    footer_left_text: staticNavbarData.data.footer_left_text,
-    footer_right_text_color: staticNavbarData.data.footer_right_text_color,
-    footer_left_text_color: staticNavbarData.data.footer_left_text_color,
-    email_address_color: staticNavbarData.data.email_address_color,
-    email_text_color: staticNavbarData.data.email_text_color,
-    button_bg_color: staticNavbarData.data.button_bg_color,
-    button_text_color: staticNavbarData.data.button_text_color,
-    footer_menu_links_color: staticNavbarData.data.footer_menu_links_color,
-    header_menu_links_color: staticNavbarData.data.header_menu_links_color,
-    description_color: staticNavbarData.data.description_color,
-    company_name_color: staticNavbarData.data.company_name_color
-  });
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -52,25 +31,6 @@ const Navbar = () => {
       router.push(link);
     }, 200);
   }
-
-  useEffect(() => {
-    const loadNavbarData = async () => {
-      try {
-        const data = await getNavbarData();
-        if (data) {
-          setNavbarData(data);
-        }
-      } catch (error) {
-        console.error("Failed to load navbar data:", error);
-        // Keep using static data as fallback
-      }
-    };
-
-    loadNavbarData();
-  }, []);
-
-
-  console.log("logoUrl", navbarData)
 
   return (
     <div className={` fixed top-0 left-0 right-0 bg-white shadow-md z-[99] ${isScrolled ? 'shadow-md' : 'shadow-none'}`}>

@@ -121,8 +121,8 @@ const Services = ({ serviceData, service_item_color, service_item_description_co
                     className="rounded-lg mx-auto"
                   />
                 </div>
-                <h3 className={`text-center text-base  md:text-lg font-bold text-[${service_item_color}] mt-4`}>{item.title}</h3>
-                <p className={`text-center text-sm text-[${service_item_description_color}] mt-2 max-w-[250px]`}>{item.description}</p>
+                <h3 className="text-center text-base md:text-lg font-bold mt-4" style={{ color: service_item_color }}>{item.title}</h3>
+                <p className="text-center text-sm mt-2 max-w-[250px]" style={{ color: service_item_description_color }}>{item.description}</p>
               </div>
             </div>
 

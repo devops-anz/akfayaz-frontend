@@ -34,9 +34,9 @@ const TimelineItem = ({
       {/* Content */}
 
       <div className='w-full  pb-12'>
-        <p className={`mb-1 font-medium  text-${career_highlights_year_color}`}>{date}</p>
-        <h3 className={`mb-1 text-3xl font-medium text-${career_highlights_title_color}`}>{title}</h3>
-        <p className={`text-${career_highlights_description_color}`}>{description}</p>
+        <p className="mb-1 font-medium" style={{ color: career_highlights_year_color }}>{date}</p>
+        <h3 className="mb-1 text-3xl font-medium" style={{ color: career_highlights_title_color }}>{title}</h3>
+        <p style={{ color: career_highlights_description_color }}>{description}</p>
       </div>
     </div>
   );
@@ -49,10 +49,10 @@ const Timeline = ({ timelineData }: { timelineData: any }) => {
   return (
     <div className='container-custom mx-auto '>
       <div className='mb-10  md:pt-10 px-4 sm:mb-16 sm:px-6 md:px-10 lg:px-10 xl:px-0 lg:mb-14 lg:pt-12 xl:mb-16 xl:pt-14'>
-        <p className={`font-[700] text-${timelineData?.title_color} ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-7xl`}>
+        <p className={`font-[700] ${poppins.className} text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-7xl`} style={{ color: timelineData?.title_color }}>
           {timelineData?.title}
         </p>
-        <p className={`mb-3 pt-6 sm:mb-4 sm:pt-8 md:mb-5 md:pt-10 text-${timelineData?.description_color}`}>
+        <p className="mb-3 pt-6 sm:mb-4 sm:pt-8 md:mb-5 md:pt-10" style={{ color: timelineData?.description_color }}>
           {timelineData?.description}
         </p>
         <hr className='border border-solid border-gray-200' />

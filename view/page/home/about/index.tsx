@@ -58,7 +58,7 @@ const About = ({ aboutData }: { aboutData: AboutData }) => {
 
         {/* aboutData Section */}
         <div className='space-y-4 sm:space-y-6'>
-          <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold leading-tight sm:leading-[60px] ${poppins.className} text-black`}>
+          <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold leading-tight sm:leading-[60px] ${poppins.className}`} style={{ color: aboutData?.title_color }}>
             {aboutData.title.includes('About Me') ? (
               <>
                 A Few Words <br className='hidden sm:block' /> About Me
@@ -68,8 +68,8 @@ const About = ({ aboutData }: { aboutData: AboutData }) => {
             )}
           </h1>
 
-          <h2 className={`text-lg sm:text-xl text-${aboutData?.post_title_color}`}>{aboutData.post_title}</h2>
-          <p className={`text-${aboutData?.description_1_color} text-sm sm:text-base`}>
+          <h2 className="text-lg sm:text-xl" style={{ color: aboutData?.post_title_color }}>{aboutData.post_title}</h2>
+          <p className="text-sm sm:text-base" style={{ color: aboutData?.description_1_color }}>
             {aboutData.description_1}
           </p>
 
@@ -80,7 +80,7 @@ const About = ({ aboutData }: { aboutData: AboutData }) => {
                 "I'm good at:",
                 ...aboutData.good_at
               ].map((skill, index) => (
-                <div key={skill} className={`flex items-center space-x-2 text-${aboutData?.good_at_color}`}>
+                <div key={skill} className="flex items-center space-x-2" style={{ color: aboutData?.good_at_color }}>
                   {index === 0 ? (
                     <svg className='h-2 w-2 text-gray-500' fill='currentColor' viewBox='0 0 24 24'>
                       <circle cx='12' cy='12' r='6' />
@@ -96,18 +96,29 @@ const About = ({ aboutData }: { aboutData: AboutData }) => {
             </div>
           </div>
 
-          <p className={`text-${aboutData?.description_2_color} text-sm sm:text-base`}>
+          <p className="text-sm sm:text-base" style={{ color: aboutData?.description_2_color }}>
             {aboutData.description_2}
           </p>
 
           {/* Buttons */}
           <div className='flex flex-row gap-4 sm:space-x-4 pt-4'>
             <p onClick={() => setOpenPortfolio(true)}
-              className={`w-full sm:w-fit cursor-pointer border-solid bg-${aboutData?.button_bg_1_color} px-4 py-2 text-center text-sm sm:text-base font-[500] text-${aboutData?.button_text_1_color} transition-all duration-300 ease-in-out hover:shadow-lg sm:px-5 sm:py-3`}>
+              className="w-full sm:w-fit cursor-pointer border-solid px-4 py-2 text-center text-sm sm:text-base font-[500] transition-all duration-300 ease-in-out hover:shadow-lg sm:px-5 sm:py-3"
+              style={{ backgroundColor: aboutData?.button_bg_1_color, color: aboutData?.button_text_1_color }}>
               {aboutData.button_text_1}
             </p>
             <p onClick={() => setOpenCV(true)}
-              className={`w-full sm:w-fit cursor-pointer border-2 border-solid border-${aboutData?.button_bg_2_color} px-4 py-2 text-sm sm:text-base font-[500] text-${aboutData?.button_text_2_color} transition-all duration-300 ease-in-out hover:bg-${aboutData?.button_bg_2_color} hover:text-white sm:px-5 sm:py-3`}>
+              className="w-full sm:w-fit cursor-pointer border-2 border-solid px-4 py-2 text-sm sm:text-base font-[500] transition-all duration-300 ease-in-out hover:text-white sm:px-5 sm:py-3"
+              style={{ 
+                borderColor: aboutData?.button_bg_2_color, 
+                color: aboutData?.button_text_2_color 
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = aboutData?.button_bg_2_color || '';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '';
+              }}>
               {aboutData.button_text_2}
             </p>
           </div>

@@ -102,10 +102,10 @@ const Testimonials = ({ testimonialsData }: { testimonialsData?: any }) => {
     <div id='testimonials' className='px-6 md:mx-10 mb-6 sm:mb-8 md:mb-10 bg-[#faf8f7] pb-10 sm:pb-16 md:pb-28'>
       <div className='container-custom'>
         <div className='mb-10 sm:mb-16 md:mb-20'>
-          <p className={`font-[700] text-${testimonialsData?.title_color} ${poppins.className} pt-12 sm:pt-16 md:pt-24 text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
+          <p className={`font-[700] ${poppins.className} pt-12 sm:pt-16 md:pt-24 text-3xl sm:text-4xl md:text-5xl lg:text-6xl`} style={{ color: testimonialsData?.title_color }}>
             {testimonialsData?.title}
           </p>
-          <p className={`mb-3 sm:mb-4 md:mb-5 pt-6 sm:pt-8 md:pt-10 text-${testimonialsData?.subtitle_color}`}>
+          <p className="mb-3 sm:mb-4 md:mb-5 pt-6 sm:pt-8 md:pt-10" style={{ color: testimonialsData?.subtitle_color }}>
             {testimonialsData?.subtitle}
           </p>
           <hr className='border border-solid border-gray-400/50' />
@@ -126,12 +126,12 @@ const Testimonials = ({ testimonialsData }: { testimonialsData?: any }) => {
                   </div>
 
                   <div>
-                    <h3 className={`text-lg sm:text-xl font-semibold text-${testimonialsData?.testimonial_item_color}`}>{testimonial.name}</h3>
-                    <p className={`mt-2 sm:mt-3 text-xs sm:text-sm text-${testimonialsData?.testimonial_position_color}`}>{testimonial.position}</p>
+                    <h3 className="text-lg sm:text-xl font-semibold" style={{ color: testimonialsData?.testimonial_item_color }}>{testimonial.name}</h3>
+                    <p className="mt-2 sm:mt-3 text-xs sm:text-sm" style={{ color: testimonialsData?.testimonial_position_color }}>{testimonial.position}</p>
                   </div>
                 </div>
 
-                <blockquote className={`italic leading-relaxed text-sm sm:text-base text-${testimonialsData?.testimonial_item_description_color}`}>{testimonial.testimonial}</blockquote>
+                <blockquote className="italic leading-relaxed text-sm sm:text-base" style={{ color: testimonialsData?.testimonial_item_description_color }}>{testimonial.testimonial}</blockquote>
               </div>
             ))}
           </Slider>

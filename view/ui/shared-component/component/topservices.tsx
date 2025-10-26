@@ -65,7 +65,8 @@ export default function TopServicesModal({
 
               <div className='px-6 pb-6'>
                 <div
-                  className={`prose max-w-none [&>h2]:pt-3 [&>h3]:pt-3 [&>h3]:pb-3 [&>h2]:text-2xl [&>h3]:text-xl [&>p]:mb-2 last:[&>p]:mb-0 text-${top_service_item_description_color}`}
+                  className="prose max-w-none [&>h2]:pt-3 [&>h3]:pt-3 [&>h3]:pb-3 [&>h2]:text-2xl [&>h3]:text-xl [&>p]:mb-2 last:[&>p]:mb-0"
+                  style={{ color: top_service_item_description_color }}
                   dangerouslySetInnerHTML={{ __html: selectedService?.description }}
                 />
               </div>

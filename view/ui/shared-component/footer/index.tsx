@@ -1,57 +1,15 @@
+'use client';
 import { MappedFooterData } from '@/types/header';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
 import { poppins } from 'styles/fonts';
-import { navbarData as staticNavbarData } from '../../../../@json-db/index';
-import { getNavbarData } from 'lib/getHeaderData';
 
-const Footer = () => {
+interface FooterProps {
+  footerData: MappedFooterData;
+}
+
+const Footer = ({ footerData }: FooterProps) => {
   const router = useRouter();
-
-  const [footerData, setFooterData] = useState<MappedFooterData>({
-    companyName: staticNavbarData.data.company_name,
-    description: staticNavbarData.data.description,
-    FooterList: staticNavbarData.data.footer_links,
-    portfolioLinks: staticNavbarData.data.portfolio_links,
-    logoUrl: staticNavbarData.data.logo_url,
-    footer_right_text: staticNavbarData.data.footer_right_text,
-    footer_left_text: staticNavbarData.data.footer_left_text,
-    footer_right_text_color: staticNavbarData.data.footer_right_text_color,
-    footer_left_text_color: staticNavbarData.data.footer_left_text_color,
-    footer_menu_links_color: staticNavbarData.data.footer_menu_links_color,
-    description_color: staticNavbarData.data.description_color,
-    company_name_color: staticNavbarData.data.company_name_color
-  });
-
-  useEffect(() => {
-    const loadNavbarData = async () => {
-      try {
-        const data = await getNavbarData();
-        if (data) {
-          setFooterData({
-            companyName: data.companyName,
-            description: data.description,
-            FooterList: data.FooterList,
-            portfolioLinks: data.portfolioLinks,
-            logoUrl: data.logoUrl,
-            footer_right_text: data.footer_right_text,
-            footer_left_text: data.footer_left_text,
-            footer_right_text_color: data.footer_right_text_color,
-            footer_left_text_color: data.footer_left_text_color,
-            footer_menu_links_color: data.footer_menu_links_color,
-            description_color: data.description_color,
-            company_name_color: data.company_name_color
-          });
-        }
-      } catch (error) {
-        console.error("Failed to load navbar data:", error);
-      }
-    };
-
-    loadNavbarData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <footer>

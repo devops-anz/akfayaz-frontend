@@ -3,8 +3,8 @@ import { navbarData as staticNavbarData } from '../@json-db/index';
 
 // Cache for header data
 let headerDataCache: HeaderData | null = null;
-let cacheTimestamp: number = 0;
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+// let cacheTimestamp: number = 0;
+// const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 /**
  * Fetches header data from the API
@@ -18,8 +18,8 @@ export async function fetchHeaderData(): Promise<FetchHeaderDataReturn> {
         'Content-Type': 'application/json',
         Accept: 'application/json'
       },
-      next: { revalidate: 1 } // Revalidate every 5 minutes
-      // cache: "no-store",
+      // next: { revalidate: 15 } // Revalidate every 5 minutes
+      cache: "no-store",
     });
 
     console.log('API', `${process.env.NEXT_PUBLIC_CMS_SERVER_URL}/api/header`);
@@ -53,18 +53,18 @@ export async function fetchHeaderData(): Promise<FetchHeaderDataReturn> {
  * @returns Promise<HeaderData | null>
  */
 export async function getHeaderData(): Promise<HeaderData | null> {
-  const now = Date.now();
+  // const now = Date.now();
 
   // Return cached data if it's still valid
-  if (headerDataCache && now - cacheTimestamp < CACHE_DURATION) {
-    return headerDataCache;
-  }
+  // if (headerDataCache && now - cacheTimestamp < CACHE_DURATION) {
+  //   return headerDataCache;
+  // }
 
   const { data, error } = await fetchHeaderData();
 
   if (data) {
     headerDataCache = data;
-    cacheTimestamp = now;
+    // cacheTimestamp = now;
 
     return data;
   }
